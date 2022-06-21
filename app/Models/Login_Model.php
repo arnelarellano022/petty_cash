@@ -14,6 +14,7 @@ class Login_Model extends Model {
         $rs_sub_menu   = array();
         $rs_user_roles = array();
 
+
         $db = db_connect();
 
 
