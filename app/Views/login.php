@@ -7,9 +7,10 @@
     <meta name="csrf-param" content="_csrf">
     <meta name="csrf-token" content="QU91d19BNkMYNhcWHR5HDjJ8NkRyBkcpFXgRJ2YNARwoOD0UFxBkGg==">
     <title>Sign in</title>
-    <link href="<?php echo base_url();?>assets/login/css/authchoice.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/login/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/login/css/site.css" rel="stylesheet"></head>
+    <link href="<?=  base_url('assets/login/css/authchoice.css');?>" rel="stylesheet">
+    <link href="<?=  base_url('assets/login/css/bootstrap.css');?>" rel="stylesheet">
+    <link href="<?=  base_url('assets/login/css/site.css');?>" rel="stylesheet">
+</head>
 <body>
 
 <div class="wrap">
@@ -37,7 +38,7 @@
         <div id="notif_fade" class="col-md-12">
             <?php if(isset($_SESSION["error"])){echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';}?>
             <?php if(isset($_SESSION["success"])){echo '<div class="alert alert-success">'.$_SESSION["success"].'</div>';}?>
-            <?php echo validation_errors('<div class="alert alert-danger">','</div>');?>
+<!--            --><?php //echo validation_errors('<div class="alert alert-danger">','</div>');?>
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -48,7 +49,7 @@
 
                     <div class="panel-body">
 
-                        <form action="<?php echo base_url();?>login/validate_login" method="post" data-toggle="validator" id="frm_validation" enctype="multipart/form-data">
+                        <form action="<?= base_url('login/validate_login');?>" method="post" data-toggle="validator" id="frm_validation" enctype="multipart/form-data">
                             <input type="hidden" name="_csrf" value="QU91d19BNkMYNhcWHR5HDjJ8NkRyBkcpFXgRJ2YNARwoOD0UFxBkGg==">
                             <div class="form-group field-login-form-login required">
                                 <label class="control-label" for="login-form-login">Login</label>
@@ -83,14 +84,13 @@
         </div>
     </div>
 </div>
+<?= view('footer'); ?>
 
-<?php $this->load->view('footer'); ?>
-
-<script src="<?php echo base_url();?>assets/login/js/jquery.js"></script>
-<script src="<?php echo base_url();?>assets/login/js/yii.js"></script>
-<script src="<?php echo base_url();?>assets/login/js/yii.activeForm.js"></script>
-<script src="<?php echo base_url();?>assets/login/js//authchoice.js"></script>
-<script src="<?php echo base_url();?>assets/login/js/bootstrap.js"></script>
+<script src="<?php echo base_url('assets/login/js/jquery.js');?>"></script>
+<script src="<?php echo base_url('assets/login/js/yii.js');?>"></script>
+<script src="<?php echo base_url('assets/login/js/yii.activeForm.js');?>"></script>
+<script src="<?php echo base_url('assets/login/js//authchoice.js');?>"></script>
+<script src="<?php echo base_url('assets/login/js/bootstrap.js');?>"></script>
 <script type="text/javascript">
 
     $( document ).ready(function() {

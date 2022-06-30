@@ -16,34 +16,36 @@ class Login_Model extends Model {
 
 
         $db = db_connect();
-
+//        $db      = \Config\Database::connect();
+//        $builder = $db->table('users');
 
 
         /* main menu */
-        $this->db->order_by("pri", "asc");
-        $this->db->where('act', 1);
-        $main_menu = $this->db->get("admin_menu_main");
-        if($main_menu->num_rows()>0){
-            foreach($main_menu->result() as $data){
+        $query = $db->query('Select * FROM admin_menu_main where act = 1 ORDER BY pri ASC ');
+        $count = $query->getNumRows();
+        if($count > 0){
+            foreach($query->getResult() as $data){
                 $rs_main_menu[] = $data;
             }
         }
 
         /* sub menu */
-        $this->db->order_by("pri", "asc");
-        $this->db->where('act', 1);
-        $sub_menu = $this->db->get("admin_menu_sub");
-        if($sub_menu->num_rows()>0){
-            foreach($sub_menu->result() as $data){
+        $query = $db->query('Select * FROM admin_menu_sub where act = 1 ORDER BY pri ASC ');
+        $count = $query->getNumRows();
+        if($count > 0){
+            foreach($query->getResult() as $data){
                 $rs_sub_menu[] = $data;
             }
         }
 
         /* user roles */
-        $this->db->where('user_role', $this->session->user_role);
-        $user_roles = $this->db->get("user_roles");
-        if($user_roles->num_rows()>0){
-            foreach($user_roles->result() as $data){
+
+        $query = $db->query("Select * FROM user_roles where user_role = '" . session()->get('user_role') . "'");
+
+        $count = $query->getNumRows();
+
+        if($count > 0){
+            foreach($query->getResult() as $data){
                 $rs_user_roles[] = $data;
             }
         }
@@ -54,25 +56,29 @@ class Login_Model extends Model {
             'index_user_roles'   =>	 $rs_user_roles
         );
     }
-    public function validate_login(){
+    public function validate_login_model($username, $password){
+        $db = db_connect();
 
         $result 	  = array();
         $user_id      = array();
         $user_role 	  = array();
         $user_name   = array();
 
-        $password = md5($this->input->post("password",TRUE));
+        $password = md5($password);
 
         /* ADMIN LOGIN VALIDATION */
 
-        $this->db->where('user_name',$this->input->post("username",TRUE));
-        $this->db->where('user_password', $password);
+        $query = $db->query("Select * FROM user_info where user_name = '" . $username . "'and user_password = '". $password . "'");
 
-        $admin_account = $this->db->get("user_info");
 
-        if ($admin_account->num_rows() == 1) {
+//        $this->db->where('user_name',$this->input->post("username",TRUE));
+//        $this->db->where('user_password', $password);
 
-            $rs = $admin_account->row();
+//        $admin_account = $this->db->get("user_info");
+
+        if ($query->getNumRows() == 1) {
+
+            $rs = $query->getResult();
             $result = true;
             $user_id = $rs->user_id;
             $user_role = $rs->user_roles;
