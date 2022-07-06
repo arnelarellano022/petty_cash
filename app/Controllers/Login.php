@@ -26,7 +26,7 @@ class login extends BaseController{
 
 //        $data = [];
         helper(['form']);
-        $session = \Config\Services::session();
+        $session = session();
 
         $rules = [
             'username' => 'required|max_length[225]',
@@ -49,9 +49,8 @@ class login extends BaseController{
                 $username = $this->request->getVar('username');
                 $password = $this->request->getVar('password');
 
+                $result = $this->Login_Model->validate_login_model($username, $password);
 
-            $result = $this->Login_Model->validate_login_model($username, $password);
-            }
 
             if($result['success']==TRUE){
 
@@ -62,41 +61,43 @@ class login extends BaseController{
                     'logged_in' 	  => TRUE
                 );
 
-                $this->session->set_userdata($account_data);
-                $session->set($account_data);
-                $this->session->set_flashdata("success","login success");
 
-                redirect("dashboard","refresh");
+                $session->set($account_data);
+                $session->setFlashdata("success","login success");
+                return redirect()->to('/dashboard');
+//                redirect("dashboard","refresh");
 
             }else{
 
-                $this->session->set_flashdata("error","invalid username/password.");
+                $session->setFlashdata("error","invalid username/password.");
+            }
+                if($result['success']==FALSE){
+                    return redirect()->to('/index');
+//                redirect("index","refresh");
+                }
             }
 
-            if($result['success']==FALSE){
-                redirect("index","refresh");
-            }
         }
     }
 
     public function error_403(){
         $data =  $this->system_menu;
-        $this->load->view('errors/error_403',$data);
+         return view('errors/error_403', $data);
     }
 
     public function dashboard()
     {
         if (!isset($_SESSION['user_role'])) {
-            redirect('index', 'refresh');
+            return redirect()->to('/index');
         } else {
             $module = $this->system_menu;
-            $this->load->view('dashboard_view/dashboard', $module);
+            return view('dashboard_view/dashboard', $module);
         }
     }
 
     public function logout()
-    {
-        $this->session->sess_destroy();
+    {   $session = session();
+        $session->destroy();
         redirect('login', 'refresh');
     }
 
