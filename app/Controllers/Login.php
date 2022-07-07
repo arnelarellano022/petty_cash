@@ -4,12 +4,14 @@ namespace App\Controllers;
 
 class login extends BaseController{
     var $system_menu = array();
+    protected $session;
 
     function __construct(){
 //        $this->Login_Model = new \App\Models\Login_Model();
         $this->Login_Model = model('Login_Model');
 
-
+        $this->session = \Config\Services::session();
+        $this->session->start();
 
         $result = $this->Login_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
@@ -28,28 +30,37 @@ class login extends BaseController{
         helper(['form']);
         $session = session();
 
-        $rules = [
-            'username' => 'required|max_length[225]',
-            'password' => 'required|max_length[225]'
-        ];
 
 //        $this->form_validation->set_rules('username','Username','required|max_length[225]');
 //        $this->form_validation->set_rules('password','Password','required|max_length[225]');
 
-        $errors = [
-            'password' => [
-                'validateUser' => 'Email or Password don\'t match'
-            ]
-        ];
+//        $errors = [
+//            'password' => [
+//                'validateUser' => 'Email or Password don\'t match'
+//            ]
+//        ];
 
-        if ( $this->validate($rules, $errors)) {
+
+//        if ( $this->validate($session_data)) {
 
             if($this->request->getMethod() == "post"){
 
-                $username = $this->request->getVar('username');
-                $password = $this->request->getVar('password');
+                $rules = [
+                    'username' => 'required|max_length[225]',
+                    'password' => 'required|max_length[225]'
+                ];
 
-                $result = $this->Login_Model->validate_login_model($username, $password);
+                if ( $this->validate($rules)) {
+
+                    $username = $this->request->getVar('username');
+                    $password = $this->request->getVar('password');
+
+                    $result = $this->Login_Model->validate_login_model($username, $password);
+
+                }
+
+
+
 
 
             if($result['success']==TRUE){
@@ -67,17 +78,19 @@ class login extends BaseController{
                 return redirect()->to('/dashboard');
 //                redirect("dashboard","refresh");
 
-            }else{
+            }
+            else{
 
                 $session->setFlashdata("error","invalid username/password.");
             }
+
                 if($result['success']==FALSE){
                     return redirect()->to('/index');
 //                redirect("index","refresh");
                 }
             }
 
-        }
+//        }
     }
 
     public function error_403(){
@@ -98,11 +111,11 @@ class login extends BaseController{
     public function logout()
     {   $session = session();
         $session->destroy();
-        redirect('login', 'refresh');
+        return redirect()->to('/login');
     }
 
     function login(){
-        $this->load->view('login');
+        return view('login');
     }
 
 
