@@ -34,6 +34,10 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Login::login');
 $routes->add('/index', 'Login::index');
 $routes->add('/dashboard', 'Login::dashboard');
+$routes->add('/logout', 'Login::logout');
+
+//Users
+$routes->add('/users_index', 'Users::users_index');
 
 
 /*

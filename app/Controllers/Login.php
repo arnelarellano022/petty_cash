@@ -26,22 +26,9 @@ class login extends BaseController{
 
     public function validate_login(){
 
-//        $data = [];
+
         helper(['form']);
         $session = session();
-
-
-//        $this->form_validation->set_rules('username','Username','required|max_length[225]');
-//        $this->form_validation->set_rules('password','Password','required|max_length[225]');
-
-//        $errors = [
-//            'password' => [
-//                'validateUser' => 'Email or Password don\'t match'
-//            ]
-//        ];
-
-
-//        if ( $this->validate($session_data)) {
 
             if($this->request->getMethod() == "post"){
 
@@ -56,28 +43,20 @@ class login extends BaseController{
                     $password = $this->request->getVar('password');
 
                     $result = $this->Login_Model->validate_login_model($username, $password);
-
                 }
-
-
-
-
 
             if($result['success']==TRUE){
 
                 $account_data = array(
-                    'user_id'         => $result['user_id'],
+                    'user_id'         => $username,
                     'user_role'  	  => $result['user_role'],
                     'username'        => $result['user_name'],
                     'logged_in' 	  => TRUE
                 );
 
-
                 $session->set($account_data);
                 $session->setFlashdata("success","login success");
                 return redirect()->to('/dashboard');
-//                redirect("dashboard","refresh");
-
             }
             else{
 
@@ -86,11 +65,9 @@ class login extends BaseController{
 
                 if($result['success']==FALSE){
                     return redirect()->to('/index');
-//                redirect("index","refresh");
                 }
             }
 
-//        }
     }
 
     public function error_403(){
@@ -100,6 +77,7 @@ class login extends BaseController{
 
     public function dashboard()
     {
+
         if (!isset($_SESSION['user_role'])) {
             return redirect()->to('/index');
         } else {
@@ -111,7 +89,7 @@ class login extends BaseController{
     public function logout()
     {   $session = session();
         $session->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/index');
     }
 
     function login(){

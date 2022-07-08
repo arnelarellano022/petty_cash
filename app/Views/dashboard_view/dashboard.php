@@ -10,13 +10,16 @@
     <meta name="csrf-param" content="_csrf">
     <meta name="csrf-token" content="R3NlR1lxdVIeCgcmGy4EHzRAJnR0NgQ4E0QBF2A9Qg0uBC0kESAnCw==">
     <title>SCMC-CRM System</title>
-    <link href="<?php echo base_url();?>assets/dashboard/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/dashboard/css/site.css" rel="stylesheet"></head>
+    <link href="<?=  base_url('assets/dashboard/css/bootstrap.css');?>" rel="stylesheet">
+    <link href="<?=  base_url('assets/dashboard/css/site.css');?>" rel="stylesheet">
+
+</head>
 <body>
 
 <div class="wrap">
 
-<?php $this->load->view('header'); ?>
+<?= view('header'); ?>
+
 
     <div class="container"></div>
     <div class="container">
@@ -32,10 +35,11 @@
         </div>
     </div>
 </div>
-  <?php $this->load->view('footer'); ?>
+  <?=  view('footer'); ?>
 
-    <script src="<?php echo base_url();?>assets/dashboard/js/jquery.js"></script>
-    <script src="<?php echo base_url();?>assets/dashboard/js/yii.js"></script>
-    <script src="<?php echo base_url();?>assets/dashboard/js/bootstrap.js"></script>
+    <script src="<?= base_url('assets/dashboard/js/jquery.js');?>"></script>
+    <script src="<?= base_url('assets/dashboard/js/yii.js');?>"></script>
+    <script src="<?= base_url('assets/dashboard/js/bootstrap.js');?>"></script>
+
 </body>
 </html>

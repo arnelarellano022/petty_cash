@@ -69,6 +69,7 @@ class Login_Model extends Model {
         /* ADMIN LOGIN VALIDATION */
 
         $query = $db->query("Select * FROM user_info where user_name = '" . $username . "'and user_password = '". $password . "'");
+//        $query = $db->query("Select * FROM user_info where user_name = 'try' and user_password = 'try'");
 
 
 //        $this->db->where('user_name',$this->input->post("username",TRUE));
@@ -77,32 +78,37 @@ class Login_Model extends Model {
 //        $admin_account = $this->db->get("user_info");
 
         if ($query->getNumRows() == 1) {
+            foreach ($query->getResult() as $rs){
+                $result = true;
+                $user_id = $rs->user_id;
+                $user_role = $rs->user_roles;
+                $user_name = $rs->user_name;
+            }
 
-            $rs = $query->getResult();
-            $result = true;
-            $user_id = $rs->user_id;
-            $user_role = $rs->user_roles;
-            $user_name = $rs->user_name;
         }
 
         return array(
             'success'       => $result,
             'user_id'       => $user_id,
             'user_role'     => $user_role,
-            'user_name'    => $user_name
+            'user_name'     => $user_name
         );
     }
 
 
     public function check_permission($main_id, $sub_id, $roles)
     {
-        $this->db->from('user_roles');
-        $this->db->where('user_role',$roles);
-        $this->db->where('main_menu_id', $main_id);
-        $this->db->where('sub_menu_id', $sub_id);
-        $query = $this->db->get()->num_rows();
+        $db = db_connect();
+        $query = $db->query("Select * FROM user_roles where user_role = '" . $roles . "'and main_menu_id = '". $main_id . "'and sub_menu_id = '". $sub_id . "'");
+        $count = $query->getNumRows();
 
-        if($query > 0){return true;}
+//        $this->db->from('user_roles');
+//        $this->db->where('user_role',$roles);
+//        $this->db->where('main_menu_id', $main_id);
+//        $this->db->where('sub_menu_id', $sub_id);
+//        $query = $this->db->get()->num_rows();
+
+        if($count > 0){return true;}
         else{return false;}
     }
 

@@ -1,17 +1,17 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+namespace App\Controllers;
 
 
-class users extends CI_Controller
+class users extends BaseController
 
 {    var $system_menu = array();
 
     function __construct(){
-        parent::__construct();
-        $this->load->model('Users_Model');
-        $this->load->model('Roles_Model');
 
-        $this->load->model('Login_Model');
+        $this->Users_Model = model('Users_Model');
+        $this->Roles_Model = model('Roles_Model');
+        $this->Login_Model = model('Login_Model');
+
         $result = $this->Login_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];
@@ -20,17 +20,26 @@ class users extends CI_Controller
 
     public function users_index(){
         if (!isset($_SESSION['user_role'])) {
-            redirect('index', 'refresh');
+            return redirect()->to('/index');
         } else {
             $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
             if ($result == true) {
                 $data = $this->system_menu;
                 $data['fetch_data'] = $this->Users_Model->users_fetch_data();
-                $this->load->view('users/_form', $data);
+                return view('users/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+
+                return redirect()->to('/error_403');
             }
         }
+
+
+//        if (!isset($_SESSION['user_role'])) {
+//            return redirect()->to('/index');
+//        } else {
+//            $module = $this->system_menu;
+//            return view('dashboard_view/dashboard', $module);
+//        }
     }
 
     public function add_new_system_user(){

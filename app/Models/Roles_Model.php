@@ -1,5 +1,11 @@
 <?php
-class Roles_Model extends  CI_Model
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+$db = db_connect();
+class Roles_Model extends  Model
 {
     //Roles
     public function roles_fetch_data()

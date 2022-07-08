@@ -1,13 +1,23 @@
 <?php
-class Users_Model extends  CI_Model
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+$db = db_connect();
+class Users_Model extends  Model
 {
     public function users_fetch_data()
     {
-        $this->db->select('*');
-        $this->db->from('user_info');
-        $this->db->order_by("user_id", "asc");
-        $query = $this->db->get();
-        return $query;
+        $db = db_connect();
+        $query = $db->query('Select * FROM user_info  ORDER BY user_id ASC ');
+        return $query->getResult();
+
+//        $this->db->select('*');
+//        $this->db->from('user_info');
+//        $this->db->order_by("user_id", "asc");
+//        $query = $this->db->get();
+//        return $query;
     }
     public function insert_user_model()
     {
