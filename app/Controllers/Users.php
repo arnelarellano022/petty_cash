@@ -16,6 +16,7 @@ class users extends BaseController
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
+
     }
 
     public function users_index(){
@@ -52,20 +53,22 @@ class users extends BaseController
             $this->session->set_flashdata("error", "Error on saving data to the database.");
         }
         redirect("users_index", "refresh");
+
     }
 
 
     public function create_user(){
         if (!isset($_SESSION['user_role'])) {
-            redirect('index', 'refresh');
+            return redirect()->to('/index');
         } else {
             $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
             if ($result == true) {
                 $data = $this->system_menu;
                 $data['fetch_roles'] = $this->Roles_Model->get_roles();
-                $this->load->view('users/create', $data);
+                return view('users/create', $data);
+
             } else {
-                redirect('error_403', 'refresh');
+                return redirect()->to('/error_403');
             }
         }
     }

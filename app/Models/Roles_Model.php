@@ -4,18 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-$db = db_connect();
+
 class Roles_Model extends  Model
 {
+
     //Roles
     public function roles_fetch_data()
     {
-        $this->db->select('*');
-        $this->db->from('roles');
-        $this->db->order_by("id", "asc");
-        $query = $this->db->get();
-        return $query;
+        $db = db_connect();
+        $query = $db->query('Select * FROM roles ORDER BY id ASC ');
+        return $query->getResult();
     }
+
     public function insert_roles_model()
     {
         $data = array(
@@ -57,11 +57,10 @@ class Roles_Model extends  Model
         );
     }
     public function get_roles(){
-        $this->db->select('*');
-        $this->db->from('roles');
-        $this->db->order_by("id", "asc");
-        $query = $this->db->get();
+        $db = db_connect();
+        $query = $db->query('Select * FROM roles ORDER BY id ASC ');
         return $query;
+
 
     }
 }

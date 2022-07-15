@@ -4,9 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-$db = db_connect();
+
 class Users_Model extends  Model
 {
+
     public function users_fetch_data()
     {
         $db = db_connect();

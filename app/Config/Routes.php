@@ -35,9 +35,11 @@ $routes->get('/', 'Login::login');
 $routes->add('/index', 'Login::index');
 $routes->add('/dashboard', 'Login::dashboard');
 $routes->add('/logout', 'Login::logout');
+$routes->add('/logout', 'Login::logout');
 
 //Users
 $routes->add('/users_index', 'Users::users_index');
+$routes->add('/create_user', 'Users::create_user');
 
 
 /*

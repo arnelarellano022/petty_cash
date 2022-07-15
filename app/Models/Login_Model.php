@@ -102,12 +102,6 @@ class Login_Model extends Model {
         $query = $db->query("Select * FROM user_roles where user_role = '" . $roles . "'and main_menu_id = '". $main_id . "'and sub_menu_id = '". $sub_id . "'");
         $count = $query->getNumRows();
 
-//        $this->db->from('user_roles');
-//        $this->db->where('user_role',$roles);
-//        $this->db->where('main_menu_id', $main_id);
-//        $this->db->where('sub_menu_id', $sub_id);
-//        $query = $this->db->get()->num_rows();
-
         if($count > 0){return true;}
         else{return false;}
     }
