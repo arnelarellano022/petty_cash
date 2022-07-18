@@ -11,8 +11,9 @@
     <meta name="csrf-token" content="Mk9DS0pLQi5rNiEqCBQzY0F8AHhnDDNEZngnG3MHdXFbOAsoAhoQdw==">
     <title>Create User</title>
     <link href="<?= base_url('assets/home/attendance/form/css/bootstrap.css');?>" rel="stylesheet">
-    <link href="<?= base_url();?>assets/home/attendance/form/css/site.css" rel="stylesheet"></head>
-<link href="<?php echo base_url();?>assets/home/employee/form/css/kv-grid.css" rel="stylesheet">
+    <link href="<?= base_url('assets/home/attendance/form/css/site.css');?>" rel="stylesheet"></head>
+<link href="<?= base_url('assets/home/employee/form/css/kv-grid.css
+');?>" rel="stylesheet">
 
 <!-- Datatables -->
 <link href="<?= base_url('assets/home/datatables/datatables.net-bs/css/dataTables.bootstrap.min.css');?>" rel="stylesheet">
@@ -23,12 +24,12 @@
 <body>
 
 <div class="wrap">
-    <?php $this->load->view('header'); ?>
+    <?= view('header'); ?>
 
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="<?php echo base_url();?>dashboard">Home</a></li>
-            <li><a href="<?php echo base_url();?>users_index">Users Management</a></li>
+            <li><a href="<?= base_url('dashboard');?>">Home</a></li>
+            <li><a href="<?= base_url('');?>">Users Management</a></li>
             <li class="active">Create User</li>
         </ul>
 
@@ -39,7 +40,7 @@
             <div id="notif_fade" class="col-md-12">
                 <?php if(isset($_SESSION["error"])){echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';}?>
                 <?php if(isset($_SESSION["success"])){echo '<div class="alert alert-success">'.$_SESSION["success"].'</div>';}?>
-                <?php echo validation_errors('<div class="alert alert-danger">','</div>');?>
+<!--                --><?php //echo validation_errors('<div class="alert alert-danger">','</div>');?>
 
             </div>
             <div id="w0" data-pjax-container="" data-pjax-push-state data-pjax-timeout="1000" >
@@ -47,13 +48,13 @@
                      </div>
                 <br>
 
-                <form id="w0" action="<?php echo base_url();?>insert_user" method="post">
+                <form id="w0" action="<?= base_url('insert_user');?>" method="post">
 
                     <input type="hidden" name="_csrf" value="SE5kdDdmWEQnYy5NfTkPKzFjByJZFxUzOD8XHwdVGTAMPg5HQAkCEA==">
 
                     <div class="form-group field-shift-start_time required">
                         <label class="control-label" for="shift-start_time">Username</label>
-                        <input type="text" id="shift-start_time" class="form-control" name="user_name" value="<?php echo (isset($_POST['user_name']))?$_POST['user_name']:'';?>" required>
+                        <input type="text" id="shift-start_time" class="form-control" name="user_name" value="<?= (isset($_POST['user_name']))?$_POST['user_name']:'';?>" required>
                         <div class="help-block"></div>
                     </div>
 
@@ -74,9 +75,9 @@
                             <select id="employee-department" class="form-control" name="user_roles"  >
                                 <?php
                                 if($fetch_roles){
-                                    foreach ($fetch_roles->result() as $rs) {
+                                    foreach ($fetch_roles as $rs) {
                                         ?>
-                                        <option value="<?php echo $rs->roles;?>"><?php echo "$rs->roles" ;?></option>
+                                        <option value="<?= $rs->roles;?>"><?= "$rs->roles" ;?></option>
                                     <?php }}?>
                             </select>
                             <div class="hint-block">Select User Role</div>
@@ -96,27 +97,27 @@
 </div>
 
 
-<?php $this->load->view('footer'); ?>
+<?=  view('footer'); ?>
 
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/jquery.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/yii.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/yii.gridView.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/jquery.pjax.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/bootstrap.js"></script>
+<script src="<?= base_url('assets/home/attendance/form/js/jquery.js');?>"></script>
+<script src="<?= base_url('assets/home/attendance/form/js/yii.js');?>"></script>
+<script src="<?= base_url('assets/home/attendance/form/js/yii.gridView.js');?>"></script>
+<script src="<?= base_url('assets/home/attendance/form/js/jquery.pjax.js');?>"></script>
+<script src="<?= base_url('assets/home/attendance/form/js/bootstrap.js');?>"></script>
 
 <!-- Datatables -->
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-buttons/js/dataTables.buttons.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-buttons-bs/js/buttons.bootstrap.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-buttons/js/buttons.flash.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-buttons/js/buttons.html5.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-buttons/js/buttons.print.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-keytable/js/dataTables.keyTable.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-responsive/js/dataTables.responsive.min.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-responsive-bs/js/responsive.bootstrap.js');?>"></script>
+<script src="<?= base_url('assets/home/datatables/datatables.net-scroller/js/dataTables.scroller.min.js');?>"></script>
 
 
 <!--//Search-->

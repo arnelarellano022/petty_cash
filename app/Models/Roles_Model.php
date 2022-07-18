@@ -59,7 +59,7 @@ class Roles_Model extends  Model
     public function get_roles(){
         $db = db_connect();
         $query = $db->query('Select * FROM roles ORDER BY id ASC ');
-        return $query;
+        return $query->getResult();
 
 
     }
