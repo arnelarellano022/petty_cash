@@ -73,30 +73,21 @@ class users extends BaseController
         }
     }
     public function insert_user(){
-
-        $this->form_validation->set_rules('user_password', 'Password', 'required');
-        $this->form_validation->set_rules('user_cpassword', 'Confirm Password', 'required|matches[user_password]');
-
-
-        if ($this->form_validation->run() == TRUE) {
+        helper(['form']);
+        $session = session();
 
             $result = $this->Users_Model->insert_user_model();
 
             //check value from model Y/N
             if ($result['result'] == true) {
-
-                $this->session->set_flashdata("success", "Data successfully added to the database.");
-                redirect("users_index", "refresh");
+                $session->setFlashdata("success", "Data successfully added to the database.");
+                return redirect()->to('/users_index');
 
             } else {
-                $this->session->set_flashdata("error", "Error on saving data to the database.");
-                redirect("create_user", "refresh");
+                $session->setFlashdata("error", "Error on saving data to the database.");
+                return redirect()->to('/create_user');
             }
-        }else
-        {   $data =  $this->system_menu;
-            $data['fetch_roles'] = $this->Roles_Model->get_roles();
-            $this->load->view('users/create',$data );
-        }
+
     }
     public function remove_user($delete_ID){
 

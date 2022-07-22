@@ -40,6 +40,7 @@ $routes->add('/logout', 'Login::logout');
 //Users
 $routes->add('/users_index', 'Users::users_index');
 $routes->add('/create_user', 'Users::create_user');
+$routes->add('/insert_user', 'Users::insert_user');
 
 
 /*

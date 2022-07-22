@@ -22,6 +22,14 @@ class Users_Model extends  Model
     }
     public function insert_user_model()
     {
+        $db = db_connect();
+        $query = $db->query("Select * FROM user_roles where user_role = '" . $roles . "'and main_menu_id = '". $main_id . "'and sub_menu_id = '". $sub_id . "'");
+        $count = $query->getNumRows();
+
+        if($count > 0){return true;}
+        else{return false;}
+
+
             $date = date('Y-m-d H:i:s');
             $data = array(
 
