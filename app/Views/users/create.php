@@ -29,7 +29,7 @@
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="<?= base_url('dashboard');?>">Home</a></li>
-            <li><a href="<?= base_url('');?>">Users Management</a></li>
+            <li><a href="<?= base_url('users_index');?>">Users Management</a></li>
             <li class="active">Create User</li>
         </ul>
 
@@ -49,8 +49,6 @@
                 <br>
 
                 <form id="w0" action="<?= base_url('insert_user');?>" method="post">
-
-                    <input type="hidden" name="_csrf" value="SE5kdDdmWEQnYy5NfTkPKzFjByJZFxUzOD8XHwdVGTAMPg5HQAkCEA==">
 
                     <div class="form-group field-shift-start_time required">
                         <label class="control-label" for="shift-start_time">Username</label>

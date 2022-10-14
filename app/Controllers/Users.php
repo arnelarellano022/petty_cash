@@ -17,6 +17,7 @@ class users extends BaseController
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
 
+
     }
 
     public function users_index(){
@@ -29,7 +30,6 @@ class users extends BaseController
                 $data['fetch_data'] = $this->Users_Model->users_fetch_data();
                 return view('users/_form', $data);
             } else {
-
                 return redirect()->to('/error_403');
             }
         }

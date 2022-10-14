@@ -40,7 +40,12 @@ $routes->add('/logout', 'Login::logout');
 //Users
 $routes->add('/users_index', 'Users::users_index');
 $routes->add('/create_user', 'Users::create_user');
-$routes->add('/insert_user', 'Users::insert_user');
+$routes->post('/insert_user', 'Users::insert_user');
+
+
+
+//Error
+$routes->add('/error_403', 'Login::error_403');
 
 
 /*
