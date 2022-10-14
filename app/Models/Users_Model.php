@@ -39,7 +39,7 @@ class Users_Model extends  Model
 //
 //        if($count > 0){return true;}
 //        else{return false;}
-
+//try
 //        $db = \Config\Database::connect();
             $user_model =  new Users_Model();
 
