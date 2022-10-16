@@ -8,7 +8,7 @@ class outlet extends CI_Controller
     function __construct(){
         parent::__construct();
         $this->load->model('Outlet_Model');
-        $this->load->model('Login_Model');
+        $this->load->model('Auth_Model');
         $result = $this->Login_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];

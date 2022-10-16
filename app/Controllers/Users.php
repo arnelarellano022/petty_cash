@@ -3,14 +3,14 @@ namespace App\Controllers;
 
 
 class users extends BaseController
-
-{    var $system_menu = array();
+{
+    var $system_menu = array();
 
     function __construct(){
 
         $this->Users_Model = model('Users_Model');
         $this->Roles_Model = model('Roles_Model');
-        $this->Login_Model = model('Login_Model');
+        $this->Login_Model = model('Auth_Model');
 
         $result = $this->Login_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
@@ -39,7 +39,7 @@ class users extends BaseController
 //            return redirect()->to('/index');
 //        } else {
 //            $module = $this->system_menu;
-//            return view('dashboard_view/dashboard', $module);
+//            return view('dashboard/dashboard', $module);
 //        }
     }
 

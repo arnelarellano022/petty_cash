@@ -12,7 +12,7 @@ class permission extends CI_Controller
         parent::__construct();
         $this->load->model('Permission_Model');
         $this->load->model('Roles_Model');
-        $this->load->model('Login_Model');
+        $this->load->model('Auth_Model');
         $result = $this->Login_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];

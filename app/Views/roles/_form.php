@@ -1,226 +1,127 @@
-<?php if (!isset($_SESSION['user_role'])) {
-    redirect('index', 'refresh');
-} ?>
-
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-param" content="_csrf">
-    <meta name="csrf-token" content="Mk9DS0pLQi5rNiEqCBQzY0F8AHhnDDNEZngnG3MHdXFbOAsoAhoQdw==">
-    <title>Roles Management</title>
-    <link href="<?php echo base_url();?>assets/home/attendance/form/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/home/attendance/form/css/site.css" rel="stylesheet"></head>
-<link href="<?php echo base_url();?>assets/home/employee/form/css/kv-grid.css" rel="stylesheet">
-
-<!-- Datatables -->
-<link href="<?php echo base_url();?>assets/home/datatables/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo base_url();?>assets/home/datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo base_url();?>assets/home/datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo base_url();?>assets/home/datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
-
-<body>
-
-<div class="wrap">
-    <?php $this->load->view('header'); ?>
-    <div class="container">
-        <ul class="breadcrumb"><li><a href="<?php echo base_url();?>dashboard">Home</a></li>
-            <li class="active">Roles Management</li>
-        </ul>
-        <div class="attendance-index">
-            <div class="pull-right">
-                <p>
-                    <a class="btn btn-success" href="<?php echo base_url();?>create_roles">Create Roles</a>
-                </p>
-            </div>
-            <h1>Roles Management</h1>
-
-            <div id="notif_fade" class="col-md-12">
-                <?php if(isset($_SESSION["error"])){echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';}?>
-                <?php if(isset($_SESSION["success"])){echo '<div class="alert alert-success">'.$_SESSION["success"].'</div>';}?>
-                <?php echo validation_errors('<div class="alert alert-danger">','</div>');?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="margin-top: 10px">
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-inline-block">
+                    <h3 class="card-title"><i class="fa fa-list mt-3  "></i>&nbsp; <?= $title ?></h3>
+                </div>
+                <div class="d-inline-block float-right">
+                    <a href="<?= base_url(''); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Add New Role</a>
+                </div>
             </div>
 
-            <div id="w0" data-pjax-container="" data-pjax-push-state data-pjax-timeout="1000" >
-                <div id="w1" class="grid-view"> </div>
-
+            <div class="card-body">
                 <!--//Table open-->
 
-                <table id="datatable"  class="table table-striped table-bordered table-hover">
+                <table id="example2"  class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
                         <th class="kv-align-center kv-align-middle">ID</th>
                         <th class="kv-align-center kv-align-middle">Roles</th>
                         <th class="kv-align-center kv-align-middle"></th>
-
                     </tr>
                     </thead>
 
                     <tbody>
                     <?php
-                    if($fetch_data){
-
-                        foreach ($fetch_data->result() as $rs) {
-                            ?>
+                    if($fetch_data){foreach ($fetch_data as $rs) {?>
                             <tr>
-                                <td class="kv-align-center kv-align-middle"><?php echo $rs->id;?></td>
-                                <td class="kv-align-center kv-align-middle"><?php echo $rs->roles;?></td>
+                                <td class="kv-align-center kv-align-middle"><?= $rs->admin_role_id;?></td>
+                                <td class="kv-align-center kv-align-middle"><?= $rs->admin_role_title;?></td>
+
+                                <td>
+                                    <a href="<?php echo base_url("update_roles"); ?>" class="btn btn-info btn-xs mr5" >
+                                        <i class="fa fa-sliders"></i>
+                                    </a>
+                                </td>
 
                                 <td class="kv-align-center kv-align-middle">
-                                    <a href="<?php echo base_url();?>update_roles/<?php echo $rs->id ;?>" title="Update" aria-label="Update" data-pjax="0">
+                                    <a href="<?php echo base_url('');?>/<?= $rs->admin_role_id;?>" title="Update" aria-label="Update" data-pjax="0">
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </a>
-                                    <a href="<?php echo base_url();?>delete_roles/<?php echo $rs->id;?>"
+                                    <a href="<?php echo base_url('delete_roles');?>/<?= $rs->admin_role_id;?>"
                                        title="Delete" data-pjax="false" data-confirm="Are you sure you want to delete this item?"  data-pjax-container="w1-pjax" >
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </a >
                                 </td>
+
                             </tr>
                         <?php }}?>
                     </tbody>
                 </table>
 
                 <!--//Table close-->
-
-
             </div>
         </div>
-    </div>
+    </section>
+    <!-- /.content -->
 </div>
 
 
-<?php $this->load->view('footer'); ?>
-
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/jquery.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/yii.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/yii.gridView.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/jquery.pjax.js"></script>
-<script src="<?php echo base_url();?>assets/home/attendance/form/js/bootstrap.js"></script>
-
-<!-- Datatables -->
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="<?php echo base_url();?>assets/home/datatables/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-
-
-<!--//Search-->
-<script>
-
-    init_DataTables();
-
-    $('.dataTable').each ( function () { $(this).dataTable().fnDraw(); });
-
-    /* DATA TABLES */
-
-    function init_DataTables() {
-
-        console.log('run_datatables');
-
-        if( typeof ($.fn.DataTable) === 'undefined'){ return; }
-        console.log('init_DataTables');
-
-        var handleDataTableButtons = function() {
-            if ($("#datatable-buttons").length) {
-                $("#datatable-buttons").DataTable({
-                    dom: "Bfrtip",
-                    buttons: [
-                        {
-                            extend: "copy",
-                            className: "btn-sm"
-                        },
-                        {
-                            extend: "csv",
-                            className: "btn-sm"
-                        },
-                        {
-                            extend: "excel",
-                            className: "btn-sm"
-                        },
-                        {
-                            extend: "pdfHtml5",
-                            className: "btn-sm"
-                        },
-                        {
-                            extend: "print",
-                            className: "btn-sm"
-                        },
-                    ],
-                    responsive: true
-                });
-            }
-        };
-
-        TableManageButtons = function() {
-            "use strict";
-            return {
-                init: function() {
-                    handleDataTableButtons();
-                }
-            };
-        }();
-
-        $('#datatable').dataTable();
-
-        $('#datatable-keytable').DataTable({
-            keys: true
-        });
-
-        $('#datatable-responsive').DataTable();
-
-        $('#datatable-scroller').DataTable({
-            ajax: "js/datatables/json/scroller-demo.json",
-            deferRender: true,
-            scrollY: 380,
-            scrollCollapse: true,
-            scroller: true
-        });
-
-        $('#datatable-fixed-header').DataTable({
-            fixedHeader: true
-        });
-
-        var $datatable = $('#datatable-checkbox');
-
-        $datatable.dataTable({
-            'order': [[ 1, 'asc' ]],
-            'columnDefs': [
-                { orderable: false, targets: [0] }
-            ]
-        });
-        $datatable.on('draw.dt', function() {
-            $('checkbox input').iCheck({
-                checkboxClass: 'icheckbox_flat-green'
-            });
-        });
-
-        TableManageButtons.init();
-
-    };
-
-
-</script>
-
-<script type="text/javascript">
-
-    $( document ).ready(function() {
-        $("#notif_fade").fadeOut(5000);
-    });
-</script>
-
-<script type="text/javascript">jQuery(document).ready(function () {
-        jQuery('#w1').yiiGridView({"filterUrl":"\/hris\/web\/index.php?r=attendance%2Findex","filterSelector":"#w1-filters input, #w1-filters select"});
-        jQuery(document).pjax("#w0 a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#w0"});
-        jQuery(document).on("submit", "#w0 form[data-pjax]", function (event) {jQuery.pjax.submit(event, {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#w0"});});
-    });</script></body>
-</html>
+<!--    <div class="container">-->
+<!--        <ul class="breadcrumb">-->
+<!--            <li>-->
+<!--                <a href="--><?php //echo base_url();?><!--dashboard">Home</a>-->
+<!--            </li>>-->
+<!--            <li class="active">Roles Management</li>-->
+<!--        </ul>-->
+<!--        <div>-->
+<!--            <div class="pull-right">-->
+<!--                <p>-->
+<!--                    <a class="btn btn-success" href="--><?php //echo base_url();?><!--create_roles">Create Roles</a>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <h1>Roles Management</h1>-->
+<!---->
+<!--            <div id="notif_fade" class="col-md-12">-->
+<!--                --><?php //if(isset($_SESSION["error"])){echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';}?>
+<!--                --><?php //if(isset($_SESSION["success"])){echo '<div class="alert alert-success">'.$_SESSION["success"].'</div>';}?>
+<!--                <!--  -->--><?php ////echo validation_errors('<div class="alert alert-danger">','</div>');?>
+<!--            </div>-->
+<!---->
+<!--            <div>-->
+<!---->
+<!---->
+<!--                <!--//Table open-->-->
+<!---->
+<!--                <table id="datatable"  class="table table-striped table-bordered table-hover">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th class="kv-align-center kv-align-middle">ID</th>-->
+<!--                        <th class="kv-align-center kv-align-middle">Roles</th>-->
+<!--                        <th class="kv-align-center kv-align-middle"></th>-->
+<!---->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!---->
+<!--                    <tbody>-->
+<!--                    --><?php
+//                    if($fetch_data){
+//
+//                        foreach ($fetch_data->result() as $rs) {
+//                            ?>
+<!--                            <tr>-->
+<!--                                <td class="kv-align-center kv-align-middle">--><?php //echo $rs->id;?><!--</td>-->
+<!--                                <td class="kv-align-center kv-align-middle">--><?php //echo $rs->roles;?><!--</td>-->
+<!---->
+<!--                                <td class="kv-align-center kv-align-middle">-->
+<!--                                    <a href="--><?php //echo base_url();?><!--update_roles/--><?php //echo $rs->id ;?><!--" title="Update" aria-label="Update" data-pjax="0">-->
+<!--                                        <span class="glyphicon glyphicon-pencil"></span>-->
+<!--                                    </a>-->
+<!--                                    <a href="--><?php //echo base_url();?><!--delete_roles/--><?php //echo $rs->id;?><!--"-->
+<!--                                       title="Delete" data-pjax="false" data-confirm="Are you sure you want to delete this item?"  data-pjax-container="w1-pjax" >-->
+<!--                                        <span class="glyphicon glyphicon-trash"></span>-->
+<!--                                    </a >-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        --><?php //}}?>
+<!--                    </tbody>-->
+<!--                </table>-->
+<!---->
+<!--                <!--//Table close-->-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->

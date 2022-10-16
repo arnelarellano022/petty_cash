@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Models;
-
 use CodeIgniter\Model;
-
 
 class Roles_Model extends  Model
 {
+    protected $table = "ci_admin_roles";
 
     //Roles
     public function roles_fetch_data()
     {
-        $db = db_connect();
-        $query = $db->query('Select * FROM roles ORDER BY id ASC ');
+        $db = \Config\Database::connect();
+        $query = $db->query('Select * FROM ci_admin_roles ORDER BY admin_role_id ASC ');
         return $query->getResult();
     }
 
