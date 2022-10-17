@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 
 
 class Auth_Model extends Model {
-//    protected $table = "ci_users";
+    protected $table = "ci_users";
 //    protected $primaryKey = "id";
 //    protected $allowedFields = [
 //        "username",

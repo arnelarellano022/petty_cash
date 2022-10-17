@@ -21,6 +21,8 @@
 <!-- AdminLTE App -->
 <script src="<?=base_url('assets/adminLTE/dist/js/adminlte.min.js')?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?=base_url('assets/adminLTE/dist/js/demo2.js')?>"></script>
+<script src="<?=base_url('assets/adminLTE/dist/js/demo3.js')?>"></script>
+<!--message js-->
+<script type="text/javascript">$( document ).ready(function() {$("#notif_fade").fadeOut(5000);});</script>
 </body>
 </html>

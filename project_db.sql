@@ -60,11 +60,11 @@ CREATE TABLE `ci_admin_roles` (
   `admin_role_modified_by` int(11) NOT NULL,
   `admin_role_modified_on` datetime NOT NULL,
   PRIMARY KEY (`admin_role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `ci_admin_roles` */
 
-insert  into `ci_admin_roles`(`admin_role_id`,`admin_role_title`,`admin_role_status`,`admin_role_created_by`,`admin_role_created_on`,`admin_role_modified_by`,`admin_role_modified_on`) values (1,'Super Admin',1,0,'2018-03-15 12:48:04',0,'2018-03-17 12:53:16'),(2,'Admin',1,0,'2018-03-15 12:53:19',0,'2019-01-26 08:27:34'),(3,'Accountant',1,0,'2018-03-15 01:46:54',0,'2019-01-26 02:17:38'),(4,'Operator',1,0,'2018-03-16 05:52:45',0,'2019-01-26 02:17:52'),(5,'User',1,0,'2022-02-16 08:32:16',0,'2022-02-16 08:32:36');
+insert  into `ci_admin_roles`(`admin_role_id`,`admin_role_title`,`admin_role_status`,`admin_role_created_by`,`admin_role_created_on`,`admin_role_modified_by`,`admin_role_modified_on`) values (1,'Super Admin',1,0,'2018-03-15 12:48:04',0,'2018-03-17 12:53:16'),(2,'Admin',1,0,'2018-03-15 12:53:19',0,'2019-01-26 08:27:34'),(3,'Accountant',1,0,'2018-03-15 01:46:54',0,'2019-01-26 02:17:38'),(4,'Operator',1,0,'2018-03-16 05:52:45',0,'2019-01-26 02:17:52'),(5,'User',1,0,'2022-02-16 08:32:16',0,'2022-02-16 08:32:36'),(6,'MARKETING',1,0,'2022-10-17 15:04:15',0,'2022-10-17 15:04:19'),(7,'SUPERMARKET',0,0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00'),(8,'try',0,0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00'),(9,'tryy2',0,0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00');
 
 /*Table structure for table `ci_users` */
 

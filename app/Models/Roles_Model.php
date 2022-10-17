@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 class Roles_Model extends  Model
 {
     protected $table = "ci_admin_roles";
+    protected $primaryKey = "ADMIN_ROLE_ID";
+    protected $allowedFields = [
+        "admin_role_title",
+    ];
 
     //Roles
     public function roles_fetch_data()
@@ -17,14 +21,18 @@ class Roles_Model extends  Model
 
     public function insert_roles_model()
     {
+        $roles_model =  new Roles_Model();
+
         $data = array(
-            'roles'     => $this->input->post("roles", TRUE),
+            'admin_role_title' => $_POST['admin_role_title'] ,
         );
 
-        $this->db->insert('roles', $data);
-        $result = ($this->db->affected_rows() != 1) ? false : true;
+        $roles_model->table('ci_admin_roles')->insert($data);
+
+        $result = ($roles_model->affectedRows() != 1) ? false : true;
+
         return array(
-            'result' => $result,
+            'result' => $result
         );
     }
     public function roles_updating($id){

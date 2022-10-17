@@ -4,23 +4,23 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-param" content="_csrf">
-    <meta name="csrf-token" content="Mk9DS0pLQi5rNiEqCBQzY0F8AHhnDDNEZngnG3MHdXFbOAsoAhoQdw==">
     <title>Create User</title>
     <link href="<?= base_url('assets/home/attendance/form/css/bootstrap.css');?>" rel="stylesheet">
-    <link href="<?= base_url('assets/home/attendance/form/css/site.css');?>" rel="stylesheet"></head>
-<link href="<?= base_url('assets/home/employee/form/css/kv-grid.css
-');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/attendance/form/css/site.css');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/employee/form/css/kv-grid.css');?>" rel="stylesheet">
 
-<!-- Datatables -->
-<link href="<?= base_url('assets/home/datatables/datatables.net-bs/css/dataTables.bootstrap.min.css');?>" rel="stylesheet">
-<link href="<?= base_url('assets/home/datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css');?>" rel="stylesheet">
-<link href="<?= base_url('assets/home/datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css');?>" rel="stylesheet">
-<link href="<?= base_url('assets/home/datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css');?>" rel="stylesheet">
-<link href="<?= base_url('assets/home/datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css');?>" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="<?= base_url('assets/home/datatables/datatables.net-bs/css/dataTables.bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?= base_url('assets/home/datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css');?>" rel="stylesheet">
+</head>
+
+
+
 <body>
 
 <div class="wrap">
@@ -215,12 +215,7 @@
 
 </script>
 
-<script type="text/javascript">
-
-    $( document ).ready(function() {
-        $("#notif_fade").fadeOut(5000);
-    });
-</script>
+<script type="text/javascript">$( document ).ready(function() {$("#notif_fade").fadeOut(5000);});</script>
 <script type="text/javascript">jQuery(document).ready(function () {
         jQuery('#w1').yiiGridView({"filterUrl":"\/hris\/web\/index.php?r=attendance%2Findex","filterSelector":"#w1-filters input, #w1-filters select"});
         jQuery(document).pjax("#w0 a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#w0"});
