@@ -46,9 +46,9 @@ $routes->post('/insert_user', 'Users::insert_user');
 
 //Roles
 $routes->add('/roles_index', 'Roles::roles_index');
-$routes->add('/edit_roles', 'Roles::edit_roles');
+$routes->add('/edit_roles/(:any)', 'Roles::edit_roles/$1');
 $routes->add('/add_roles', 'Roles::add_roles');
-$routes->add('/delete_roles', 'Roles::delete_roles');
+$routes->add('/delete_roles/(:any)', 'Roles::delete_roles/$1');
 
 
 

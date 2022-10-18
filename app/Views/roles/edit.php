@@ -18,16 +18,17 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-                                <form action="<?= base_url('edit_roles');?>" method="post">
+                                <?php if($fetch_data){foreach ($fetch_data as $row) {?>
+                                <form action="<?= base_url("edit_roles/". $row->admin_role_id); ?>" method="post">
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-sm-12">
+
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Admin Role</label>
-                                                    <input class="form-control" type="text" name="admin_role_title" value="" required="">
+                                                    <input class="form-control" type="text" name="admin_role_title" value="<?= $row->admin_role_title;?>" required="">
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="box-footer">
@@ -35,6 +36,7 @@
                                         <button type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
                                     </div>
                                 </form>
+                                <?php }}?>
                             </div>
                         </div>
                     </div>

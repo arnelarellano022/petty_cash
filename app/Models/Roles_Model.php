@@ -5,69 +5,60 @@ use CodeIgniter\Model;
 
 class Roles_Model extends  Model
 {
-    protected $table = "ci_admin_roles";
-    protected $primaryKey = "ADMIN_ROLE_ID";
-    protected $allowedFields = [
-        "admin_role_title",
-    ];
+    public $builder;
+
+    public function __construct() {
+        $db      = \Config\Database::connect();
+        $this->builder = $db->table('ci_admin_roles');
+    }
 
     //Roles
     public function roles_fetch_data()
     {
-        $db = \Config\Database::connect();
-        $query = $db->query('Select * FROM ci_admin_roles ORDER BY admin_role_id ASC ');
-        return $query->getResult();
+        return $this->builder->orderBy('admin_role_id', 'asc')
+        ->get()->getResult();
     }
 
-    public function insert_roles_model()
+    public function insert_roles()
     {
-        $roles_model =  new Roles_Model();
+        $data = array( 'admin_role_title' => $_POST['admin_role_title'] );
 
-        $data = array(
-            'admin_role_title' => $_POST['admin_role_title'] ,
-        );
-
-        $roles_model->table('ci_admin_roles')->insert($data);
-
-        $result = ($roles_model->affectedRows() != 1) ? false : true;
+        $this->builder->insert($data);
+        $result = ($this->builder->updateBatch() != 1) ? false : true;
 
         return array(
             'result' => $result
         );
     }
-    public function roles_updating($id){
-        $this->db->select('*');
-        $this->db->from('roles');
-        $this->db->where('id',$id);
-        $query = $this->db->get();
-        return $query;
-    }
-    public function updating_roles_model($id_no)
+
+    public function get_role_by_id($id)
     {
-        $this->db->set('roles',         $this->input->post("roles", TRUE));
+        return $this->builder->where('admin_role_id', $id)
+            ->get()->getResult();
+    }
 
-        $this->db->where('id', $id_no);
-        $this->db->update('roles');
-        $result = ($this->db->affected_rows() != 1) ? false : true;
+    public function update_roles($id)
+    {
+
+        $data = array(
+            'admin_role_title' => $_POST['admin_role_title']
+        );
+
+        $this->builder->update($data, 'admin_role_id =' . $id);
+        $result = ($this->builder->updateBatch() != 1) ? false : true;
 
         return array(
-            'result' => $result,
+            'result' => $result
         );
     }
-    public function delete_roles_Model($delete_ID){
-        $this->db->where('id', $delete_ID);
-        $this->db->delete('roles');
-        $result = ($this->db->affected_rows() != 1) ? false : true;
+    public function delete_roles($id)
+    {
+        $this->builder->delete(['admin_role_id' => $id]);
+    }
 
-        return array(
-            'result'    => $result
-        );
-    }
     public function get_roles(){
         $db = db_connect();
         $query = $db->query('Select * FROM roles ORDER BY id ASC ');
         return $query->getResult();
-
-
     }
 }

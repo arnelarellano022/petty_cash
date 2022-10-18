@@ -25,17 +25,16 @@
                     </thead>
 
                     <tbody>
-                    <?php
-                    if($fetch_data){foreach ($fetch_data as $rs) {?>
+                    <?php if($fetch_data){foreach ($fetch_data as $row) {?>
                             <tr>
-                                <td class="kv-align-center kv-align-middle"><?= $rs->admin_role_id;?></td>
-                                <td class="kv-align-center kv-align-middle"><?= $rs->admin_role_title;?></td>
+                                <td class="kv-align-center kv-align-middle"><?= $row->admin_role_id;?></td>
+                                <td class="kv-align-center kv-align-middle"><?= $row->admin_role_title;?></td>
 
                                 <td>
-                                    <a href="<?php echo base_url("update_roles"); ?>" class="btn btn-warning btn-xs mr5">
+                                    <a href="<?php echo base_url("edit_roles/". $row->admin_role_id); ?>" class="btn btn-warning btn-xs mr5">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="<?php echo base_url("delete_roles"); ?>" class="btn btn-danger btn-xs mr5">
+                                    <a href="<?php echo base_url("delete_roles/". $row->admin_role_id); ?>" class="btn btn-danger btn-xs mr5">
                                         <i class="fa fa-trash-alt"></i>
                                     </a>
 

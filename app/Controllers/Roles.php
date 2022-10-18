@@ -3,7 +3,6 @@ namespace App\Controllers;
 
 class roles extends BaseController
 {
-
     var $system_menu = array();
     protected $session;
 
@@ -20,8 +19,8 @@ class roles extends BaseController
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
+        helper(['form']);
     }
-
 
     //Roles
     public function roles_index(){
@@ -37,39 +36,17 @@ class roles extends BaseController
             echo view('roles/list',$module);
             echo view('partial/footer');
         }
-//        if (!isset($_SESSION['user_role'])) {
-//            redirect('index', 'refresh');
-//        } else {
-//            $result = $this->Login_Model->check_permission(1, 2, $_SESSION['user_role']);
-//            if ($result == true) {
-//                $data = $this->system_menu;
-//                $data['fetch_data'] = $this->Roles_Model->roles_fetch_data();
-//                $this->load->view('', $data);
-//            } else {
-//                redirect('error_403', 'refresh');
-//            }
-//        }
-
-
     }
 
     public function add_roles(){
-        helper(['form']);
+
         $session = session();
 
-        if($_POST['submit']) {
-            $result = $this->Roles_Model->insert_roles_model();
-
-            //check value from model Y/N
-            if ($result['result'] == true) {
-                $session->setFlashdata("success", "Data successfully added to the database.");
-                return redirect()->to('/roles_index');
-
-            } else {
-                $session->setFlashdata("error", "Error on saving data to the database.");
-                return redirect()->to('/add_roles');
-            }
-
+        if($_POST['submit'])
+        {
+            $this->Roles_Model->insert_roles();
+            $session->setFlashdata("success", "Record Added Successfully");
+            return redirect()->to('/roles_index');
         }
             $module = $this->system_menu;
             $module['fetch_data'] = $this->Roles_Model->roles_fetch_data();
@@ -80,49 +57,37 @@ class roles extends BaseController
             echo view('partial/side_menu');
             echo view('roles/add', $module);
             echo view('partial/footer');
-
     }
 
-    public function delete_roles($delete_ID){
-
-        $result = $this->Roles_Model->delete_roles_Model($delete_ID);
-
-        if($result['result']==true){
-            $this->session->set_flashdata("success", "Data successfully deleted to the database.");
-        } else {
-            $this->session->set_flashdata("error", "Error on deleting data to the database.");
-        }
-        redirect("roles_index", "refresh");
-    }
-
-    public function updating_roles($ID)
-    {
-        $result = $this->Roles_Model->updating_roles_model($ID);
-
-        //check value from model Y/N
-        if($result['result']==true ){
-            $this->session->set_flashdata("success", "Data successfully updated to the database.");
-            redirect("roles_index", "refresh");
-
-        } else {
-            $this->session->set_flashdata("error", "Error on updating data to the database.");
-            redirect("update_roles", "refresh");
-        }
-    }
     public function edit_roles($id)
     {
-        if (!isset($_SESSION['user_role'])) {
-            redirect('index', 'refresh');
-        } else {
-            $result = $this->Login_Model->check_permission(1, 2, $_SESSION['user_role']);
-            if ($result == true) {
-                $data = $this->system_menu;
-                $data['fetch_data'] = $this->Roles_Model->roles_updating($id);
-                $this->load->view('roles/update', $data);
-            } else {
-                redirect('error_403', 'refresh');
-            }
+        $session = session();
+
+        if($_POST['submit']) {
+             $this->Roles_Model->update_roles($id);
+            //check value from model Y/N
+            $session->setFlashdata("success", "Record Updated Successfully");
+            return redirect()->to('/roles_index');
         }
+
+        $module = $this->system_menu;
+        $module['fetch_data'] = $this->Roles_Model->get_role_by_id($id);
+        $module['title'] = 'EDIT ROLES';
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('roles/edit', $module);
+        echo view('partial/footer');
+    }
+
+    public function delete_roles($delete_ID)
+    {
+        $session = session();
+        $this->Roles_Model->delete_roles($delete_ID);
+
+        $session->setFlashdata("success", "Record Deleted Successfully");
+        return redirect()->to('/roles_index');
     }
 
 
