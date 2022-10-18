@@ -20,6 +20,7 @@ class roles extends BaseController
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
         helper(['form']);
+
     }
 
     //Roles
