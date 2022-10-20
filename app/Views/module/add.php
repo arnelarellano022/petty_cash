@@ -19,13 +19,13 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-                                <form action="<?= base_url('add_roles');?>" method="post">
+                                <form action="<?= base_url('add_module');?>" method="post">
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Admin Role</label>
-                                                    <input class="form-control" type="text" name="roles" value="" required="">
+                                                    <input class="form-control" type="text" name="module" value="" required="">
                                                 </div>
                                             </div>
 

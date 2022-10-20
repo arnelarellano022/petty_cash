@@ -9,19 +9,19 @@ class Roles_Model extends  Model
 
     public function __construct() {
         $db      = \Config\Database::connect();
-        $this->builder = $db->table('ci_admin_roles');
+        $this->builder = $db->table('user_roles');
     }
 
     //Roles
     public function roles_fetch_data()
     {
-        return $this->builder->orderBy('admin_role_id', 'asc')
+        return $this->builder->orderBy('id', 'asc')
         ->get()->getResult();
     }
 
     public function insert_roles()
     {
-        $data = array( 'admin_role_title' => $_POST['admin_role_title'] );
+        $data = array( 'roles' => $_POST['roles'] );
 
         $this->builder->insert($data);
         $result = ($this->builder->updateBatch() != 1) ? false : true;
@@ -33,7 +33,7 @@ class Roles_Model extends  Model
 
     public function get_role_by_id($id)
     {
-        return $this->builder->where('admin_role_id', $id)
+        return $this->builder->where('id', $id)
             ->get()->getResult();
     }
 
@@ -41,10 +41,10 @@ class Roles_Model extends  Model
     {
 
         $data = array(
-            'admin_role_title' => $_POST['admin_role_title']
+            'roles' => $_POST['roles']
         );
 
-        $this->builder->update($data, 'admin_role_id =' . $id);
+        $this->builder->update($data, 'id =' . $id);
         $result = ($this->builder->updateBatch() != 1) ? false : true;
 
         return array(
@@ -53,7 +53,7 @@ class Roles_Model extends  Model
     }
     public function delete_roles($id)
     {
-        $this->builder->delete(['admin_role_id' => $id]);
+        $this->builder->delete(['id' => $id]);
     }
 
     public function get_roles(){

@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-class Roles extends BaseController
+class Module extends BaseController
 {
     var $system_menu = array();
     protected $session;
@@ -9,7 +9,7 @@ class Roles extends BaseController
     function __construct(){
 
         $this->Users_Model = model('Users_Model');
-        $this->Roles_Model = model('Roles_Model');
+        $this->Module_Model = model('Module_Model');
         $this->Auth_Model = model('Auth_Model');
 
         $this->session = \Config\Services::session();
@@ -23,73 +23,79 @@ class Roles extends BaseController
 
     }
 
-    //Roles
-    public function roles_index(){
+    //Module
+    public function module_index(){
         if (!isset($_SESSION['user_role'])) {
             return redirect()->to('/index');
         } else {
             $module = $this->system_menu;
-            $module['fetch_data'] = $this->Roles_Model->roles_fetch_data();
-            $module['title']='ROLES MANAGEMENT';
+            $module['fetch_data'] = $this->Module_Model->Module_fetch_data();
+            $module['title']='MODULE MANAGEMENT';
             echo view('partial/header',$module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
-            echo view('roles/list',$module);
+            echo view('module/list',$module);
             echo view('partial/footer');
         }
     }
 
-    public function add_roles(){
+    public function add_module(){
 
         $session = session();
 
         if($_POST['submit'])
         {
-            $this->Roles_Model->insert_roles();
+            $this->Module_Model->insert_module();
             $session->setFlashdata("success", "Record Added Successfully");
-            return redirect()->to('/roles_index');
+            return redirect()->to('/module_index');
         }
         $module = $this->system_menu;
-        $module['fetch_data'] = $this->Roles_Model->roles_fetch_data();
-        $module['title'] = 'ADD NEW ROLES';
+        $module['fetch_data'] = $this->Module_Model->module_fetch_data();
+        $module['title'] = 'ADD NEW MODULE';
 
         echo view('partial/header', $module);
         echo view('partial/top_menu');
         echo view('partial/side_menu');
-        echo view('roles/add', $module);
+        echo view('module/add', $module);
         echo view('partial/footer');
     }
 
-    public function edit_roles($id)
+    public function edit_module($id)
     {
         $session = session();
 
         if($_POST['submit']) {
-            $this->Roles_Model->update_roles($id);
+            $this->Module_Model->update_module($id);
             //check value from model Y/N
             $session->setFlashdata("success", "Record Updated Successfully");
-            return redirect()->to('/roles_index');
+            return redirect()->to('/module_index');
         }
 
         $module = $this->system_menu;
-        $module['fetch_data'] = $this->Roles_Model->get_role_by_id($id);
-        $module['title'] = 'EDIT ROLES';
+        $module['fetch_data'] = $this->Module_Model->get_role_by_id($id);
+        $module['title'] = 'EDIT MODULE';
 
         echo view('partial/header', $module);
         echo view('partial/top_menu');
         echo view('partial/side_menu');
-        echo view('roles/edit', $module);
+        echo view('module/edit', $module);
         echo view('partial/footer');
     }
 
-    public function delete_roles($delete_ID)
+    public function delete_module($delete_ID)
     {
         $session = session();
-        $this->Roles_Model->delete_roles($delete_ID);
+        $this->Module_Model->delete_module($delete_ID);
 
         $session->setFlashdata("success", "Record Deleted Successfully");
-        return redirect()->to('/roles_index');
+        return redirect()->to('/module_index');
     }
 
 
 }
+
+
+
+
+
+

@@ -50,6 +50,12 @@ $routes->add('/edit_roles/(:any)', 'Roles::edit_roles/$1');
 $routes->add('/add_roles', 'Roles::add_roles');
 $routes->add('/delete_roles/(:any)', 'Roles::delete_roles/$1');
 
+//Module
+$routes->add('/module_index', 'module::module_index');
+$routes->add('/edit_module/(:any)', 'module::edit_module/$1');
+$routes->add('/add_module', 'module::add_module');
+$routes->add('/delete_module/(:any)', 'module::delete_module/$1');
+
 
 
 //Error
