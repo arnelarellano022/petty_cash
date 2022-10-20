@@ -23,7 +23,7 @@ class Module extends BaseController
 
     }
 
-    //Module
+    //Modules
     public function module_index(){
         if (!isset($_SESSION['user_role'])) {
             return redirect()->to('/index');
