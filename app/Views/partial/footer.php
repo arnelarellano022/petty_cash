@@ -18,6 +18,16 @@
 <script src="<?=base_url('assets/adminLTE/plugins/jquery/jquery.min.js')?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?=base_url('assets/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+
+
+<!-- DataTables -->
+<!--<script src="--><?//=base_url('assets/adminLTE/plugins/datatables/jquery.dataTables.js')?><!--"></script>-->
+<script src="<?=base_url('assets/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.js')?>"></script>
+<script src="<?=base_url('assets/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')?>"></script>
+<!--<script src="--><?//=base_url('assets/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js')?><!--"></script>-->
+<!--<script src="--><?//=base_url('assets/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')?><!--"></script>-->
+
+
 <!-- AdminLTE App -->
 <script src="<?=base_url('assets/adminLTE/dist/js/adminlte.min.js')?>"></script>
 <!-- AdminLTE for demo purposes -->
