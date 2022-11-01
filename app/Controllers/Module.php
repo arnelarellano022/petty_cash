@@ -30,7 +30,7 @@ class Module extends BaseController
         } else {
             $module = $this->system_menu;
             $module['fetch_data'] = $this->Module_Model->Module_fetch_data();
-            $module['title']='MODULE MANAGEMENT';
+            $module['title']='MODULE SETTING';
             echo view('partial/header',$module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
@@ -50,7 +50,6 @@ class Module extends BaseController
             return redirect()->to('/module_index');
         }
         $module = $this->system_menu;
-        $module['fetch_data'] = $this->Module_Model->module_fetch_data();
         $module['title'] = 'ADD NEW MODULE';
 
         echo view('partial/header', $module);
@@ -72,7 +71,7 @@ class Module extends BaseController
         }
 
         $module = $this->system_menu;
-        $module['fetch_data'] = $this->Module_Model->get_role_by_id($id);
+        $module['fetch_data'] = $this->Module_Model->get_role_by_module_id($id);
         $module['title'] = 'EDIT MODULE';
 
         echo view('partial/header', $module);
@@ -89,6 +88,46 @@ class Module extends BaseController
 
         $session->setFlashdata("success", "Record Deleted Successfully");
         return redirect()->to('/module_index');
+    }
+
+    //Sub Module
+    public function sub_module_index($module_id){
+        if (!isset($_SESSION['user_role'])) {
+            return redirect()->to('/index');
+        } else {
+            $module = $this->system_menu;
+            $module['fetch_data'] = $this->Module_Model->sub_module_fetch_data($module_id);
+            $module['title']='SUB MODULE SETTING';
+            $module['module_id'] = $module_id;
+
+            echo view('partial/header',$module);
+            echo view('partial/top_menu');
+            echo view('partial/side_menu');
+            echo view('module/sub_module_list',$module);
+            echo view('partial/footer');
+        }
+    }
+
+
+    public function add_sub_module($module_id){
+
+        $session = session();
+
+        if($_POST['submit'])
+        {
+            $this->Module_Model->insert_sub_module($module_id);
+            $session->setFlashdata("success", "Sub Module Added Successfully") ;
+            return redirect()->to('/module_index');
+        }
+        $module = $this->system_menu;
+        $module['title'] = 'ADD NEW SUB MODULE';
+        $module['module_id'] = $module_id;
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('module/sub_module_add', $module);
+        echo view('partial/footer');
     }
 
 

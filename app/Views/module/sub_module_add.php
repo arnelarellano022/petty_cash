@@ -19,19 +19,25 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-                                <form action="<?= base_url('add_module');?>" method="post">
+                                <form action="<?= base_url('add_sub_module/'. $module_id); ?>" method="post">
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Module Name</label>
-                                                    <input class="form-control" type="text" name="module_name" value="" required="">
+                                                    <label>Sub Module Name</label>
+                                                    <input class="form-control" type="text" name="sub_module_name" value="" required="">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Fa Icon</label>
-                                                    <input class="form-control" type="text" name="fa_icon" value="" required="">
+                                                    <label>Link</label>
+                                                    <input class="form-control" type="text" name="link" value="" required="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Operation</label>
+                                                    <input class="form-control" type="text" name="operation" value="" required="">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -40,6 +46,7 @@
                                                     <input class="form-control" type="number" name="sort_order" value="" required="">
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="box-footer">

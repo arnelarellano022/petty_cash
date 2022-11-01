@@ -51,10 +51,16 @@ $routes->add('/add_roles', 'Roles::add_roles');
 $routes->add('/delete_roles/(:any)', 'Roles::delete_roles/$1');
 
 //Module
-$routes->add('/module_index', 'module::module_index');
-$routes->add('/edit_module/(:any)', 'module::edit_module/$1');
-$routes->add('/add_module', 'module::add_module');
-$routes->add('/delete_module/(:any)', 'module::delete_module/$1');
+$routes->add('/module_index', 'Module::module_index');
+$routes->add('/edit_module/(:any)', 'Module::edit_module/$1');
+$routes->add('/add_module', 'Module::add_module');
+$routes->add('/delete_module/(:any)', 'Module::delete_module/$1');
+
+//SubModule
+$routes->add('/sub_module_index/(:any)', 'Module::sub_module_index/$1');
+$routes->add('/edit_sub_module/(:any)', 'Module::edit_sub_module/$1');
+$routes->add('/add_sub_module/(:any)', 'Module::add_sub_module/$1');
+$routes->add('/delete_sub_module/(:any)', 'Module::delete_sub_module/$1');
 
 
 
