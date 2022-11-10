@@ -79,6 +79,7 @@ DROP TABLE IF EXISTS `module`;
 CREATE TABLE `module` (
   `module_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_name` varchar(255) NOT NULL,
+  `controller_name` varchar(200) DEFAULT NULL,
   `fa_icon` varchar(100) NOT NULL,
   `sort_order` tinyint(4) NOT NULL,
   PRIMARY KEY (`module_id`)
@@ -86,7 +87,7 @@ CREATE TABLE `module` (
 
 /*Data for the table `module` */
 
-insert  into `module`(`module_id`,`module_name`,`fa_icon`,`sort_order`) values (1,'admin','fa-pie-chart',3),(2,'role_and_permissions','fa-book',4),(3,'users','fa-users',4),(8,'settings','fa-cogs',13),(9,'dashboard','fa-dashboard',1),(11,'invoicing_system','fa-files-o',9),(13,'language_setting','fa-language',14),(14,'locations','fa-map-pin',11),(15,'widgets','fa-th',19),(16,'charts','fa-line-chart',17),(17,'ui_elements','fa-tree',18),(18,'forms','fa-edit',20),(19,'tables','fa-table',21),(21,'mailbox','fa-envelope-o',23),(22,'pages','fa-book',24),(23,'extras','fa-plus-square-o',25),(25,'profile','fa-user',2),(26,'activity_log','fa-flag-o',11);
+insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-users',1),(2,'Role and Permissions','Roles','fa-book',2),(3,'Settings','Settings','fa-cogs',3);
 
 /*Table structure for table `module_access` */
 
@@ -104,7 +105,7 @@ CREATE TABLE `module_access` (
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,0,NULL,'view'),(2,1,0,NULL,'add'),(3,1,0,NULL,'edit'),(5,1,0,NULL,'access'),(6,1,0,NULL,'change_status'),(7,1,0,NULL,'access'),(8,1,0,NULL,'view'),(9,1,0,NULL,'add'),(10,1,0,NULL,'edit'),(11,1,0,NULL,'access'),(27,2,0,NULL,'access'),(28,2,0,NULL,'access'),(29,2,0,NULL,'view'),(34,2,0,NULL,'access'),(35,2,0,NULL,'access'),(36,2,0,NULL,'access'),(37,2,0,NULL,'access'),(38,2,0,NULL,'access'),(39,2,0,NULL,'access'),(40,2,0,NULL,'access'),(41,2,0,NULL,'access'),(42,2,0,NULL,'access'),(43,2,0,NULL,'view'),(44,2,0,NULL,'add'),(45,2,0,NULL,'edit'),(46,2,0,NULL,'change_status'),(47,2,0,NULL,'access'),(48,2,0,NULL,'access'),(49,2,0,NULL,'access'),(50,2,0,NULL,'access'),(51,2,0,NULL,'access'),(52,2,0,NULL,'access'),(53,2,0,NULL,'access'),(59,1,0,NULL,'view'),(60,1,0,NULL,'change_status'),(61,1,0,NULL,'view'),(62,1,0,NULL,'change_status'),(63,1,0,NULL,'access'),(65,1,0,NULL,'view'),(66,1,0,NULL,'index_3'),(67,1,0,NULL,'access'),(68,1,0,NULL,'delete'),(69,1,0,NULL,'add'),(70,1,0,NULL,'access'),(71,1,0,NULL,'edit'),(72,1,0,NULL,'edit'),(73,1,0,NULL,'delete'),(74,1,0,NULL,'add'),(75,1,0,NULL,'access'),(76,1,0,NULL,'delete'),(77,1,0,NULL,'access'),(78,1,0,NULL,'access'),(79,1,0,NULL,'access'),(80,1,0,NULL,'access'),(81,1,0,NULL,'access'),(82,1,0,NULL,'access'),(83,1,0,NULL,'access'),(84,1,0,NULL,'access'),(85,1,0,NULL,'access'),(86,1,0,NULL,'access'),(87,1,0,NULL,'access'),(88,1,0,NULL,'access'),(89,1,0,NULL,'access'),(90,1,0,NULL,'access'),(91,5,0,NULL,'view'),(96,5,0,NULL,'access'),(101,5,0,NULL,'add'),(102,5,0,NULL,'change_status'),(103,5,0,NULL,'access'),(107,1,0,NULL,'index_2');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'add'),(3,1,2,3,'acess'),(5,1,2,4,'add'),(6,1,0,NULL,'change_status'),(7,1,0,NULL,'access'),(8,1,0,NULL,'view'),(9,1,0,NULL,'add'),(10,1,0,NULL,'edit');
 
 /*Table structure for table `sub_module` */
 
@@ -119,11 +120,11 @@ CREATE TABLE `sub_module` (
   `operation` text DEFAULT NULL,
   PRIMARY KEY (`sub_module_id`),
   KEY `Parent Module ID` (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (2,2,'module_setting','module',1,NULL),(3,2,'role_and_permissions','',2,NULL),(4,1,'add_new_admin','add',2,NULL),(6,1,'admin_list','add',1,NULL),(26,9,'dashboard_v1','',1,NULL),(27,9,'dashboard_v2','index_2',2,NULL),(28,9,'dashboard_v3','index_3',3,NULL),(30,3,'users_list','',1,NULL),(31,3,'add_new_user','add',2,NULL),(32,10,'simple_datatable','simple_datatable',1,NULL),(33,10,'ajax_datatable','ajax_datatable',2,NULL),(34,10,'pagination','pagination',3,NULL),(35,10,'advance_search','advance_search',4,NULL),(36,10,'file_upload','file_upload',5,NULL),(37,11,'invoice_list','',1,NULL),(38,11,'add_new_invoice','add',2,NULL),(39,12,'serverside_join','',1,NULL),(40,12,'simple_join','simple',2,NULL),(41,14,'country','',1,NULL),(42,14,'state','state',2,NULL),(43,14,'city','city',3,NULL),(44,16,'charts_js','chartjs',1,NULL),(45,16,'charts_flot','flot',2,NULL),(46,16,'charts_inline','inline',3,NULL),(47,17,'general','general',1,NULL),(48,17,'icons','icons',2,NULL),(49,17,'buttons','buttons',3,NULL),(50,18,'general_elements','general',1,NULL),(51,18,'advanced_elements','advanced',2,NULL),(52,18,'editors','editors',3,NULL),(53,19,'simple_tables','simple',1,NULL),(54,19,'data_tables','data',2,NULL),(55,21,'inbox','inbox',1,NULL),(56,21,'compose','compose',2,NULL),(57,21,'read','read_mail',3,NULL),(58,22,'invoice','invoice',1,NULL),(59,22,'profile','profile',2,NULL),(60,22,'login','login',3,NULL),(61,22,'register','register',4,NULL),(62,22,'lock_screen','Lockscreen',4,NULL),(63,23,'error_404','error404',1,NULL),(64,23,'error_500','error500',2,NULL),(65,23,'blank_page','blank',3,NULL),(66,23,'starter_page','starter',4,NULL),(67,8,'general_settings','',1,NULL),(68,8,'email_template_settings','email_templates',2,NULL),(69,25,'view_profile','',1,NULL),(70,25,'change_password','change_pwd',2,NULL),(71,10,'multiple_files_upload','multi_file_upload',6,NULL),(72,10,'dynamic_charts','charts',7,NULL),(73,10,'locations','locations',8,NULL);
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access'),(2,1,'Add New User','add_users',1,'add'),(3,2,'Module Setting','module_index',1,NULL),(4,2,'Roles & Permissions','roles_index',2,NULL),(26,9,'dashboard_v1','',1,NULL),(27,9,'dashboard_v2','index_2',2,NULL),(28,9,'dashboard_v3','index_3',3,NULL),(67,8,'general_settings','',1,NULL),(68,8,'email_template_settings','email_templates',2,NULL);
 
 /*Table structure for table `user_roles` */
 

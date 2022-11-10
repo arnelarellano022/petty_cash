@@ -59,6 +59,7 @@ class Module_Model extends  Model
             'result' => $result
         );
     }
+
     public function delete_module($module_id)
     {
         $this->module->delete(['module_id' => $module_id]);
@@ -86,7 +87,7 @@ class Module_Model extends  Model
             'sub_module_name'   => $_POST['sub_module_name'],
             'link'              => $_POST['link'],
             'sort_order'        => $_POST['sort_order'],
-            'operation'         => $_POST['operation'],
+            'operation'         => $_POST['operation']
         );
 
         $this->sub_module->insert($data);
@@ -95,5 +96,28 @@ class Module_Model extends  Model
         return array(
             'result' => $result
         );
+    }
+
+    public function update_sub_module($sub_module_id)
+    {
+        $data = array(
+            'sub_module_name'   => $_POST['sub_module_name'],
+            'link'              => $_POST['link'],
+            'sort_order'        => $_POST['sort_order'],
+            'operation'         => $_POST['operation']
+        );
+
+        $this->sub_module->update($data, 'sub_module_id =' . $sub_module_id);
+        $result = ($this->sub_module->updateBatch() != 1) ? false : true;
+
+        return array(
+            'result' => $result
+        );
+    }
+
+    public function get_role_by_sub_module_id($sub_module_id)
+    {
+        return $this->sub_module->where('sub_module_id', $sub_module_id)
+            ->get()->getResult();
     }
 }

@@ -20,7 +20,6 @@ class Module extends BaseController
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
         helper(['form']);
-
     }
 
     //Module
@@ -127,6 +126,28 @@ class Module extends BaseController
         echo view('partial/top_menu');
         echo view('partial/side_menu');
         echo view('module/sub_module_add', $module);
+        echo view('partial/footer');
+    }
+
+    public function edit_sub_module($id)
+    {
+        $session = session();
+
+        if($_POST['submit']) {
+            $this->Module_Model->update_sub_module($id);
+            //check value from model Y/N
+            $session->setFlashdata("success", "Record Updated Successfully");
+            return redirect()->to('/module_index');
+        }
+
+        $module = $this->system_menu;
+        $module['fetch_data'] = $this->Module_Model->get_role_by_sub_module_id($id);
+        $module['title'] = 'EDIT SUB MODULE';
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('module/sub_module_edit', $module);
         echo view('partial/footer');
     }
 

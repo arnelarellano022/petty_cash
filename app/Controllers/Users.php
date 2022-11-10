@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 
-
 class users extends BaseController
 {
     var $system_menu = array();
@@ -9,38 +8,34 @@ class users extends BaseController
     function __construct(){
 
         $this->Users_Model = model('Users_Model');
-        $this->Roles_Model = model('Roles_Model');
-        $this->Login_Model = model('Auth_Model');
+        $this->Module_Model = model('Module_Model');
+        $this->Auth_Model = model('Auth_Model');
 
-        $result = $this->Login_Model->load_index_data();
+        $this->session = \Config\Services::session();
+        $this->session->start();
+
+        $result = $this->Auth_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];
         $this->system_menu['index_user_roles'] = $result['index_user_roles'];
-
-
+        helper(['form']);
     }
 
     public function users_index(){
+
         if (!isset($_SESSION['user_role'])) {
             return redirect()->to('/index');
         } else {
-            $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
-            if ($result == true) {
-                $data = $this->system_menu;
-                $data['fetch_data'] = $this->Users_Model->users_fetch_data();
-                return view('users/_form', $data);
-            } else {
-                return redirect()->to('/error_403');
-            }
+            $module = $this->system_menu;
+            $module['fetch_data'] = $this->Users_Model->Users_fetch_data();
+            $module['title']='USERS LIST';
+            echo view('partial/header',$module);
+            echo view('partial/top_menu');
+            echo view('partial/side_menu');
+            echo view('users/list',$module);
+            echo view('partial/footer');
         }
 
-
-//        if (!isset($_SESSION['user_role'])) {
-//            return redirect()->to('/index');
-//        } else {
-//            $module = $this->system_menu;
-//            return view('dashboard/dashboard', $module);
-//        }
     }
 
     public function add_new_system_user(){

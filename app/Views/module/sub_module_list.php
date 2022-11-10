@@ -38,10 +38,10 @@
                                     <td style="text-align: center"><?= $row->operation;?></td>
 
                                     <td style="text-align: center">
-                                        <a href="<?php echo base_url("edit_module/". $row->module_id); ?>" class="btn btn-warning btn-xs mr5">
+                                        <a href="<?php echo base_url("edit_sub_module/". $row->sub_module_id); ?>" class="btn btn-warning btn-xs mr5">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="<?php echo base_url("delete_module/". $row->module_id); ?>" class="btn btn-danger btn-xs mr5">
+                                        <a href="<?php echo base_url("delete_sub_module/". $row->sub_module_id); ?>" class="btn btn-danger btn-xs mr5">
                                             <i class="fa fa-trash-alt"></i>
                                         </a>
 
