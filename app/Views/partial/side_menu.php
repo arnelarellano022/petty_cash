@@ -79,8 +79,9 @@
                     $has_submenu = (count($sub_menu) > 0) ? true : false;
                     $has_menu = check_module_permission($_SESSION['user_role'],$nav->module_id);
                     ?>
+
                 <?php if($has_menu): ?>
-                <li  class="nav-item ">
+                <li class="nav-item">
 
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa <?= $nav->fa_icon ?> "></i>

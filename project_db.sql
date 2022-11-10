@@ -105,7 +105,7 @@ CREATE TABLE `module_access` (
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'add'),(3,1,2,3,'acess'),(5,1,2,4,'add'),(6,1,0,NULL,'change_status'),(7,1,0,NULL,'access'),(8,1,0,NULL,'view'),(9,1,0,NULL,'add'),(10,1,0,NULL,'edit');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'add'),(3,1,2,3,'acess'),(5,1,2,4,'add'),(6,1,3,8,'change_status'),(7,1,3,9,'access'),(8,1,0,NULL,'view'),(9,1,0,NULL,'add'),(10,1,0,NULL,'edit');
 
 /*Table structure for table `sub_module` */
 
@@ -124,7 +124,7 @@ CREATE TABLE `sub_module` (
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access'),(2,1,'Add New User','add_users',1,'add'),(3,2,'Module Setting','module_index',1,NULL),(4,2,'Roles & Permissions','roles_index',2,NULL),(26,9,'dashboard_v1','',1,NULL),(27,9,'dashboard_v2','index_2',2,NULL),(28,9,'dashboard_v3','index_3',3,NULL),(67,8,'general_settings','',1,NULL),(68,8,'email_template_settings','email_templates',2,NULL);
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access'),(2,1,'Add New User','add_users',1,'add'),(3,2,'Module Setting','module_index',1,NULL),(4,2,'Roles & Permissions','roles_index',2,NULL),(5,9,'dashboard_v1','',1,NULL),(6,9,'dashboard_v2','index_2',2,NULL),(7,9,'dashboard_v3','index_3',3,NULL),(8,3,'general_settings','',1,NULL),(9,3,'email_template_settings','email_templates',2,NULL);
 
 /*Table structure for table `user_roles` */
 
