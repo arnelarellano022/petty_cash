@@ -5,11 +5,14 @@ use CodeIgniter\Model;
 
 class Roles_Model extends  Model
 {
-    public $builder;
+
 
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->builder = $db->table('user_roles');
+        $this->module = $db->table('module');
+        $this->sub_module = $db->table('sub_module');
+        $this->module_access = $db->table('module_access');
     }
 
     //Roles
@@ -31,12 +34,6 @@ class Roles_Model extends  Model
         );
     }
 
-    public function get_role_by_id($id)
-    {
-        return $this->builder->where('id', $id)
-            ->get()->getResult();
-    }
-
     public function update_roles($id)
     {
 
@@ -56,9 +53,64 @@ class Roles_Model extends  Model
         $this->builder->delete(['id' => $id]);
     }
 
-    public function get_roles(){
-        $db = db_connect();
-        $query = $db->query('Select * FROM roles ORDER BY id ASC ');
-        return $query->getResult();
+    public function get_roles($id){
+        $query =  $this->builder->where('id', $id)->get();
+        foreach ($query->getResult() as $row) {
+            return $row->roles;
+        }
+    }
+
+    public function get_role_by_id($id)
+    {
+        return $this->builder->where('id', $id)
+            ->get()->getResult();
+    }
+
+    public function get_modules()
+    {
+        return $this->module->orderBy('sort_order', 'asc')
+            ->get()->getResult();
+    }
+    public function get_sub_modules()
+    {
+        return $this->sub_module->orderBy('sort_order', 'asc')
+            ->get()->getResult();
+    }
+
+    public function get_module_access($user_role_id)
+    {
+        $records = $this->module_access->where('user_role', $user_role_id)
+            ->get()->getResultArray();
+
+
+        $data=array();
+        foreach($records as $row)
+        {
+            $data[] = $row->module_id .'/'. $row->operation;
+        }
+        return $data;
+    }
+
+    function set_access()
+    {
+        if($_POST['status']==1)
+        {
+            $data = array(
+                'user_role' => $_POST['user_role'],
+                'module_id' => $_POST['module_id'],
+                'sub_module_id' => $_POST['sub_module_id'],
+                'operation' => $_POST['operation'],
+            );
+
+            $this->module_access->insert($data);
+
+        }
+        else
+        {
+            $this->db->where('admin_role_id',$this->input->post('admin_role_id'));
+            $this->db->where('module',$this->input->post('module'));
+            $this->db->where('operation',$this->input->post('operation'));
+            $this->db->delete('module_access');
+        }
     }
 }

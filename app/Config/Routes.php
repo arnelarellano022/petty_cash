@@ -49,6 +49,8 @@ $routes->add('/roles_index', 'Roles::roles_index');
 $routes->add('/edit_roles/(:any)', 'Roles::edit_roles/$1');
 $routes->add('/add_roles', 'Roles::add_roles');
 $routes->add('/delete_roles/(:any)', 'Roles::delete_roles/$1');
+$routes->add('/access_roles/(:any)', 'Roles::access_roles/$1');
+$routes->add('/set_access/', 'Roles::set_access');
 
 //Module
 $routes->add('/module_index', 'Module::module_index');

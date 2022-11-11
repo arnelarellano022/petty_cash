@@ -91,5 +91,26 @@ class Roles extends BaseController
         return redirect()->to('/roles_index');
     }
 
+    public function access_roles($id)
+    {
+        $module = $this->system_menu;
+        $module['fetch_data'] = $this->Roles_Model->get_modules($id);
+        $module['title'] = 'EDIT ROLES';
 
+        $module['roles']= $this->Roles_Model->get_roles($id);
+        $module['access']= $this->Roles_Model->get_module_access($id);
+        $module['sub_modules']= $this->Roles_Model->get_sub_modules();
+
+
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('roles/access', $module);
+        echo view('partial/footer');
+    }
+
+    public function set_access(){
+        $this->Roles_Model->set_access();
+    }
 }

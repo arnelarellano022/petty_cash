@@ -21,6 +21,7 @@
                     <tr>
                         <th style="text-align: center">ID</th>
                         <th style="text-align: center">Roles</th>
+                        <th style="text-align: center">Permission</th>
                         <th style="text-align: center">Action</th>
                     </tr>
                     </thead>
@@ -30,7 +31,11 @@
                             <tr>
                                 <td style="text-align: center"><?= $row->id;?></td>
                                 <td style="text-align: center"><?= $row->roles;?></td>
-
+                                <td style="text-align: center">
+                                    <a href="<?php echo base_url("access_roles/". $row->id); ?>" class="btn btn-info btn-xs mr5" >
+                                        <i class="fas fa-sliders-h"></i>
+                                    </a>
+                                </td>
                                 <td style="text-align: center">
                                     <a href="<?php echo base_url("edit_roles/". $row->id); ?>" class="btn btn-warning btn-xs mr5">
                                         <i class="fa fa-edit"></i>
