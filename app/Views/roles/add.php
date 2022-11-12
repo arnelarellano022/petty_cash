@@ -24,7 +24,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Admin Role</label>
+                                                    <label for="exampleInputEmail1">Roles</label>
                                                     <input class="form-control" type="text" name="roles" value="" required="">
                                                 </div>
                                             </div>

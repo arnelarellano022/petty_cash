@@ -80,13 +80,13 @@ class Roles_Model extends  Model
     public function get_module_access($user_role_id)
     {
         $records = $this->module_access->where('user_role', $user_role_id)
-            ->get()->getResultArray();
+            ->get()->getResult();
 
 
-        $data=array();
+        $data = array();
         foreach($records as $row)
         {
-            $data[] = $row->module_id .'/'. $row->operation;
+            $data[] = $row->module_id .'/'. $row->sub_module_id .'/'. $row->operation;
         }
         return $data;
     }
@@ -101,16 +101,18 @@ class Roles_Model extends  Model
                 'sub_module_id' => $_POST['sub_module_id'],
                 'operation' => $_POST['operation'],
             );
-
             $this->module_access->insert($data);
 
         }
         else
         {
-            $this->db->where('admin_role_id',$this->input->post('admin_role_id'));
-            $this->db->where('module',$this->input->post('module'));
-            $this->db->where('operation',$this->input->post('operation'));
-            $this->db->delete('module_access');
+            $data = array(
+                'user_role' => $_POST['user_role'],
+                'module_id' => $_POST['module_id'],
+                'sub_module_id' => $_POST['sub_module_id'],
+                'operation' => $_POST['operation'],
+            );
+            $this->module_access->delete($data);
         }
     }
 }

@@ -66,47 +66,16 @@
 <script src="<?=base_url('assets/adminLTE/dist/js/demo3.js')?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!--<script src="--><?//=base_url('assets/adminLTE/dist/js/pages/dashboard.js')?><!--"></script>-->
+<!-- Notify JS -->
+<script src="<?=base_url('assets/adminLTE/plugins/notify/notify.min.js')?>"></script>
+<!-- MY JS CODES HERE -->
+<script src="<?=base_url('assets/adminLTE/dist/js/my-js-code.js')?>"></script>
 
 <script>
-    $(function () {
-        $("#example").DataTable({});
-
-        $("#example1").DataTable({
-            "responsive": true, "lengthChange": false, "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true
-        });
-    });
+    access_js();
 </script>
 
-<script>
-    $(function () {
-        /** add active class and stay opened when selected */
-        var url = window.location;
 
-        // for sidebar menu entirely but not cover treeview
-        $('ul.nav-sidebar a').filter(function() {
-            return this.href == url;
-        }).addClass('active');
-
-        // for treeview
-        $('ul.nav-treeview a').filter(function() {
-            return this.href == url;
-        }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
-    });
-</script>
-
-<!--message js-->
-<script type="text/javascript">$( document ).ready(function() {$("#notif_fade").fadeOut(5000);});</script>
 
 </body>
 </html>

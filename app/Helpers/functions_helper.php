@@ -51,14 +51,32 @@ if (!function_exists('check_module_permission')) {
 // -----------------------------------------------------------------------------
 // CHECK SUB MODULE PERMISSION
 if (!function_exists('check_sub_module_permission')) {
-    function check_sub_module_permission($user_role, $module_id, $sub_module_id)
+    function check_sub_module_permission($user_role, $module_id)
     {
         $db      = \Config\Database::connect();
         $module = $db->table('module_access');
         $result = $module->where('user_role', $user_role)
             ->where('module_id', $module_id)
-            ->where('sub_module_id', $sub_module_id)
+            ->where('operation', 'access')
             ->countAllResults();
        return($result > 0) ? true : false;
     }
 }
+
+
+// CHECK SUB MODULE PERMISSION
+if (!function_exists('get_sub_module_permission')) {
+    function get_sub_module_permission($user_role, $module_id, $sub_module_id)
+    {
+        $db      = \Config\Database::connect();
+        $module = $db->table('module_access');
+        return $module->where('user_role', $user_role)
+            ->where('module_id', $module_id)
+            ->where('sub_module_id', $sub_module_id)
+            ->where('operation', 'access')
+            ->get()->getResult();
+
+    }
+}
+// -----------------------------------------------------------------------------
+

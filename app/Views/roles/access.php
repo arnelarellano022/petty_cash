@@ -40,12 +40,12 @@
                                             <span class="pull-left">
 	                                            <input type='checkbox'
 	                                            class='tgl tgl-ios tgl_checkbox'
-	                                            data-module_id='<?= $sub_module_row->module_id ?>'
-	                                            data-sub_module_id='<?= $sub_module_row->sub_module_id ?>'
+	                                            data-module-id='<?= $sub_module_row->module_id ?>'
+	                                            data-sub-module-id='<?= $sub_module_row->sub_module_id ?>'
 	                                            data-operation='<?= $operation; ?>'
 	                                            id='cb_<?=$kk.$k?>'
-	                                            <?php if (in_array($sub_module_row->controller_name .'/'.$operation, $access)) echo 'checked="checked"';?>
-	                                            />
+	                                            <?php if(in_array($sub_module_row->module_id .'/'.$sub_module_row->sub_module_id .'/'.$operation, $module_access)) echo 'checked="checked"';?>
+	                                             />
 	                                            <label class='tgl-btn' for='cb_<?=$kk.$k?>'></label>
 	                                        </span>
 	                                        <span class="mt-15 pl-3">
@@ -67,19 +67,27 @@
 	</section>
 </div>
 
+
 <script>
+function access_js(){
+
     $("body").on("change",".tgl_checkbox",function(){
+
         $.post('<?=base_url("/set_access")?>',
             {
-                module_id : $(this).data('module_id'),
+                module_id : $(this).data('module-id'),
+                sub_module_id : $(this).data('sub-module-id'),
                 operation : $(this).data('operation'),
-                user_role : <?=$roles?>,
+                user_role : <?=$roles_id?>,
                 status : $(this).is(':checked')==true?1:0
             },
-            function(data){
+            function(){
                 $.notify("Status Changed Successfully", "success");
+
             });
     });
+
+}
 </script>
 
 

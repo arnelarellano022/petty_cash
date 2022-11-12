@@ -101,11 +101,11 @@ CREATE TABLE `module_access` (
   `operation` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `RoleId` (`user_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'add'),(3,1,2,3,'access'),(5,1,2,4,'add'),(6,1,3,8,'access'),(7,1,3,9,'add');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (142,1,2,3,'access'),(158,1,2,4,'access'),(163,1,3,9,'access'),(164,1,3,8,'access'),(166,1,1,1,'access'),(167,1,1,2,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -138,11 +138,11 @@ CREATE TABLE `user_roles` (
   `updated_by` int(11) NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_roles` */
 
-insert  into `user_roles`(`id`,`roles`,`created_by`,`created_at`,`updated_by`,`updated_at`) values (1,'Super Admin',0,'2018-03-15 12:48:04',0,'2018-03-17 12:53:16'),(2,'Admin',0,'2018-03-15 12:53:19',0,'2019-01-26 08:27:34'),(3,'Accountant',0,'2018-03-15 01:46:54',0,'2019-01-26 02:17:38'),(4,'Operator',0,'2018-03-16 05:52:45',0,'2019-01-26 02:17:52'),(5,'User',0,'2022-02-16 08:32:16',0,'2022-02-16 08:32:36'),(6,'up trty ew ',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00');
+insert  into `user_roles`(`id`,`roles`,`created_by`,`created_at`,`updated_by`,`updated_at`) values (1,'Admin',0,'2018-03-15 12:48:04',0,'2018-03-17 12:53:16'),(2,'User',0,'2018-03-15 12:53:19',0,'2019-01-26 08:27:34'),(3,'Accountant',0,'2018-03-15 01:46:54',0,'2019-01-26 02:17:38'),(4,'Operator',0,'2018-03-16 05:52:45',0,'2019-01-26 02:17:52'),(5,'Marketing',0,'2022-02-16 08:32:16',0,'2022-02-16 08:32:36'),(6,'up trty ew ',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

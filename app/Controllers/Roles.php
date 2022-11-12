@@ -98,7 +98,8 @@ class Roles extends BaseController
         $module['title'] = 'EDIT ROLES';
 
         $module['roles']= $this->Roles_Model->get_roles($id);
-        $module['access']= $this->Roles_Model->get_module_access($id);
+        $module['roles_id'] = $id;
+        $module['module_access']= $this->Roles_Model->get_module_access($id);
         $module['sub_modules']= $this->Roles_Model->get_sub_modules();
 
 
