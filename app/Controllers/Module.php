@@ -28,8 +28,9 @@ class Module extends BaseController
             return redirect()->to('/index');
         } else {
             $module = $this->system_menu;
-            $module['fetch_data'] = $this->Module_Model->Module_fetch_data();
+            $module['fetch_data'] = $this->Module_Model->Module_List();
             $module['title']='MODULE SETTING';
+
             echo view('partial/header',$module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');

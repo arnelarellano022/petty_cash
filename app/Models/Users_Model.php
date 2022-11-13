@@ -6,63 +6,42 @@ use CodeIgniter\Model;
 
 class Users_Model extends  Model
 {
+    //Table
+    public $users, $roles;
 
-    protected $table = "user_info";
-    protected $primaryKey = "user_id";
-    protected $allowedFields = [
-        "user_name",
-        "user_password",
-        "user_roles",
-        "created_at",
-        "updated_at"
-    ];
-
-    public function users_fetch_data()
-    {
-        $db = \Config\Database::connect();
-//        $try = $db->query("select * from user_info");
-//        echo var_dump($try->getResult());
-        $query = $db->query('Select * FROM user_info  ORDER BY user_id ASC ');
-        return $query->getResult();
-
-//        $this->db->select('*');
-//        $this->db->from('user_info');
-//        $this->db->order_by("user_id", "asc");
-//        $query = $this->db->get();
-//        return $query;
+    public function __construct() {
+        $db      = \Config\Database::connect();
+        $this->users = $db->table('ci_users');
+        $this->roles = $db->table('user_roles');
     }
-    public function insert_user_model()
+
+    public function users_list()
     {
+        return $this->users->orderBy('user_id', 'asc')
+            ->get()->getResult();
+    }
 
-//        $query = $db->query("Select * FROM user_roles where user_role = '" . $roles . "'and main_menu_id = '". $main_id . "'and sub_menu_id = '". $sub_id . "'");
-//        $count = $query->getNumRows();
-//
-//        if($count > 0){return true;}
-//        else{return false;}
-//try
-//        $db = \Config\Database::connect();
-            $user_model =  new Users_Model();
+    public function get_Roles_List()
+    {
+        return $this->roles->orderBy('id', 'asc')
+            ->get()->getResult();
+    }
+    public function insert_user()
+    {
+        $date = date('Y-m-d H:i:s');
 
-//            $request = \Config\Services::request();
-            $date = date('Y-m-d H:i:s');
-            $data = array(
+        $data = array(
+            'username'      => $_POST['username'] ,
+            'firstname'     => $_POST['firstname'] ,
+            'lastname'      => $_POST['lastname'] ,
+            'password'      => md5($_POST['password']),
+            'user_roles'    => $_POST['user_roles'],
+            'created_at'    => $date,
+            'updated_at'    => $date
+        );
 
-                'user_name' => $_POST['user_name'] ,
-                'user_password' => md5($_POST['user_password']),
-                'user_roles' => $_POST['user_roles'],
-                'created_at' => $date,
-                'updated_at' => $date
-            );
+        $this->users->insert($data);
 
-
-            $user_model->table('user_info')
-                ->insert($data);
-
-            $result = ($user_model->affectedRows() != 1) ? false : true;
-
-            return array(
-                'result' => $result
-            );
     }
 
     public function users_updating($id){
@@ -107,5 +86,9 @@ class Users_Model extends  Model
 
     }
 
-
+    function change_status()
+    {
+        $data = array('status' => $_POST['status']);
+        $this->module_access->update($data,'user_id =' . $_POST['id']);
+    }
 }

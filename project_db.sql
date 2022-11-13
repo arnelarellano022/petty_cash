@@ -57,20 +57,21 @@ CREATE TABLE `ci_users` (
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `user_role` tinyint(4) NOT NULL DEFAULT 1,
-  `is_active` tinyint(4) NOT NULL DEFAULT 0,
-  `is_verify` tinyint(4) NOT NULL DEFAULT 0,
-  `token` varchar(255) NOT NULL,
-  `password_reset_code` varchar(255) NOT NULL,
-  `last_ip` varchar(30) NOT NULL,
+  `user_roles` tinyint(4) NOT NULL DEFAULT 1,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_verify` tinyint(4) NOT NULL DEFAULT 1,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `token` varchar(255) DEFAULT NULL,
+  `password_reset_code` varchar(255) DEFAULT NULL,
+  `last_ip` varchar(30) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_active`,`is_verify`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_roles`,`is_active`,`is_verify`,`status`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(3,'user','Arnel ','Arellano','ee11cbb19052e40b07aac0ca060c23ee',2,1,1,1,NULL,NULL,NULL,'2022-11-13 06:14:22','2022-11-13 06:14:22'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,0,NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28');
 
 /*Table structure for table `module` */
 
@@ -101,11 +102,11 @@ CREATE TABLE `module_access` (
   `operation` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `RoleId` (`user_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (142,1,2,3,'access'),(158,1,2,4,'access'),(163,1,3,9,'access'),(164,1,3,8,'access'),(166,1,1,1,'access'),(167,1,1,2,'access');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (142,1,2,3,'access'),(158,1,2,4,'access'),(163,1,3,9,'access'),(164,1,3,8,'access'),(167,1,1,2,'access'),(168,1,1,1,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -138,7 +139,7 @@ CREATE TABLE `user_roles` (
   `updated_by` int(11) NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_roles` */
 

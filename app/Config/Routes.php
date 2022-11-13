@@ -41,8 +41,9 @@ $routes->add('/logout', 'Auth::logout');
 //Users
 
 $routes->add('/users_index', 'Users::users_index');
-$routes->add('/create_user', 'Users::create_user');
-$routes->post('/insert_user', 'Users::insert_user');
+$routes->add('/add_user', 'Users::add_user');
+$routes->add('/change_status', 'Users::change_status');
+
 
 //Roles
 $routes->add('/roles_index', 'Roles::roles_index');

@@ -19,12 +19,10 @@ class Auth extends BaseController{
     }
 
     function index(){
-
         return view('auth/login');
     }
 
     public function validate_login(){
-
 
         helper(['form']);
         $session = session();

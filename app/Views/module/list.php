@@ -47,14 +47,12 @@
                                         </a>
 
                                     </td>
-
-
                                 </tr>
                             <?php }}?>
 
                             </tbody>
                         </table>
-                <?= $current_uri; ?>
+
             </div>
         </div>
     </section>

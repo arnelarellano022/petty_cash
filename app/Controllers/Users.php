@@ -27,8 +27,9 @@ class users extends BaseController
             return redirect()->to('/index');
         } else {
             $module = $this->system_menu;
-            $module['fetch_data'] = $this->Users_Model->Users_fetch_data();
-            $module['title']='USERS LIST';
+            $module['fetch_data'] = $this->Users_Model->users_list();
+            $module['title']='USER LIST';
+
             echo view('partial/header',$module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
@@ -38,52 +39,73 @@ class users extends BaseController
 
     }
 
-    public function add_new_system_user(){
+//    public function add_new_system_user(){
+//
+//        $result = $this->Users_Model->add_system_user_data();
+//
+//        if($result['result']==true){
+//            $this->session->set_flashdata("success", "Data successfully added to the database.");
+//        } else {
+//            $this->session->set_flashdata("error", "Error on saving data to the database.");
+//        }
+//        redirect("users_index", "refresh");
+//
+//    }
 
-        $result = $this->Users_Model->add_system_user_data();
+    public function add_user(){
 
-        if($result['result']==true){
-            $this->session->set_flashdata("success", "Data successfully added to the database.");
-        } else {
-            $this->session->set_flashdata("error", "Error on saving data to the database.");
-        }
-        redirect("users_index", "refresh");
-
-    }
-
-
-    public function create_user(){
-        if (!isset($_SESSION['user_role'])) {
-            return redirect()->to('/index');
-        } else {
-            $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
-            if ($result == true) {
-                $data = $this->system_menu;
-                $data['fetch_roles'] = $this->Roles_Model->get_roles();
-                return view('users/create', $data);
-
-            } else {
-                return redirect()->to('/error_403');
-            }
-        }
-    }
-    public function insert_user(){
-        helper(['form']);
         $session = session();
 
-            $result = $this->Users_Model->insert_user_model();
+        if($_POST['submit'])
+        {
+            $this->Users_Model->insert_user();
+            $session->setFlashdata("success", "User Added Successfully");
+            return redirect()->to('/users_index');
+        }
+        $module = $this->system_menu;
+        $module['user_roles_list'] = $this->Users_Model->get_Roles_List();
+        $module['title'] = 'ADD NEW USER';
 
-            //check value from model Y/N
-            if ($result['result'] == true) {
-                $session->setFlashdata("success", "Data successfully added to the database.");
-                return redirect()->to('/users_index');
-
-            } else {
-                $session->setFlashdata("error", "Error on saving data to the database.");
-                return redirect()->to('/create_user');
-            }
-
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('users/add', $module);
+        echo view('partial/footer');
     }
+
+//
+//    public function create_user(){
+//        if (!isset($_SESSION['user_role'])) {
+//            return redirect()->to('/index');
+//        } else {
+//            $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
+//            if ($result == true) {
+//                $data = $this->system_menu;
+//                $data['fetch_roles'] = $this->Roles_Model->get_roles();
+//                return view('users/create', $data);
+//
+//            } else {
+//                return redirect()->to('/error_403');
+//            }
+//        }
+//    }
+//    public function insert_user(){
+//        helper(['form']);
+//        $session = session();
+//
+//            $result = $this->Users_Model->insert_user_model();
+//
+//            //check value from model Y/N
+//            if ($result['result'] == true) {
+//                $session->setFlashdata("success", "Data successfully added to the database.");
+//                return redirect()->to('/users_index');
+//
+//            } else {
+//                $session->setFlashdata("error", "Error on saving data to the database.");
+//                return redirect()->to('/create_user');
+//            }
+//
+//    }
     public function remove_user($delete_ID){
 
         $result = $this->Users_Model->delete_users_Model($delete_ID);
@@ -138,6 +160,10 @@ class users extends BaseController
                 redirect('error_403', 'refresh');
             }
         }
+    }
+
+    public function change_status(){
+        $this->Users_Model->change_status();
     }
 
 
