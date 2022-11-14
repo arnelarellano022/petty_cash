@@ -73,7 +73,7 @@
 
 <script>
     access_js();
-    user_js();
+//    user_js();
 </script>
 
 

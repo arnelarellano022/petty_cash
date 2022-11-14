@@ -59,9 +59,9 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="role" class="col-md-12 control-label">Select User Role</label>
-                                                        <select name="user_roles" class="form-control" required>
+                                                        <select name="user_role" class="form-control" required>
                                                             <option value="" hidden>Select Role</option>
-                                                            <?php foreach($user_roles_list as $role_row): ?>
+                                                            <?php foreach($user_role_list as $role_row): ?>
                                                                 <option value="<?= $role_row->id; ?>"><?= $role_row->roles; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>

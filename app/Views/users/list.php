@@ -33,17 +33,17 @@
                         <tr>
                             <td style="text-align: center"><?= $row->user_id;?></td>
                             <td style="text-align: center"><?= $row->username;?></td>
-                            <td style="text-align: center"><?= $row->user_roles;?></td>
+                            <td style="text-align: center"><?= $row->user_role;?></td>
                             <td style="text-align: center"><?= $row->created_at;?></td>
                             <td style="text-align: center"><?= $row->updated_at;?></td>
                             <td style="text-align: center">
                                     <input type='checkbox'
                                            class='tgl tgl-ios tgl_checkbox'
-                                           data-id='<?= $row->user_id; ?>'
-                                           id='cb_<?=$row->user_id?>'
+                                           data-id='<?= $row->user_id ?>'
+                                           id='cb_<?= $row->user_id ?>'
                                             <?= ($row->status == 1)? "checked" : ""; ?>
                                     />
-                                    <label class='tgl-btn' for='cb_<?= $row->user_role ?>'></label>
+                                    <label class='tgl-btn' for='cb_<?= $row->user_id ?>'></label>
                             </td>
 
                             <td style="text-align: center">
@@ -69,11 +69,11 @@
 
 
 <script>
-    function user_js() {
+    function access_js() {
     $("body").on("change",".tgl_checkbox",function(){
         $.post('<?=base_url("/change_status")?>',
             {
-                id : $(this).data('id'),
+                user_id : $(this).data('id'),
                 status : $(this).is(':checked') == true ? 1:0
             },
             function(data){

@@ -12,13 +12,16 @@ class Users_Model extends  Model
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->users = $db->table('ci_users');
-        $this->roles = $db->table('user_roles');
+        $this->roles = $db->table('user_role');
     }
 
     public function users_list()
     {
-        return $this->users->orderBy('user_id', 'asc')
+        return $this->users->select('*')
+            ->join('user_role', 'ci_users.user_role = user_role.id')
+            ->orderBy('ci_users.user_id', 'asc')
             ->get()->getResult();
+
     }
 
     public function get_Roles_List()
@@ -35,7 +38,7 @@ class Users_Model extends  Model
             'firstname'     => $_POST['firstname'] ,
             'lastname'      => $_POST['lastname'] ,
             'password'      => md5($_POST['password']),
-            'user_roles'    => $_POST['user_roles'],
+            'user_role'    => $_POST['user_role'],
             'created_at'    => $date,
             'updated_at'    => $date
         );
@@ -57,7 +60,7 @@ class Users_Model extends  Model
         $date = date('Y-m-d H:i:s');
         $this->db->set('user_name',              $this->input->post("user_name", TRUE));
         $this->db->set('user_password',          md5($this->input->post("user_password", TRUE)));
-        $this->db->set('user_roles',             $this->input->post("user_roles", TRUE));
+        $this->db->set('user_role',             $this->input->post("user_role", TRUE));
         $this->db->set('updated_at',            $date ) ;
 
         $this->db->where('user_id', $id_no);
@@ -88,7 +91,8 @@ class Users_Model extends  Model
 
     function change_status()
     {
-        $data = array('status' => $_POST['status']);
-        $this->module_access->update($data,'user_id =' . $_POST['id']);
+        $data = array( 'status' => $_POST['status'] );
+        $this->users->update($data,'user_id =' . $_POST['user_id']);
+
     }
 }

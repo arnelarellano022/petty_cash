@@ -71,7 +71,7 @@
                     <div class="form-group field-shift-start_time required">
                         <div class="form-group field-employee-department required">
                             <label class="control-label" for="employee-department">User Role</label>
-                            <select id="employee-department" class="form-control" name="user_roles">
+                            <select id="employee-department" class="form-control" name="user_role">
                                 <?php
                                 if ($fetch_roles) {
                                     foreach ($fetch_roles->result() as $rs) {

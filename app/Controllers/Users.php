@@ -17,7 +17,7 @@ class users extends BaseController
         $result = $this->Auth_Model->load_index_data();
         $this->system_menu['main_menu'] = $result['main_menu'];
         $this->system_menu['sub_menu'] = $result['sub_menu'];
-        $this->system_menu['index_user_roles'] = $result['index_user_roles'];
+        $this->system_menu['index_user_role'] = $result['index_user_role'];
         helper(['form']);
     }
 
@@ -63,7 +63,7 @@ class users extends BaseController
             return redirect()->to('/users_index');
         }
         $module = $this->system_menu;
-        $module['user_roles_list'] = $this->Users_Model->get_Roles_List();
+        $module['user_role_list'] = $this->Users_Model->get_Roles_List();
         $module['title'] = 'ADD NEW USER';
 
         echo view('partial/header', $module);
