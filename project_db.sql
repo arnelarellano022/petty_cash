@@ -16,37 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`project_db` /*!40100 DEFAULT CHARACTER 
 
 USE `project_db`;
 
-/*Table structure for table `ci_admin` */
-
-DROP TABLE IF EXISTS `ci_admin`;
-
-CREATE TABLE `ci_admin` (
-  `admin_id` int(11) NOT NULL AUTO_INCREMENT,
-  `admin_role_id` int(11) NOT NULL,
-  `username` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `mobile_no` varchar(255) NOT NULL,
-  `image` varchar(300) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `last_login` datetime NOT NULL,
-  `is_verify` tinyint(4) NOT NULL DEFAULT 1,
-  `is_admin` tinyint(4) NOT NULL DEFAULT 1,
-  `is_active` tinyint(4) NOT NULL DEFAULT 0,
-  `is_supper` tinyint(4) NOT NULL DEFAULT 0,
-  `token` varchar(255) NOT NULL,
-  `password_reset_code` varchar(255) NOT NULL,
-  `last_ip` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
-
-/*Data for the table `ci_admin` */
-
-insert  into `ci_admin`(`admin_id`,`admin_role_id`,`username`,`firstname`,`lastname`,`email`,`mobile_no`,`image`,`password`,`last_login`,`is_verify`,`is_admin`,`is_active`,`is_supper`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (25,5,'admin','Admin','User','admin@gmail.com','544354353','','$2y$10$KyH0L.rMhaXWkMh/ZoN1.e44FOzEak.KzZoUjQdIGiuVJtuKa9z0y','2019-01-09 00:00:00',1,1,1,0,'','','','2018-03-19 00:00:00','2022-02-16 00:00:00'),(26,3,'bush','jorge','bush','bush@gmail.com','5446546545665','1c576d254c9f8a23c9243702bdb45a11.png','$2y$10$qlAzDhBEqkKwP3OykqA7N.ZQk6T67fxD9RHfdv3zToxa9Mtwu9C/e','2018-11-01 09:46:23',1,1,1,0,'','','','2018-03-19 00:00:00','2019-01-26 02:01:11'),(27,5,'schoo43543','rewr','erew','erew@dfsfs','ewre43543','','0a7eab610f12cb73aa0a4aa7c0acf691','2019-01-02 00:00:00',1,1,1,0,'','','','2018-03-18 00:00:00','2019-01-16 23:33:26'),(31,1,'superadmin','Nauman','Ahmed','naumanahmedcs@gmail.com','123456','','$2y$10$cOTKTWhWOrWzDXldeXZKf.uxdCZLyYfftM8mSz3z63dBaTPJSXytO','0000-00-00 00:00:00',1,1,1,1,'','','','2019-01-16 06:01:58','2019-07-16 09:07:37'),(32,4,'John','Smitt','Johan','johnsmith@gmail.com','46545566554865','','$2y$10$ssWS29aK1NV8hmiFxysfgekC3txWQIH/IFPk8BcDLPtpaAwzYwbXu','0000-00-00 00:00:00',1,1,1,0,'','','','2019-07-15 08:07:34','2019-11-25 00:00:00'),(34,2,'techesprit','Zain','Khan','officialarea423@gmail.com','','','$2y$10$kpCJH6qL64tW30YIDqt0LeM8D23c5DAUqp8aXzaC2tDjKn.qeNVLe','0000-00-00 00:00:00',0,1,1,0,'b3967a0e938dc2a6340e258630febd5a','','','2019-11-26 00:00:00','2019-11-26 00:00:00'),(38,5,'user','username','userlast','user@email.com','0922222222','','$2y$10$93ip8RphF3kIE205AwLk2O3A0HAYzkGKzdMkxtG9v5kmOXow4Acv6','0000-00-00 00:00:00',1,1,1,0,'','','','2022-02-16 00:00:00','2022-02-16 00:00:00'),(39,5,'aaaaaaaa','aaaaaaaa','sssss','aaaaa@aaa.cj','342342324','','$2y$10$Mmqg5W2Gg7vCTPAg0ThiOuT6ojp8jrFCjlC8U7.bKtkc7SYyRP3Ku','0000-00-00 00:00:00',0,1,1,0,'b3e3e393c77e35a4a3f3cbd1e429b5dc','','','2022-02-16 00:00:00','2022-02-16 00:00:00');
-
 /*Table structure for table `ci_users` */
 
 DROP TABLE IF EXISTS `ci_users`;
@@ -67,11 +36,11 @@ CREATE TABLE `ci_users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_active`,`is_verify`,`status`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(3,'user','Arnel ','Arellano','ee11cbb19052e40b07aac0ca060c23ee',2,1,1,1,NULL,NULL,NULL,'2022-11-13 06:14:22','2022-11-13 06:14:22'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,1,NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_active`,`is_verify`,`status`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(3,'user','Arnel ','Arellano','ee11cbb19052e40b07aac0ca060c23ee',2,1,1,1,NULL,NULL,NULL,'2022-11-13 06:14:22','2022-11-13 06:14:22'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,1,NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055',3,1,1,1,NULL,NULL,NULL,'2022-11-14 19:25:01','2022-11-14 19:25:01');
 
 /*Table structure for table `module` */
 
@@ -84,7 +53,7 @@ CREATE TABLE `module` (
   `fa_icon` varchar(100) NOT NULL,
   `sort_order` tinyint(4) NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module` */
 
@@ -101,12 +70,17 @@ CREATE TABLE `module_access` (
   `sub_module_id` int(5) DEFAULT NULL,
   `operation` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `RoleId` (`user_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=latin1;
+  KEY `RoleId` (`user_role`),
+  KEY `FK-Module` (`module_id`),
+  KEY `FK-SubModule` (`sub_module_id`),
+  CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (142,1,2,3,'access'),(158,1,2,4,'access'),(163,1,3,9,'access'),(164,1,3,8,'access'),(167,1,1,2,'access'),(168,1,1,1,'access');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'access'),(3,1,2,3,'access'),(4,1,2,4,'access'),(5,1,3,5,'access'),(6,1,3,6,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -120,12 +94,13 @@ CREATE TABLE `sub_module` (
   `sort_order` int(11) NOT NULL,
   `operation` text DEFAULT NULL,
   PRIMARY KEY (`sub_module_id`),
-  KEY `Parent Module ID` (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+  KEY `Parent Module ID` (`module_id`),
+  CONSTRAINT `FK-Module-ID` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete'),(2,1,'Add New User','add_users',2,'access|add|edit|delete'),(3,2,'Module Setting','module_index',3,'access|add|edit|delete'),(4,2,'Roles & Permissions','roles_index',4,'access|add|edit|delete'),(5,9,'dashboard_v1','',5,'access'),(6,9,'dashboard_v2','index_2',6,'access'),(7,9,'dashboard_v3','index_3',7,'access'),(8,3,'general_settings','',8,'access'),(9,3,'email_template_settings','email_templates',9,'access');
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete'),(2,1,'Add New User','add_users',2,'access|add|edit|delete'),(3,2,'Module Setting','module_index',3,'access|add|edit|delete'),(4,2,'Roles & Permissions','roles_index',4,'access|add|edit|delete'),(5,3,'General Settings','settings_index',5,'access'),(6,3,'Email Template Settings','email_index',6,'access');
 
 /*Table structure for table `user_roles` */
 
@@ -139,7 +114,7 @@ CREATE TABLE `user_roles` (
   `updated_by` int(11) NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_roles` */
 

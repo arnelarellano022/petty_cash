@@ -1,6 +1,4 @@
-
 <!-- Content Wrapper. Contains page content -->
-<!--<div style="background-color: #F4F6F9; height: 10px "></div>-->
 <div class="content-wrapper" >
     <?=  view('partial/message'); ?>
     <section class="content">
@@ -33,7 +31,7 @@
                         <tr>
                             <td style="text-align: center"><?= $row->user_id;?></td>
                             <td style="text-align: center"><?= $row->username;?></td>
-                            <td style="text-align: center"><?= $row->user_role;?></td>
+                            <td style="text-align: center"><?= $row->roles;?></td>
                             <td style="text-align: center"><?= $row->created_at;?></td>
                             <td style="text-align: center"><?= $row->updated_at;?></td>
                             <td style="text-align: center">
@@ -53,7 +51,6 @@
                                 <a href="<?php echo base_url("delete_user/". $row->user_id); ?>" class="btn btn-danger btn-xs mr5">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
-
                             </td>
                         </tr>
                     <?php }}?>

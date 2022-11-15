@@ -28,7 +28,7 @@ class Module extends BaseController
             return redirect()->to('/index');
         } else {
             $module = $this->system_menu;
-            $module['fetch_data'] = $this->Module_Model->Module_List();
+            $module['fetch_data'] = $this->Module_Model->module_list();
             $module['title']='MODULE SETTING';
 
             echo view('partial/header',$module);
@@ -152,6 +152,14 @@ class Module extends BaseController
         echo view('partial/footer');
     }
 
+    public function delete_sub_module($delete_ID)
+    {
+        $session = session();
+        $this->Module_Model->delete_sub_module($delete_ID);
+
+        $session->setFlashdata("success", "Record Deleted Successfully");
+        return redirect()->to('/module_index');
+    }
 
 }
 

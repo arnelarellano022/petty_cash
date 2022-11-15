@@ -12,16 +12,15 @@ class Users_Model extends  Model
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->users = $db->table('ci_users');
-        $this->roles = $db->table('user_role');
+        $this->roles = $db->table('user_roles');
     }
 
     public function users_list()
     {
         return $this->users->select('*')
-            ->join('user_role', 'ci_users.user_role = user_role.id')
+            ->join('user_roles', 'ci_users.user_role = user_roles.id')
             ->orderBy('ci_users.user_id', 'asc')
             ->get()->getResult();
-
     }
 
     public function get_Roles_List()

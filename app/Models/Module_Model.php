@@ -15,7 +15,7 @@ class Module_Model extends  Model
     }
 
     //Module
-    public function module_fetch_data()
+    public function module_list()
     {
         return $this->module->orderBy('module_id', 'asc')
         ->get()->getResult();
@@ -119,5 +119,10 @@ class Module_Model extends  Model
     {
         return $this->sub_module->where('sub_module_id', $sub_module_id)
             ->get()->getResult();
+    }
+
+    public function delete_sub_module($sub_module_id)
+    {
+        $this->sub_module->delete(['sub_module_id' => $sub_module_id]);
     }
 }

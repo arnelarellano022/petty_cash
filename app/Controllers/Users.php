@@ -106,7 +106,7 @@ class users extends BaseController
 //            }
 //
 //    }
-    public function remove_user($delete_ID){
+    public function delete_user($delete_ID){
 
         $result = $this->Users_Model->delete_users_Model($delete_ID);
 
