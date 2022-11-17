@@ -28,6 +28,7 @@ class Users_Model extends  Model
         return $this->roles->orderBy('id', 'asc')
             ->get()->getResult();
     }
+
     public function insert_user()
     {
         $date = date('Y-m-d H:i:s');
@@ -46,46 +47,31 @@ class Users_Model extends  Model
 
     }
 
-    public function users_updating($id){
-        $this->db->select('*');
-        $this->db->from('user_info');
-        $this->db->where('user_id',$id);
-        $query = $this->db->get();
-        return $query;
-    }
-
-    public function updating_users_model($id_no)
+    public function update_user($user_id)
     {
-        $date = date('Y-m-d H:i:s');
-        $this->db->set('user_name',              $this->input->post("user_name", TRUE));
-        $this->db->set('user_password',          md5($this->input->post("user_password", TRUE)));
-        $this->db->set('user_role',             $this->input->post("user_role", TRUE));
-        $this->db->set('updated_at',            $date ) ;
+        $data = array(
+            'firstname' => $_POST['firstname'],
+            'lastname' => $_POST['lastname'],
+            'password' => md5($_POST['password']),
+            'user_role'    => $_POST['user_role']
+        );
 
-        $this->db->where('user_id', $id_no);
-        $this->db->update('user_info');
-        $result = ($this->db->affected_rows() != 1) ? false : true;
+        $this->users->update($data, 'user_id =' . $user_id);
+        $result = ($this->users->updateBatch() != 1) ? false : true;
 
         return array(
             'result' => $result
         );
     }
-    public function delete_users_Model($delete_ID)
+    public function delete_user($user_id)
     {
-        $this->db->where('user_id', $delete_ID);
-        $this->db->delete('user_info');
-        $result = ($this->db->affected_rows() != 1) ? false : true;
-        return array(
-            'result'    => $result
-        );
+        $this->users->delete(['user_id' => $user_id]);
     }
-    public function get_users(){
-        $this->db->select('*');
-        $this->db->from('user_info');
-        $this->db->order_by("user_id", "asc");
-        $query = $this->db->get();
-        return $query;
 
+    public function get_user_by_user_id($user_id)
+    {
+        return $this->users->where('user_id', $user_id)
+            ->get()->getResult();
     }
 
     function change_status()

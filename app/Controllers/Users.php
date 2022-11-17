@@ -39,19 +39,6 @@ class users extends BaseController
 
     }
 
-//    public function add_new_system_user(){
-//
-//        $result = $this->Users_Model->add_system_user_data();
-//
-//        if($result['result']==true){
-//            $this->session->set_flashdata("success", "Data successfully added to the database.");
-//        } else {
-//            $this->session->set_flashdata("error", "Error on saving data to the database.");
-//        }
-//        redirect("users_index", "refresh");
-//
-//    }
-
     public function add_user(){
 
         $session = session();
@@ -73,6 +60,39 @@ class users extends BaseController
         echo view('partial/footer');
     }
 
+
+    public function edit_user($id)
+    {
+        $session = session();
+
+        if($_POST['submit']) {
+            $this->Users_Model->update_user($id);
+            //check value from model Y/N
+            $session->setFlashdata("success", "Record Updated Successfully");
+            return redirect()->to('/users_index');
+        }
+
+        $module = $this->system_menu;
+        $module['fetch_data'] = $this->Users_Model->get_user_by_user_id($id);
+        $module['user_role_list'] = $this->Users_Model->get_Roles_List();
+        $module['title'] = 'EDIT USER';
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('users/edit', $module);
+        echo view('partial/footer');
+    }
+
+
+    public function delete_user($delete_ID)
+    {
+        $session = session();
+        $this->Users_Model->delete_user($delete_ID);
+
+        $session->setFlashdata("success", "Record Deleted Successfully");
+        return redirect()->to('/users_index');
+    }
 //
 //    public function create_user(){
 //        if (!isset($_SESSION['user_role'])) {
@@ -106,17 +126,7 @@ class users extends BaseController
 //            }
 //
 //    }
-    public function delete_user($delete_ID){
 
-        $result = $this->Users_Model->delete_users_Model($delete_ID);
-
-        if($result['result']==true){
-            $this->session->set_flashdata("success", "Data successfully deleted to the database.");
-        } else {
-            $this->session->set_flashdata("error", "Error on deleting data to the database.");
-        }
-        redirect("users_index", "refresh");
-    }
 
     public function updating_users($ID)
     {

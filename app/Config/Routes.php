@@ -43,7 +43,8 @@ $routes->add('/logout', 'Auth::logout');
 $routes->add('/users_index', 'Users::users_index');
 $routes->add('/add_user', 'Users::add_user');
 $routes->add('/change_status', 'Users::change_status');
-
+$routes->add('/edit_user/(:any)', 'Users::edit_user/$1');
+$routes->add('/delete_user/(:any)', 'Users::delete_user/$1');
 
 //Roles
 $routes->add('/roles_index', 'Roles::roles_index');
