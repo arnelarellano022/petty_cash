@@ -70,6 +70,9 @@
 <script src="<?=base_url('assets/adminLTE/plugins/notify/notify.min.js')?>"></script>
 <!-- MY JS CODES HERE -->
 <script src="<?=base_url('assets/adminLTE/dist/js/my-js-code.js')?>"></script>
+<!-- DIALOG BOX YES NO -->
+<script src="<?=base_url('assets/adminLTE/dist/js/yii.js')?>"></script>
+
 
 <script>
     access_js();
