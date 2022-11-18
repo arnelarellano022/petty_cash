@@ -49,12 +49,19 @@ class Users_Model extends  Model
 
     public function update_user($user_id)
     {
+
         $data = array(
             'firstname' => $_POST['firstname'],
             'lastname' => $_POST['lastname'],
-            'password' => md5($_POST['password']),
             'user_role'    => $_POST['user_role']
         );
+        $password = $_POST['password'];
+
+        if($password != ''){
+            $data = array(
+            'password' => md5($_POST['password'])
+        );
+        }
 
         $this->users->update($data, 'user_id =' . $user_id);
         $result = ($this->users->updateBatch() != 1) ? false : true;

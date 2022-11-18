@@ -43,13 +43,13 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Password</label>
-                                                        <input class="form-control" type="text" name="password" value="" required="">
+                                                        <input class="form-control" type="text" name="password" value="" >
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Confirm Password</label>
-                                                        <input class="form-control" type="text" name="c_password" value="" required="">
+                                                        <input class="form-control" type="text" name="c_password" value="" >
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">

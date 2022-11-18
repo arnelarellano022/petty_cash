@@ -1,6 +1,39 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" >
     <?=  view('partial/message'); ?>
+
+    <div class="modal modal-danger fade" id="modal-delete" data-backdrop="static">
+        <div class="modal-dialog" style="width: 350px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-book"></i> Delete Book Data </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="box-body table-responsive">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="hidden" id="delete-id" name="delete-id" />
+                                    <input type="hidden" id="delete-title" name="delete-title" />
+                                    <p>Are you sure to delete this data ?</p>
+                                    <div class="callout callout-danger">
+                                        <p>Title: <span class="delete-title"> </span></p>
+                                        <p>Author: <span class="delete-author"> </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                    <button id="btn-delete" type="button" class="btn btn-primary"><i class="fa fa-check"></i> Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="content">
         <div class="card">
             <div class="card-header">
@@ -19,6 +52,8 @@
                         <th style="text-align: center">ID</th>
                         <th style="text-align: center">Username</th>
                         <th style="text-align: center">Roles</th>
+                        <th style="text-align: center">First Name</th>
+                        <th style="text-align: center">Last Name</th>
                         <th style="text-align: center">Created at</th>
                         <th style="text-align: center">Updated at</th>
                         <th style="text-align: center">Status</th>
@@ -32,6 +67,8 @@
                             <td style="text-align: center"><?= $row->user_id;?></td>
                             <td style="text-align: center"><?= $row->username;?></td>
                             <td style="text-align: center"><?= $row->roles;?></td>
+                            <td style="text-align: center"><?= $row->firstname;?></td>
+                            <td style="text-align: center"><?= $row->lastname?></td>
                             <td style="text-align: center"><?= $row->created_at;?></td>
                             <td style="text-align: center"><?= $row->updated_at;?></td>
                             <td style="text-align: center">
@@ -48,9 +85,10 @@
                                 <a href="<?php echo base_url("edit_user/". $row->user_id); ?>" class="btn btn-warning btn-xs mr5">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="<?php echo base_url("delete_user/". $row->user_id); ?>" class="btn btn-danger btn-xs mr5" data-confirm="Are you sure you want to delete this record?">
+                                <a href="<?php echo base_url("delete_user/". $row->user_id); ?>" class="btn btn-danger btn-xs mr5 " id="btn-delete-trig">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
+
                             </td>
                         </tr>
                     <?php }}?>
@@ -79,5 +117,9 @@
 
     });
 
+        $('#btn-delete-trig').on("click",function(){
+        $('#modal-delete').modal('show');
+    });
     }
+
 </script>

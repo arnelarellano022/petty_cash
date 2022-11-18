@@ -36,7 +36,6 @@ class users extends BaseController
             echo view('users/list',$module);
             echo view('partial/footer');
         }
-
     }
 
     public function add_user(){
@@ -93,40 +92,6 @@ class users extends BaseController
         $session->setFlashdata("success", "Record Deleted Successfully");
         return redirect()->to('/users_index');
     }
-//
-//    public function create_user(){
-//        if (!isset($_SESSION['user_role'])) {
-//            return redirect()->to('/index');
-//        } else {
-//            $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
-//            if ($result == true) {
-//                $data = $this->system_menu;
-//                $data['fetch_roles'] = $this->Roles_Model->get_roles();
-//                return view('users/create', $data);
-//
-//            } else {
-//                return redirect()->to('/error_403');
-//            }
-//        }
-//    }
-//    public function insert_user(){
-//        helper(['form']);
-//        $session = session();
-//
-//            $result = $this->Users_Model->insert_user_model();
-//
-//            //check value from model Y/N
-//            if ($result['result'] == true) {
-//                $session->setFlashdata("success", "Data successfully added to the database.");
-//                return redirect()->to('/users_index');
-//
-//            } else {
-//                $session->setFlashdata("error", "Error on saving data to the database.");
-//                return redirect()->to('/create_user');
-//            }
-//
-//    }
-
 
     public function updating_users($ID)
     {
