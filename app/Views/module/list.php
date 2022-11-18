@@ -42,7 +42,7 @@
                                         <a href="<?php echo base_url("edit_module/". $row->module_id); ?>" class="btn btn-warning btn-xs mr5">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="<?php echo base_url("delete_module/". $row->module_id); ?>" class="btn btn-danger btn-xs mr5">
+                                        <a href="<?php echo base_url("delete_module/". $row->module_id); ?>" class="btn btn-danger btn-xs mr5" data-confirm="Are you sure you want to delete this record?">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
 
