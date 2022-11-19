@@ -20,6 +20,7 @@
                             <thead>
                             <tr>
                                 <th style="text-align: center">ID</th>
+                                <th style="text-align: center">Sort Order</th>
                                 <th style="text-align: center">Module Name</th>
                                 <th style="text-align: center">Fa Icon</th>
                                 <th style="text-align: center">Sub Module</th>
@@ -31,6 +32,7 @@
                             <?php if($fetch_data){foreach ($fetch_data as $row) {?>
                                 <tr>
                                     <td style="text-align: center"><?= $row->module_id;?></td>
+                                    <td style="text-align: center"><?= $row->sort_order;?></td>
                                     <td style="text-align: center"><?= $row->module_name;?></td>
                                     <td style="text-align: center"><?= $row->fa_icon;?></td>
                                     <td style="text-align: center">

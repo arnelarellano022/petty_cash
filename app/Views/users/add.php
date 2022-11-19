@@ -45,14 +45,14 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input class="form-control" type="password" name="password" value="" required="">
+                                                    <input onclick=" pw_length_check();" class="form-control" type="password" name="password" value="" required="" id="password">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input class="form-control" type="password" name="c_password" value="" required="">
+                                                    <input onfocus=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
                                                 </div>
                                             </div>
 
@@ -67,13 +67,11 @@
                                                         </select>
                                                 </div>
                                             </div>
-
-
                                         </div>
                                     </div>
                                     <div class="box-footer">
                                         <input type="hidden" name="submit" value="submit"/>
-                                        <button type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
+                                        <button onclick="return check_b4_submit();" type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
                                     </div>
                                 </form>
                             </div>
@@ -82,3 +80,43 @@
     </section>
 </div>
 
+<script>
+    var password = $("#password").val();
+    var c_password = $("#c_password").val();
+    var pswlen = password.length;
+
+    function check_b4_submit() {
+        var password = $("#password").val();
+        var c_password = $("#c_password").val();
+        var pswlen = password.length;
+            if (password != '' && c_password != '' && password != c_password) {
+                alert('Password and Confirm Password must be equal');
+                $("#password").focus();
+                return false;
+            }
+            return true;
+        }
+
+
+        function cpw_length_check() {
+            var password = $("#password").val();
+            var c_password = $("#c_password").val();
+            var pswlen = password.length;
+            if(password != ''){
+                if (pswlen < 8 && password != '' ) {
+                    alert('Password must be at least 8 characters');
+                    $("#password").focus();
+                }
+                if ( c_password != '' && pswlen < 8 ) {
+                    alert('Confirm Password must be at least 8 characters');
+                    $("#c_password").focus();
+                }
+            }else{
+                alert("You must input the Password first");
+                $("#password").focus();
+            }
+
+
+        }
+
+</script>
