@@ -81,9 +81,6 @@
             function(data){
                 $.notify("Status Changed Successfully", "success");
             });
-
     });
-
     }
-
 </script>

@@ -10,6 +10,7 @@
                     <h3 class="card-title"> <i class="fa fa-plus mt-2"></i>
                         &nbsp; <b><?= $title ?></b> </h3>
                 </div>
+<!--                --><?php //if(){} ?>
                 <div class="d-inline-block float-right">
                     <a href="#" onclick="window.history.go(-1); return false;" class="btn btn-primary pull-right"><i class="fa fa-reply mr5"></i> <b>BACK</b></a>
                 </div>
@@ -52,7 +53,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input onfocus=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
+                                                    <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
                                                 </div>
                                             </div>
 
@@ -90,8 +91,7 @@
         var c_password = $("#c_password").val();
         var pswlen = password.length;
             if (password != '' && c_password != '' && password != c_password) {
-                alert('Password and Confirm Password must be equal');
-                $("#password").focus();
+                alert('Password and Confirm Password must be the same');
                 return false;
             }
             return true;
