@@ -3,49 +3,44 @@ namespace App\Controllers;
 
 class users extends BaseController
 {
-    var $system_menu = array();
+    var $Module_ID = 1;
+    var $Sub_Module_ID = 1;
 
     function __construct(){
-
         $this->Users_Model = model('Users_Model');
-        $this->Module_Model = model('Module_Model');
-        $this->Auth_Model = model('Auth_Model');
-
         $this->session = \Config\Services::session();
         $this->session->start();
-
-        $result = $this->Auth_Model->load_index_data();
-        $this->system_menu['main_menu'] = $result['main_menu'];
-        $this->system_menu['sub_menu'] = $result['sub_menu'];
-        $this->system_menu['index_user_role'] = $result['index_user_role'];
         helper(['form']);
+
+        $router = service('router');
+        $this->controller  = $router->controllerName();
+        $this->module_id     = 1 ;
+        $this->sub_module_id = 1 ;
     }
 
     public function users_index(){
 
-        if (!isset($_SESSION['user_role'])) {
-            return redirect()->to('/index');
-        } else {
-            $module = $this->system_menu;
-            $module['fetch_data'] = $this->Users_Model->users_list();
-            $module['title']='USER LIST';
 
-            echo view('partial/header',$module);
+            if(check_module_permission($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_403');};
+
+            $data['fetch_data'] = $this->Users_Model->users_list();
+            $data['title']='USER LIST';
+            $data['controller_name']= $this->controller;
+
+            echo view('partial/header',$data);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
-            echo view('users/list',$module);
+            echo view('users/list',$data);
             echo view('partial/footer');
-        }
+
     }
 
     public function add_user(){
 
-        $session = session();
-
         if($_POST['submit'])
         {
             $this->Users_Model->insert_user();
-            $session->setFlashdata("success", "User Added Successfully");
+            $this->session->setFlashdata("success", "User Added Successfully");
             return redirect()->to('/users_index');
         }
         $module = $this->system_menu;
@@ -62,12 +57,11 @@ class users extends BaseController
 
     public function edit_user($id)
     {
-        $session = session();
 
         if($_POST['submit']) {
             $this->Users_Model->update_user($id);
             //check value from model Y/N
-            $session->setFlashdata("success", "Record Updated Successfully");
+            $this->session->setFlashdata("success", "Record Updated Successfully");
             return redirect()->to('/users_index');
         }
 
@@ -89,7 +83,7 @@ class users extends BaseController
         $session = session();
         $this->Users_Model->delete_user($delete_ID);
 
-        $session->setFlashdata("success", "Record Deleted Successfully");
+        $this->session->setFlashdata("success", "Record Deleted Successfully");
         return redirect()->to('/users_index');
     }
 
@@ -122,19 +116,17 @@ class users extends BaseController
     }
     public function update_user($id)
     {
-        if (!isset($_SESSION['user_role'])) {
-            redirect('index', 'refresh');
-        } else {
-            $result = $this->Login_Model->check_permission(1, 1, $_SESSION['user_role']);
+
+            $result = $this->Login_Model->check_module_permission(1, 1, $_SESSION['user_role'],'access');
             if ($result == true) {
                 $data = $this->system_menu;
                 $data['fetch_roles'] = $this->Roles_Model->get_roles();
                 $data['fetch_data'] = $this->Users_Model->users_updating($id);
                 $this->load->view('users/update', $data);
             } else {
-                redirect('error_403', 'refresh');
+                return redirect()->to('/error_403');
             }
-        }
+
     }
 
     public function change_status(){

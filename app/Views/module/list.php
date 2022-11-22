@@ -61,3 +61,13 @@
     <!-- /.content -->
 </div>
 
+<script>
+    function access_js() {
+
+        $(document).on("click", ".sub_module_id", function(){
+
+            alert(($("#sub_module_val").val()));
+        });
+    }
+
+</script>

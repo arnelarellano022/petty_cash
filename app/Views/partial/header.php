@@ -1,3 +1,5 @@
+<?php if (!isset($_SESSION['user_role'])) { return redirect()->to('/index');} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head >

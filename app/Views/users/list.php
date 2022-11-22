@@ -9,6 +9,7 @@
                 </div>
                 <div class="d-inline-block float-right">
                     <a href="<?=  base_url('add_user');?>" class="btn btn-success"><i class="fa fa-plus"></i> <b>ADD NEW USER</b></a>
+                    <?= $controller_name;?>
                 </div>
             </div>
 
@@ -72,7 +73,7 @@
 
 <script>
     function access_js() {
-    $("body").on("change",".tgl_checkbox",function(){
+    $(document).on("change",".tgl_checkbox",function(){
         $.post('<?=base_url("/change_status")?>',
             {
                 user_id : $(this).data('id'),
@@ -82,5 +83,10 @@
                 $.notify("Status Changed Successfully", "success");
             });
     });
+
+        $(document).on("click", ".sub_module_id", function(){
+
+            alert(($("#sub_module_val").val()));
+        });
     }
 </script>

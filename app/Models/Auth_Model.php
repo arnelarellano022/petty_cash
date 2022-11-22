@@ -123,15 +123,7 @@ class Auth_Model extends Model {
     }
 
 
-    public function check_permission($main_id, $sub_id, $roles)
-    {
-        $db = db_connect();
-        $query = $db->query("Select * FROM user_roles where user_role = '" . $roles . "'and main_menu_id = '". $main_id . "'and sub_menu_id = '". $sub_id . "'");
-        $count = $query->getNumRows();
 
-        if($count > 0){return true;}
-        else{return false;}
-    }
 
 
 }

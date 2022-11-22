@@ -89,26 +89,19 @@
                             </p>
                         </a>
                         <!-- sub-menu -->
-                        <?php if($has_submenu): ?>
+                            <?php foreach($sub_menu as $sub_nav):
+                                $has_sub_menu_permission  = get_sub_module_permission($_SESSION['user_role'],$nav->module_id, $sub_nav->sub_module_id); // get sub module access if has menu
+                                if($has_sub_menu_permission):?>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="<?= base_url(''.$sub_nav->link); ?>" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p><?= $sub_nav->sub_module_name ?></p>
+                                            </a>
+                                        </li>
+                                    </ul>
 
-                            <ul class="nav nav-treeview">
-
-                                <?php foreach($sub_menu as $sub_nav):
-                                    $sub_menu_permission  = get_sub_module_permission($_SESSION['user_role'],$nav->module_id, $sub_nav->sub_module_id); // get sub module access if has menu
-                                    foreach ($sub_menu_permission as $sub_menu_row):?>
-
-                                    <li class="nav-item">
-                                        <a href="<?= base_url(''.$sub_nav->link); ?>" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p><?= $sub_nav->sub_module_name ?></p>
-                                        </a>
-                                    </li>
-
-                                <?php   endforeach; endforeach;  ?>
-                            </ul>
-
-                        <?php endif; ?>
-
+                            <?php   endif; endforeach;  ?>
                         <!-- /sub-menu -->
                     </li>
                 <?php endif; endforeach;  ?>
