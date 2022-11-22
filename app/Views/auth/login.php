@@ -1,112 +1,92 @@
 
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
+<html lang="en">
+<head >
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-param" content="_csrf">
-    <meta name="csrf-token" content="QU91d19BNkMYNhcWHR5HDjJ8NkRyBkcpFXgRJ2YNARwoOD0UFxBkGg==">
-    <title>Sign in</title>
-    <link href="<?=  base_url('assets/login/css/authchoice.css');?>" rel="stylesheet">
-    <link href="<?=  base_url('assets/login/css/bootstrap.css');?>" rel="stylesheet">
-    <link href="<?=  base_url('assets/login/css/site.css');?>" rel="stylesheet">
+    <title><?=$title?></title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/google-font/google-font.css')?>">
+
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/fontawesome-free/css/googlefont.css')?>">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/fontawesome-free/css/all.min.css')?>">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/ionicons/css/ionicons.min.css')?>">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/dist/css/adminlte.min.css')?>">
+
+    <!-- toogle-switch -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/toogle-switch/toogle-switch.css')?>">
+
 </head>
-<body>
 
-<div class="wrap">
-    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>dashboard">SCMC-CRM System</a></div>
-            <div id="w1-collapse" class="collapse navbar-collapse">
-                <ul id="w2" class="navbar-nav navbar-right nav">
-                    <li class="active"><a href="<?php echo base_url(); ?>dashboard"">Login</a></li>
-                </ul>
-            </div>
+<body class="hold-transition sidebar-mini layout-fixed"   style="
+        background: url('<?= base_url("assets/adminLTE/dist/img/bg_pics.jpg");?>') bottom;
+        background-size: 103%;
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-top: 10%;
+        ">
+<!-- Site wrapper -->
+<div class="wrapper" >
+
+
+<div  >
+
+
+    <div class="login-box" >
+        <div class="login-logo">
+            <h1 style="color: red">CodeIgniter 4 Project</h1>
         </div>
-    </nav>
-    <div class="container">
-        <ul class="breadcrumb"><li><a href="<?php echo base_url();?>dashboard"">Home</a></li>
-            <li class="active">Sign in</li>
-        </ul>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
 
-        <div class="row">
-            <div class="col-xs-12">
-            </div>
-        </div>
-        <div id="notif_fade" class="col-md-12">
-            <?php if(isset($_SESSION["error"])){echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';}?>
-            <?php if(isset($_SESSION["success"])){echo '<div class="alert alert-success">'.$_SESSION["success"].'</div>';}?>
-            <!--  --><?php //echo validation_errors('<div class="alert alert-danger">','</div>');?>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Sign in</h3>
-                    </div>
+                <?=  view('partial/message'); ?>
 
-                    <div class="panel-body">
-
-                        <form action="<?= base_url('auth/validate_login');?>" method="post" data-toggle="validator" id="frm_validation" enctype="multipart/form-data">
-                            <input type="hidden" name="_csrf" value="QU91d19BNkMYNhcWHR5HDjJ8NkRyBkcpFXgRJ2YNARwoOD0UFxBkGg==">
-                            <div class="form-group field-login-form-login required">
-                                <label class="control-label" for="login-form-login">Login</label>
-                                <input type="text" id="login-form-login" class="form-control" name="username" autofocus="autofocus" tabindex="1" required>
-
-                                <div class="help-block"></div>
-                            </div>
-                            <div class="form-group field-login-form-password required">
-                                <label class="control-label" for="login-form-password">Password</label>
-                                <input type="password" id="login-form-password" class="form-control" name="password" tabindex="2" required>
-
-                                <div class="help-block"></div>
-
-                            </div>
-                            <div class="form-group field-login-form-rememberme">
-
-                                <input type="hidden" name="remember_me" value="0"><label><input type="checkbox"
-                                                                                                id="login-form-rememberme"
-                                                                                                name="remember_me"
-                                                                                                value="1" tabindex="4">
-                                    Remember me next time</label>
-
-                                <div class="help-block"></div>
-
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block" tabindex="3">Sign in</button>
-                        </form>
-
-                    </div>
+                <?php echo form_open(base_url('auth/validate_login'), 'class="login-form" '); ?>
+                <div class="form-group has-feedback">
+                    <input type="text" name="username" id="name" class="form-control" placeholder="Username" >
                 </div>
-                <div id="w0"><ul class="auth-clients"></ul></div>    </div>
+                <div class="form-group has-feedback">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block btn-flat" value="Sign In">
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <?php echo form_close(); ?>
+
+                <p class="mb-1">
+                    <a href="<?= base_url('admin/auth/forgot_password'); ?>">I forgot my password</a>
+                </p>
+                <p class="mb-0">
+                    <a href="<?= base_url('admin/auth/register'); ?>" class="text-center">Register a new membership</a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
         </div>
     </div>
+    <!-- /.login-box -->
 </div>
-<?= view('footer'); ?>
-
-<script src="<?php echo base_url('assets/login/js/jquery.js');?>"></script>
-<script src="<?php echo base_url('assets/login/js/yii.js');?>"></script>
-<script src="<?php echo base_url('assets/login/js/yii.activeForm.js');?>"></script>
-<script src="<?php echo base_url('assets/login/js//authchoice.js');?>"></script>
-<script src="<?php echo base_url('assets/login/js/bootstrap.js');?>"></script>
-<script type="text/javascript">
-
-    $( document ).ready(function() {
-        $("#notif_fade").fadeOut(5000);
-    });
-</script>
-
-<script type="text/javascript">jQuery(document).ready(function () {
-        jQuery('#login-form').yiiActiveForm([{"id":"login-form-login","name":"login","container":".field-login-form-login",
-            "input":"#login-form-login","enableAjaxValidation":true,"validateOnChange":false,"validateOnBlur":false},
-            {"id":"login-form-password","name":"password","container":".field-login-form-password","input":"#login-form-password",
-                "enableAjaxValidation":true,"validateOnChange":false,"validateOnBlur":false},
-            {"id":"login-form-rememberme","name":"rememberMe","container":".field-login-form-rememberme","input":"#login-form-rememberme",
-                "enableAjaxValidation":true,"validateOnChange":false,"validateOnBlur":false}], []);
-        $('#w0').authchoice();
-    });
-</script>
-</body>
-</html>
