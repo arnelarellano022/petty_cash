@@ -28,7 +28,7 @@ class distributors extends CI_Controller
                 $data['fetch_data'] = $this->Distributors_Model->distributors_fetch_data();
                 $this->load->view('distributors/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -42,7 +42,7 @@ class distributors extends CI_Controller
                 $data = $this->system_menu;
                 $this->load->view('distributors/create', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -97,7 +97,7 @@ class distributors extends CI_Controller
                 $data['fetch_data'] = $this->Distributors_Model->distributors_updating($id);
                 $this->load->view('distributors/update', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }

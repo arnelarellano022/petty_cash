@@ -27,7 +27,7 @@ class outlet extends CI_Controller
                 $data['fetch_data2'] = $this->Outlet_Model->outlet_fetch_data();
                 $this->load->view('outlet/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -56,7 +56,7 @@ class outlet extends CI_Controller
 
                 $this->load->view('outlet/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -83,7 +83,7 @@ class outlet extends CI_Controller
 
                 $this->load->view('outlet/update', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -122,7 +122,7 @@ class outlet extends CI_Controller
                 $data['fetch_distributor'] = $this->Outlet_Model->fetch_distributor();
                 $this->load->view('outlet/create', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -137,7 +137,7 @@ class outlet extends CI_Controller
                 $data['fetch_data'] = $this->Outlet_Model->fetch_data_outlet_view($id);
                 $this->load->view('outlet/add_photo', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }

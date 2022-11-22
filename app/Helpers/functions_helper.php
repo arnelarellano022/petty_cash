@@ -81,8 +81,8 @@ if (!function_exists('get_sub_module_permission')) {
 // -----------------------------------------------------------------------------
 
 // CHECK MODULE PERMISSION
-if (!function_exists('check_module_permission')) {
-    function check_module_permission( $module_id, $sub_module_id, $user_role, $operation)
+if (!function_exists('check_module_access')) {
+    function check_module_access( $module_id, $sub_module_id, $user_role, $operation)
     {
         $db      = \Config\Database::connect();
         $module = $db->table('module_access');

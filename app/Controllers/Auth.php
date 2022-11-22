@@ -83,9 +83,9 @@ class Auth extends BaseController{
 
     }
 
-    public function error_403(){
+    public function error_404(){
         $data =  $this->system_menu;
-         return view('errors/error_403', $data);
+         return view('errors/error_404', $data);
     }
 
     public function dashboard()

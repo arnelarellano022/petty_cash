@@ -69,7 +69,7 @@ $routes->add('/delete_sub_module/(:any)', 'Module::delete_sub_module/$1');
 
 
 //Error
-$routes->add('/error_403', 'Auth::error_403');
+$routes->add('/error_404', 'Auth::error_404');
 
 
 /*

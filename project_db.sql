@@ -53,7 +53,7 @@ CREATE TABLE `module` (
   `fa_icon` varchar(100) NOT NULL,
   `sort_order` tinyint(4) NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module` */
 
@@ -76,11 +76,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (3,1,2,3,'access'),(4,1,2,4,'access'),(20,1,1,1,'access'),(24,1,1,2,'access'),(27,1,3,6,'access'),(28,1,3,5,'access');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(49,1,1,1,'add'),(50,1,1,1,'edit'),(51,1,1,1,'delete'),(52,1,1,1,'change_status'),(56,1,2,2,'access'),(59,1,2,3,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -100,7 +100,7 @@ CREATE TABLE `sub_module` (
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete'),(2,1,'Add New User','add_user',2,'access'),(3,2,'Module Setting','module_index',3,'access|add|edit|delete'),(4,2,'Roles & Permissions','roles_index',4,'access|add|edit|delete'),(5,3,'General Settings','settings_index',5,'access'),(6,3,'Email Template Settings','email_index',6,'access');
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete|change_status'),(2,2,'Module Setting','module_index',3,'access'),(3,2,'Roles & Permissions','roles_index',4,'access'),(4,3,'General Settings','settings_index',5,'access'),(5,3,'Email Template Settings','email_index',6,'access');
 
 /*Table structure for table `user_roles` */
 

@@ -28,7 +28,7 @@ class outlet_invoice extends CI_Controller
                 $data['fetch_data'] = $this->Outlet_Invoice_Model->outlet_invoice_fetch_data();
                 $this->load->view('outlet_invoice/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -49,7 +49,7 @@ class outlet_invoice extends CI_Controller
 
                 $this->load->view('outlet_invoice/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -64,7 +64,7 @@ class outlet_invoice extends CI_Controller
                 $data['fetch_outlet'] = $this->Outlet_Invoice_Model->fetch_outlet_list();
                 $this->load->view('outlet_invoice/create', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -96,7 +96,7 @@ class outlet_invoice extends CI_Controller
                 }
                 $this->load->view('outlet_invoice/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -135,7 +135,7 @@ class outlet_invoice extends CI_Controller
                 }
                 $this->load->view('outlet_invoice/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -156,7 +156,7 @@ class outlet_invoice extends CI_Controller
 
                 $this->load->view('outlet_invoice/update', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }

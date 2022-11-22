@@ -31,7 +31,7 @@ class permission extends CI_Controller
                 $data['fetch_data'] = $this->Permission_Model->permission_fetch_data()->result();
                 $this->load->view('permission/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }

@@ -28,7 +28,7 @@ class products extends CI_Controller
                 $data['fetch_data'] = $this->Products_Model->products_fetch_data();
                 $this->load->view('products/_form', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -42,7 +42,7 @@ class products extends CI_Controller
                 $data = $this->system_menu;
                 $this->load->view('products/create', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -59,7 +59,7 @@ class products extends CI_Controller
 
                 $this->load->view('products/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -85,7 +85,7 @@ class products extends CI_Controller
 
                 $this->load->view('products/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
@@ -124,7 +124,7 @@ class products extends CI_Controller
 
                 $this->load->view('products/view', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
 
@@ -141,7 +141,7 @@ class products extends CI_Controller
                 $data['fetch_data'] = $this->Products_Model->products_updating($id);
                 $this->load->view('products/update', $data);
             } else {
-                redirect('error_403', 'refresh');
+                redirect('error_404', 'refresh');
             }
         }
     }
