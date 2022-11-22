@@ -36,11 +36,11 @@ CREATE TABLE `ci_users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_active`,`is_verify`,`status`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(3,'user','Arnel ','Arellano','ee11cbb19052e40b07aac0ca060c23ee',2,1,1,1,NULL,NULL,NULL,'2022-11-13 06:14:22','2022-11-13 06:14:22'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,1,NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055',3,1,1,1,NULL,NULL,NULL,'2022-11-14 19:25:01','2022-11-14 19:25:01');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_active`,`is_verify`,`status`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,1,'N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(3,'user','Arnel up','Arellano up','81dc9bdb52d04dc20036dbd8313ed055',2,1,1,1,NULL,NULL,NULL,'2022-11-13 06:14:22','2022-11-13 06:14:22'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,1,NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055',3,1,1,1,NULL,NULL,NULL,'2022-11-14 19:25:01','2022-11-14 19:25:01'),(23,'try','rt','rt','1bbd886460827015e5d605ed44252251',4,1,1,1,NULL,NULL,NULL,'2022-11-22 00:50:16','2022-11-22 00:50:16');
 
 /*Table structure for table `module` */
 
@@ -53,7 +53,7 @@ CREATE TABLE `module` (
   `fa_icon` varchar(100) NOT NULL,
   `sort_order` tinyint(4) NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module` */
 
@@ -76,11 +76,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (1,1,1,1,'access'),(2,1,1,2,'access'),(3,1,2,3,'access'),(4,1,2,4,'access'),(5,1,3,5,'access'),(6,1,3,6,'access');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (3,1,2,3,'access'),(4,1,2,4,'access'),(20,1,1,1,'access'),(24,1,1,2,'access'),(27,1,3,6,'access'),(28,1,3,5,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -100,7 +100,7 @@ CREATE TABLE `sub_module` (
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete'),(2,1,'Add New User','add_users',2,'access|add|edit|delete'),(3,2,'Module Setting','module_index',3,'access|add|edit|delete'),(4,2,'Roles & Permissions','roles_index',4,'access|add|edit|delete'),(5,3,'General Settings','settings_index',5,'access'),(6,3,'Email Template Settings','email_index',6,'access');
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete'),(2,1,'Add New User','add_user',2,'access'),(3,2,'Module Setting','module_index',3,'access|add|edit|delete'),(4,2,'Roles & Permissions','roles_index',4,'access|add|edit|delete'),(5,3,'General Settings','settings_index',5,'access'),(6,3,'Email Template Settings','email_index',6,'access');
 
 /*Table structure for table `user_roles` */
 
