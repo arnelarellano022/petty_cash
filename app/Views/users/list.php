@@ -84,6 +84,7 @@
     $(document).on("change",".tgl_checkbox",function(){
         $.post('<?=base_url("/change_status")?>',
             {
+
                 user_id : $(this).data('id'),
                 status : $(this).is(':checked') == true ? 1:0
             },
@@ -93,7 +94,6 @@
     });
 
         $(document).on("click", ".sub_module_id", function(){
-
             alert(($("#sub_module_val").val()));
         });
     }

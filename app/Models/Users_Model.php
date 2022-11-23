@@ -6,9 +6,6 @@ use CodeIgniter\Model;
 
 class Users_Model extends  Model
 {
-    //Table
-    public $users, $roles;
-
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->users = $db->table('ci_users');
@@ -38,6 +35,8 @@ class Users_Model extends  Model
             'firstname'     => $_POST['firstname'] ,
             'lastname'      => $_POST['lastname'] ,
             'password'      => md5($_POST['password']),
+            'sec_question'    =>  $_POST['sec_question'] ,
+            'sec_answer'    =>  $_POST['sec_answer'] ,
             'user_role'    => $_POST['user_role'],
             'created_at'    => $date,
             'updated_at'    => $date
@@ -86,5 +85,12 @@ class Users_Model extends  Model
         $data = array( 'status' => $_POST['status'] );
         $this->users->update($data,'user_id =' . $_POST['user_id']);
 
+    }
+
+    public function check_username_exist($username)
+    {
+        $result = $this->users->where('username', $username)
+            ->countAllResults();
+        return($result > 0) ? true : false;
     }
 }

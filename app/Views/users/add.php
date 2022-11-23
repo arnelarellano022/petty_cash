@@ -27,7 +27,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>User Name</label>
-                                                    <input class="form-control" type="text" name="username" value="" required="">
+                                                    <input onblur="check_username()" class="form-control " type="text" name="username" value="" required="" id="username">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -46,7 +46,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input onclick=" pw_length_check();" class="form-control" type="password" name="password" value="" required="" id="password">
+                                                    <input   class="form-control" type="password" name="password" value="" required="" id="password">
                                                 </div>
                                             </div>
 
@@ -59,7 +59,33 @@
 
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label for="role" class="col-md-12 control-label">Select User Role</label>
+                                                    <label class="col-md-12 control-label">Security Question</label>
+                                                    <select name="sec_question" class="form-control" required >
+                                                        <option value="" hidden>Select Security Question</option>
+                                                        <option value="1">In what city were you born?</option>
+                                                        <option value="2">What is the name of your favorite pet?</option>
+                                                        <option value="3">What is your mother's maiden name?</option>
+                                                        <option value="4">What high school did you attend?</option>
+                                                        <option value="5">What was the name of your elementary school?</option>
+                                                        <option value="6">What was the make of your first car?</option>
+                                                        <option value="7">What was your favorite food as a child?</option>
+                                                        <option value="8">Where did you meet your spouse?</option>
+                                                        <option value="9">What year was your father (or mother) born?</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Answer</label>
+                                                    <input class="form-control" type="text" name="sec_answer" value="" required="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-md-12 control-label">Select User Role</label>
                                                         <select name="user_role" class="form-control" required>
                                                             <option value="" hidden>Select Role</option>
                                                             <?php foreach($user_role_list as $role_row): ?>
@@ -97,7 +123,6 @@
             return true;
         }
 
-
         function cpw_length_check() {
             var password = $("#password").val();
             var c_password = $("#c_password").val();
@@ -115,8 +140,24 @@
                 alert("You must input the Password first");
                 $("#password").focus();
             }
-
-
         }
 
+    //Check Username Exist
+    function check_username()
+    {
+        var username = $("#username").val();
+
+        $.ajax({
+            url: "<?= base_url("Users/check_username_exist");?>",
+            method: "POST",
+            data: {username: username},
+            success: function (data) {
+                if (data == 1) {
+                    alert("Username already exist!");
+                    $("#username").val('');
+                    $("#username").focus();
+                }
+            }
+        });
+    }
 </script>

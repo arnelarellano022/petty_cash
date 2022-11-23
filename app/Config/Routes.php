@@ -35,11 +35,11 @@ $routes->get('/', 'Auth::index');
 //$routes->get('/', 'Login::login');
 $routes->add('/index', 'Auth::index');
 $routes->add('/dashboard', 'Auth::dashboard');
+$routes->add('/add_register', 'Auth::add_register');
 $routes->add('/logout', 'Auth::logout');
 $routes->add('/logout', 'Auth::logout');
 
 //Users
-
 $routes->add('/users_index', 'Users::users_index');
 $routes->add('/add_user', 'Users::add_user');
 $routes->add('/change_status', 'Users::change_status');

@@ -20,6 +20,7 @@ class users extends BaseController
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'change_status') == true) {$data['status_access'] = true;};
 
             $data['fetch_data'] = $this->Users_Model->users_list();
             $data['title']='USER LIST';
@@ -43,7 +44,6 @@ class users extends BaseController
                 return redirect()->to('/users_index');
             }
 
-            $module = $this->system_menu;
             $module['user_role_list'] = $this->Users_Model->get_Roles_List();
             $module['title'] = 'ADD NEW USER';
 
@@ -66,7 +66,6 @@ class users extends BaseController
                 return redirect()->to('/users_index');
             }
 
-            $module = $this->system_menu;
             $module['fetch_data'] = $this->Users_Model->get_user_by_user_id($id);
             $module['user_role_list'] = $this->Users_Model->get_Roles_List();
             $module['title'] = 'EDIT USER';
@@ -91,6 +90,10 @@ class users extends BaseController
 
     public function change_status(){
         $this->Users_Model->change_status();
+    }
+
+    function check_username_exist(){
+        echo $this->Users_Model->check_username_exist($_POST['username']);
     }
 
 

@@ -36,7 +36,7 @@ class Auth extends BaseController{
                     $username = $this->request->getVar('username');
                     $password = $this->request->getVar('password');
 
-                    $result = $this->Auth_Model->validate_Auth_Model($username, $password);
+                    $result = $this->Auth_Model->validate_Auth_login($username, $password);
                 }
 
                     if($result['success']==TRUE){
@@ -47,7 +47,7 @@ class Auth extends BaseController{
 
                         }
 
-                        if($result['is_active'] == 0){
+                        if($result['status'] == 0){
                             $session->setFlashdata("error", 'Account is disabled by Admin!');
                             return redirect()->to('/index');
 
@@ -114,5 +114,19 @@ class Auth extends BaseController{
         return view('login');
     }
 
+    public function add_register(){
+
+        if($_POST['submit'])
+        {
+            $this->Auth_Model->insert_register_user();
+            $this->session->setFlashdata("success", "Account created successfully");
+            return redirect()->to('/index');
+        }
+
+        $module['title'] = 'REGISTER';
+        echo view('auth/register', $module);
+
+
+    }
 
 }
