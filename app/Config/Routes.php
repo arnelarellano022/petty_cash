@@ -36,6 +36,7 @@ $routes->get('/', 'Auth::index');
 $routes->add('/index', 'Auth::index');
 $routes->add('/dashboard', 'Auth::dashboard');
 $routes->add('/add_register', 'Auth::add_register');
+$routes->add('/forgot_password', 'Auth::forgot_password');
 $routes->add('/logout', 'Auth::logout');
 $routes->add('/logout', 'Auth::logout');
 

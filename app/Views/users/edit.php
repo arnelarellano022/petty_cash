@@ -52,6 +52,32 @@
                                                         <input class="form-control" type="text" name="c_password" value="" >
                                                     </div>
                                                 </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="col-md-12 control-label">Security Question</label>
+                                                        <select name="sec_question" class="form-control" required >
+                                                            <option value="" hidden>Select Security Question</option>
+                                                            <option value="1" <?php if($row->sec_question == 1){ echo "selected";} ?> >In what city you were born?</option>
+                                                            <option value="2" <?php if($row->sec_question == 2){ echo "selected";} ?>>What is the name of your favorite pet?</option>
+                                                            <option value="3" <?php if($row->sec_question == 3){ echo "selected";} ?>>What is your mother's maiden name?</option>
+                                                            <option value="4" <?php if($row->sec_question == 4){ echo "selected";} ?>>What high school did you attend?</option>
+                                                            <option value="5" <?php if($row->sec_question == 5){ echo "selected";} ?>>What was the name of your elementary school?</option>
+                                                            <option value="6" <?php if($row->sec_question == 6){ echo "selected";} ?>>What was the make of your first car?</option>
+                                                            <option value="7" <?php if($row->sec_question == 7){ echo "selected";} ?>>What was your favorite food as a child?</option>
+                                                            <option value="8" <?php if($row->sec_question == 8){ echo "selected";} ?>>Where did you meet your spouse/partner?</option>
+                                                            <option value="9" <?php if($row->sec_question == 9){ echo "selected";} ?>>What year was your father (or mother) born?</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Answer</label>
+                                                        <input class="form-control" type="text" name="sec_answer" value="<?= $row->sec_answer;?>" required="">
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label for="role" class="col-md-12 control-label">Select User Role</label>

@@ -129,8 +129,22 @@ class Auth extends BaseController{
 
         $module['title'] = 'REGISTER';
         echo view('auth/register', $module);
-
-
     }
 
+    public function forgot_password(){
+
+        if($_POST['submit'])
+        {
+            $this->Auth_Model->forgot_password();
+            $this->session->setFlashdata("success", "Account created successfully");
+            return redirect()->to('/index');
+        }
+
+        $module['title'] = 'FORGOT PASSWORD';
+        echo view('auth/forgot_password', $module);
+    }
+
+    function check_username_exist(){
+        echo $this->Auth_Model->check_username_exist($_POST['username']);
+    }
 }

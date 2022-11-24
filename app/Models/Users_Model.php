@@ -16,7 +16,7 @@ class Users_Model extends  Model
     public function users_list()
     {
 //        return $this->users->select('*')
-//            ->join('user_roles', 'ci_users.user_role = user_roles.id')
+//        ->join('user_roles', 'ci_users.user_role = user_roles.id')
         return $this->users->orderBy('ci_users.user_id', 'asc')
             ->get()->getResult();
     }
@@ -39,6 +39,7 @@ class Users_Model extends  Model
             'sec_question'  =>  $_POST['sec_question'] ,
             'sec_answer'    =>  $_POST['sec_answer'] ,
             'user_role'     => $_POST['user_role'],
+            'last_ip'       => $this->getUserIpAddr(),
             'created_at'    => $date,
             'updated_at'    => $date
         );
@@ -55,11 +56,11 @@ class Users_Model extends  Model
             'firstname'     => $_POST['firstname'],
             'lastname'      => $_POST['lastname'],
             'user_role'     => $_POST['user_role'],
+            'last_ip'       => $this->getUserIpAddr(),
             'updated_at'    => $date
         );
 
         $password = $_POST['password'];
-
         if($password != ''){
             $data = array(
             'password' => md5($_POST['password'])
@@ -103,5 +104,19 @@ class Users_Model extends  Model
         $result = $this->users->where('username', $username)
             ->countAllResults();
         return($result > 0) ? true : false;
+    }
+
+
+    function getUserIpAddr(){
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            //ip from share internet
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            //ip pass from proxy
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
     }
 }

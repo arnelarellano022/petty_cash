@@ -64,7 +64,7 @@
 
 
             <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
+                <a href="<?= base_url('forgot_password') ?>">I forgot my password</a>
             </p>
             <p class="mb-0">
                 <a href="<?= base_url('add_register') ?>" class="text-center">Register a new membership</a>

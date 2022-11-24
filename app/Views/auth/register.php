@@ -69,14 +69,14 @@
                 <div class="input-group mb-3">
                     <select name="sec_question" class="form-control" required >
                         <option value="" hidden>Select Security Question</option>
-                            <option value="1">In what city were you born?</option>
+                            <option value="1">In what city you were born?</option>
                             <option value="2">What is the name of your favorite pet?</option>
                             <option value="3">What is your mother's maiden name?</option>
                             <option value="4">What high school did you attend?</option>
                             <option value="5">What was the name of your elementary school?</option>
                             <option value="6">What was the make of your first car?</option>
                             <option value="7">What was your favorite food as a child?</option>
-                            <option value="8">Where did you meet your spouse?</option>
+                            <option value="8">Where did you meet your spouse/partner?</option>
                             <option value="9">What year was your father (or mother) born?</option>
 
                     </select>
@@ -115,7 +115,7 @@
                 </div>
             </form>
 
-            <div class="social-auth-links text-center">
+            <div style="margin-top: 10px; margin-bottom: 5px">
                 <a href="<?= base_url('index') ?>" class="btn btn-block btn-success">
                     I already have an account
                 </a>
@@ -179,19 +179,20 @@
     function check_username()
     {
         var username = $("#username").val();
-
-        $.ajax({
-            url: "<?= base_url("Users/check_username_exist");?>",
-            method: "POST",
-            data: {username: username},
-            success: function (data) {
-                if (data == 1) {
-                    alert("Username already exist!");
-                    $("#username").val('');
-                    $("#username").focus();
+        if(username != '') {
+            $.ajax({
+                url: "<?= base_url("Users/check_username_exist");?>",
+                method: "POST",
+                data: {username: username},
+                success: function (data) {
+                    if (data == 1) {
+                        alert("Username already exist!");
+                        $("#username").val('');
+                        $("#username").focus();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 </script>
 

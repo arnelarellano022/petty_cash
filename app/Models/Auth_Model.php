@@ -78,6 +78,12 @@ class Auth_Model extends Model {
         $this->users->insert($data);
     }
 
+    public function check_username_exist($username)
+    {
+        $result = $this->users->where('username', $username)
+            ->countAllResults();
+        return($result == 0) ? true : false;
+    }
 
     function getUserIpAddr(){
         if(!empty($_SERVER['HTTP_CLIENT_IP'])){
