@@ -27,6 +27,8 @@
                         <th style="text-align: center">Updated at</th>
                         <?php if($status_access == 1){ ?>
                         <th style="text-align: center">Status</th>
+                        <?php } if($verify_account_access == 1){ ?>
+                            <th style="text-align: center">Verify</th>
                         <?php } if($edit_access == 1 or $delete_access == 1){ ?>
                         <th style="text-align: center">Action</th>
                         <?php } ?>
@@ -38,7 +40,7 @@
                         <tr>
                             <td style="text-align: center"><?= $row->user_id;?></td>
                             <td style="text-align: center"><?= $row->username;?></td>
-                            <td style="text-align: center"><?= $row->roles;?></td>
+                            <td style="text-align: center"><?= $row->user_role;?></td>
                             <td style="text-align: center"><?= $row->firstname;?></td>
                             <td style="text-align: center"><?= $row->lastname?></td>
                             <td style="text-align: center"><?= $row->created_at;?></td>
@@ -53,6 +55,18 @@
                                     />
                                     <label class='tgl-btn' for='cb_<?= $row->user_id ?>'></label>
                             </td>
+
+                            <?php } if($verify_account_access == 1){ ?>
+                                <td style="text-align: center">
+                                    <input type='checkbox'
+                                           class='tgl tgl-ios tgl_checkbox_2'
+                                           data-id='<?= $row->user_id ?>'
+                                           id='cb2_<?= $row->user_id ?>'
+                                        <?= ($row->is_verify == 1)? "checked" : ""; ?>
+                                    />
+                                    <label class='tgl-btn' for='cb2_<?= $row->user_id ?>'></label>
+                                </td>
+
                         <?php } if($edit_access == 1 or $delete_access == 1){  ?>
                             <td style="text-align: center">
                         <?php if($edit_access == 1){ ?>
@@ -81,6 +95,7 @@
 
 <script>
     function access_js() {
+
     $(document).on("change",".tgl_checkbox",function(){
         $.post('<?=base_url("/change_status")?>',
             {
@@ -91,6 +106,18 @@
             function(data){
                 $.notify("Status Changed Successfully", "success");
             });
+    });
+
+    $(document).on("change",".tgl_checkbox_2",function(){
+        $.post('<?=base_url("/change_verify_status")?>',
+            {
+                user_id     : $(this).data('id'),
+                is_verify   : $(this).is(':checked') == true ? 1:0
+            },
+            function(data){
+                $.notify("User has been verified", "success");
+            });
+
     });
 
         $(document).on("click", ".sub_module_id", function(){

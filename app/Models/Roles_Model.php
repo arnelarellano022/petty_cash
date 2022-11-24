@@ -13,6 +13,7 @@ class Roles_Model extends  Model
         $this->module = $db->table('module');
         $this->sub_module = $db->table('sub_module');
         $this->module_access = $db->table('module_access');
+        date_default_timezone_set('Asia/Manila');
     }
 
     //Roles

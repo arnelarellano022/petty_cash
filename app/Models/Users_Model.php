@@ -10,13 +10,14 @@ class Users_Model extends  Model
         $db      = \Config\Database::connect();
         $this->users = $db->table('ci_users');
         $this->roles = $db->table('user_roles');
+        date_default_timezone_set('Asia/Manila');
     }
 
     public function users_list()
     {
-        return $this->users->select('*')
-            ->join('user_roles', 'ci_users.user_role = user_roles.id')
-            ->orderBy('ci_users.user_id', 'asc')
+//        return $this->users->select('*')
+//            ->join('user_roles', 'ci_users.user_role = user_roles.id')
+        return $this->users->orderBy('ci_users.user_id', 'asc')
             ->get()->getResult();
     }
 
@@ -35,9 +36,9 @@ class Users_Model extends  Model
             'firstname'     => $_POST['firstname'] ,
             'lastname'      => $_POST['lastname'] ,
             'password'      => md5($_POST['password']),
-            'sec_question'    =>  $_POST['sec_question'] ,
+            'sec_question'  =>  $_POST['sec_question'] ,
             'sec_answer'    =>  $_POST['sec_answer'] ,
-            'user_role'    => $_POST['user_role'],
+            'user_role'     => $_POST['user_role'],
             'created_at'    => $date,
             'updated_at'    => $date
         );
@@ -48,12 +49,15 @@ class Users_Model extends  Model
 
     public function update_user($user_id)
     {
+        $date = date('Y-m-d H:i:s');
 
         $data = array(
-            'firstname' => $_POST['firstname'],
-            'lastname' => $_POST['lastname'],
-            'user_role'    => $_POST['user_role']
+            'firstname'     => $_POST['firstname'],
+            'lastname'      => $_POST['lastname'],
+            'user_role'     => $_POST['user_role'],
+            'updated_at'    => $date
         );
+
         $password = $_POST['password'];
 
         if($password != ''){
@@ -83,6 +87,13 @@ class Users_Model extends  Model
     function change_status()
     {
         $data = array( 'status' => $_POST['status'] );
+        $this->users->update($data,'user_id =' . $_POST['user_id']);
+
+    }
+
+    function change_verify_status()
+    {
+        $data = array( 'is_verify' => $_POST['is_verify'] );
         $this->users->update($data,'user_id =' . $_POST['user_id']);
 
     }

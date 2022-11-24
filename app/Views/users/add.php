@@ -89,7 +89,7 @@
                                                         <select name="user_role" class="form-control" required>
                                                             <option value="" hidden>Select Role</option>
                                                             <?php foreach($user_role_list as $role_row): ?>
-                                                                <option value="<?= $role_row->id; ?>"><?= $role_row->roles; ?></option>
+                                                                <option value="<?= $role_row->roles; ?>"><?= $role_row->roles; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                 </div>

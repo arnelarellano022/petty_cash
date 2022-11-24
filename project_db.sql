@@ -22,26 +22,24 @@ DROP TABLE IF EXISTS `ci_users`;
 
 CREATE TABLE `ci_users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `user_role` tinyint(4) NOT NULL DEFAULT 0,
-  `is_verify` tinyint(4) NOT NULL DEFAULT 1,
-  `status` tinyint(4) NOT NULL DEFAULT 1,
-  `sec_question` int(2) NOT NULL,
-  `sec_answer` varchar(150) NOT NULL,
-  `token` varchar(255) DEFAULT NULL,
-  `password_reset_code` varchar(255) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `firstname` varchar(30) DEFAULT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `user_role` varchar(25) DEFAULT '-',
+  `is_verify` tinyint(4) DEFAULT 1,
+  `status` tinyint(4) DEFAULT 1,
+  `sec_question` int(2) DEFAULT NULL,
+  `sec_answer` varchar(150) DEFAULT NULL,
   `last_ip` varchar(30) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`token`,`password_reset_code`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3',1,1,1,0,'','N/A','N/A','N/A','2022-10-16 18:18:05','2022-10-16 18:18:09'),(26,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc',2,1,1,0,'',NULL,NULL,NULL,'2022-11-22 20:04:33','2022-11-22 20:04:33'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055',5,1,1,0,'',NULL,NULL,NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055',3,1,1,0,'',NULL,NULL,NULL,'2022-11-14 19:25:01','2022-11-14 19:25:01'),(23,'try','rt','rt','1bbd886460827015e5d605ed44252251',4,1,1,0,'',NULL,NULL,NULL,'2022-11-22 00:50:16','2022-11-22 00:50:16'),(28,'qwe','12','12','25d55ad283aa400af464c76d713c07ad',0,0,0,0,'',NULL,NULL,NULL,'2022-11-23 01:25:15','2022-11-23 01:25:15'),(29,'qwerty','qwerty','qwerty','58b4e38f66bcdb546380845d6af27187',2,1,1,2,'kuruchan',NULL,NULL,NULL,'2022-11-23 01:46:22','2022-11-23 01:46:22'),(30,'qwerty2','qwerty2','qwerty2','58b4e38f66bcdb546380845d6af27187',0,0,0,0,'182459e3e74e818b7530cb107a58d3a0',NULL,NULL,NULL,'2022-11-23 01:47:48','2022-11-23 01:47:48'),(31,'qwerty3','qwerty3','qwerty3','58b4e38f66bcdb546380845d6af27187',0,0,0,4,'cnhs',NULL,NULL,NULL,'2022-11-23 01:48:40','2022-11-23 01:48:40');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3','Admin',1,1,1,'1',NULL,'2022-10-16 18:18:05','2022-10-16 18:18:09'),(26,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc','User',1,1,0,'2',NULL,'2022-11-22 20:04:33','2022-11-22 20:04:33'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'1',NULL,'2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'2',NULL,'2022-11-14 19:25:01','2022-11-14 19:25:01'),(29,'qwerty','qwerty','qwerty','58b4e38f66bcdb546380845d6af27187','User',1,1,2,'kuruchan',NULL,'2022-11-23 01:46:22','2022-11-23 01:46:22'),(36,'ammiel','ammiel','pastrana','6eea9b7ef19179a06954edd0f6c05ceb','-',0,0,2,'asd','192.168.1.32','2022-11-23 20:32:39','2022-11-23 20:32:39'),(41,'superadmin','superadmin','superadmin','17c4520f6cfd1ab53d8745e84681eb49','User',1,1,3,'3','::1','2022-11-24 14:44:09','2022-11-24 15:57:34');
 
 /*Table structure for table `module` */
 
@@ -77,11 +75,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(63,1,1,1,'edit'),(64,1,1,1,'delete');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(63,1,1,1,'edit'),(64,1,1,1,'delete'),(66,1,1,1,'verify_account'),(68,2,1,1,'access');
 
 /*Table structure for table `sub_module` */
 
@@ -101,7 +99,7 @@ CREATE TABLE `sub_module` (
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete|change_status'),(2,2,'Module Setting','module_index',3,'access'),(3,2,'Roles & Permissions','roles_index',4,'access'),(4,3,'General Settings','settings_index',5,'access'),(5,3,'Email Template Settings','email_index',6,'access');
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete|change_status|verify_account'),(2,2,'Module Setting','module_index',3,'access'),(3,2,'Roles & Permissions','roles_index',4,'access'),(4,3,'General Settings','settings_index',5,'access'),(5,3,'Email Template Settings','email_index',6,'access');
 
 /*Table structure for table `user_roles` */
 

@@ -21,6 +21,7 @@ class users extends BaseController
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'change_status') == true) {$data['status_access'] = true;};
+        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'verify_account') == true) {$data['verify_account_access'] = true;};
 
             $data['fetch_data'] = $this->Users_Model->users_list();
             $data['title']='USER LIST';
@@ -90,6 +91,10 @@ class users extends BaseController
 
     public function change_status(){
         $this->Users_Model->change_status();
+    }
+
+    public function change_verify_status(){
+        $this->Users_Model->change_verify_status();
     }
 
     function check_username_exist(){

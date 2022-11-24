@@ -58,7 +58,7 @@
                                                         <select name="user_role" class="form-control" required>
                                                             <option value="" hidden>Select Role</option>
                                                             <?php foreach($user_role_list as $role_row): ?>
-                                                                <option value="<?= $role_row->id; ?>" <?php if($row->user_role == $role_row->id){ echo "selected";} ?> ><?= $role_row->roles; ?></option>
+                                                                <option value="<?= $role_row->roles; ?>" <?php if($row->user_role == $role_row->roles){ echo "selected";} ?> ><?= $role_row->roles; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>

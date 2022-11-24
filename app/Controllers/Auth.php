@@ -22,7 +22,7 @@ class Auth extends BaseController{
     public function validate_login(){
 
         helper(['form']);
-        $session = session();
+
 
             if($this->request->getMethod() == "post"){
 
@@ -42,13 +42,19 @@ class Auth extends BaseController{
                     if($result['success']==TRUE){
 
                         if($result['is_verify'] == 0){
-                            $session->setFlashdata("error", 'Account is not yet verified by the Admin!');
+                            $this->session->setFlashdata("error", 'Account is not yet verified by the Admin!');
                             return redirect()->to('/index');
 
                         }
 
                         if($result['status'] == 0){
-                            $session->setFlashdata("error", 'Account is disabled by Admin!');
+                            $this->session->setFlashdata("error", 'Account is disabled by the Admin!');
+                            return redirect()->to('/index');
+
+                        }
+
+                        if($result['user_role'] == "-"){
+                            $this->session->setFlashdata("error", 'Account role is not yet set by the Admin!');
                             return redirect()->to('/index');
 
                         }
@@ -62,15 +68,15 @@ class Auth extends BaseController{
                             'logged_in' 	  => TRUE
                         );
 
-                        $session->set($account_data);
-                        $session->setFlashdata("success","login success");
+                        $this->session->set($account_data);
+                        $this->session->setFlashdata("success","login success");
                         return redirect()->to('/dashboard');
                     }
 
 
                     else{
 
-                        $session->setFlashdata("error","invalid username/password.");
+                        $this->session->setFlashdata("error","invalid username/password.");
                     }
 
                         if($result['success']==FALSE){
@@ -91,8 +97,6 @@ class Auth extends BaseController{
         if (!isset($_SESSION['user_role'])) {
             return redirect()->to('/index');
         } else {
-            $module = $this->system_menu;
-//            return view('dashboard/general', $module);
             $module['title']='Dashboard';
             echo view('partial/header',$module);
             echo view('partial/top_menu');

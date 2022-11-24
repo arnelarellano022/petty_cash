@@ -12,6 +12,7 @@ class Module_Model extends  Model
         $db      = \Config\Database::connect();
         $this->module = $db->table('module');
         $this->sub_module = $db->table('sub_module');
+        date_default_timezone_set('Asia/Manila');
     }
 
     //Module
