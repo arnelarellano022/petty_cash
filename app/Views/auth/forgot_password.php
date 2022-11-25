@@ -23,41 +23,56 @@
     <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
             <div class="modal-content">
-                <?php echo form_open(base_url('auth/validate_account_security'), 'class="login-form" '); ?>
+
+<!--                --><?php //echo form_open(base_url('auth/validate_account_security'), 'method = "post"'); ?>
+                <form action="<?= base_url('auth/validate_account_security');?>" method="post">
                     <div class="modal-header">
                         <h4 class="modal-title">Enter your new password</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                <div class="modal-body">
 
-                            <div class="input-group mb-3">
-                                <input type="password" class="form-control" placeholder="Password" name="password" id="password">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
+                    <div class="modal-body">
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
+                                            <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="input-group mb-3">
-                                <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password" placeholder="Confirm Password">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                    <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password" placeholder="Confirm Password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
+                                            <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                    </div>
 
-
-
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="hidden" name="submit" value="submit"/>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-                <?php echo form_close(); ?>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="hidden" name="submit" value="submit"/>
+                        <button onclick="return check_b4_submit()" type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+<!--                --><?php //echo form_close(); ?>
             </div>
             <!-- /.modal-content -->
         </div>
@@ -105,10 +120,10 @@
             <div class="row">
                     <!-- /.col -->
                     <div class="col-12" style="margin-bottom: 12px">
-                        <button type="submit" class="btn btn-primary btn-block " onclick="check_account_sec();" >Change Password</button>
+                        <button type="button" class="btn btn-primary btn-block " onclick="check_account_sec();" >Change Password</button>
                     </div>
                     <!-- /.col -->
-                </div>
+            </div>
 
 
             <p class="mb-0">
@@ -119,6 +134,7 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
 </div>
 <!-- /.login-box -->
 
@@ -218,6 +234,60 @@
           });
       }
   }
+
+    function check_b4_submit() {
+        var password = $("#password").val();
+        var c_password = $("#c_password").val();
+        var pswlen = password.length;
+        if (password != '' && c_password != '' && password != c_password) {
+            alert('Password and Confirm Password must be the same');
+            return false;
+        }
+        return true;
+    }
+
+    function cpw_length_check() {
+        var password = $("#password").val();
+        var c_password = $("#c_password").val();
+        var pswlen = password.length;
+        if(password != ''){
+            if (pswlen < 8 && password != '' ) {
+                alert('Password must be at least 8 characters');
+                $("#password").focus();
+            }
+            if ( c_password != '' && pswlen < 8 ) {
+                alert('Confirm Password must be at least 8 characters');
+                $("#c_password").focus();
+            }
+        }else{
+            alert("You must input the Password first");
+            $("#password").focus();
+        }
+    }
+
+    $(document).on("click", ".eye_open1",function () {
+        $("#password").attr("type","text");
+        $("#eye_open1").attr("hidden", "hidden");
+        $("#eye_close1").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close1", function(){
+        $("#password").attr("type","password");
+        $("#eye_open1").removeAttr("hidden", "hidden");
+        $("#eye_close1").attr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_open2",function () {
+        $("#c_password").attr("type","text");
+        $("#eye_open2").attr("hidden", "hidden");
+        $("#eye_close2").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close2", function(){
+        $("#c_password").attr("type","password");
+        $("#eye_open2").removeAttr("hidden", "hidden");
+        $("#eye_close2").attr("hidden", "hidden");
+    });
 
 
 

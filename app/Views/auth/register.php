@@ -142,9 +142,6 @@
 
 
 <script>
-    var password = $("#password").val();
-    var c_password = $("#c_password").val();
-    var pswlen = password.length;
 
     function check_b4_submit() {
         var password = $("#password").val();

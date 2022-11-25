@@ -102,6 +102,21 @@ class Auth_Model extends Model {
         return($result > 0) ? true : false;
     }
 
+    public function validate_account_security()
+    {
+        $date = date('Y-m-d H:i:s');
+
+        $data = array(
+            'password'      => md5($_POST['password']),
+            'last_ip'       => $this->getUserIpAddr(),
+            'updated_at'    => $date
+        );
+
+        $this->users->update($data, 'username = superadmin' );
+        return $result = ($this->users->updateBatch() != 1) ? false : true;
+
+    }
+
     function getUserIpAddr(){
         if(!empty($_SERVER['HTTP_CLIENT_IP'])){
             //ip from share internet

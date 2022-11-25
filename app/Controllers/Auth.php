@@ -144,6 +144,22 @@ class Auth extends BaseController{
         echo view('auth/forgot_password', $module);
     }
 
+    public function validate_account_security(){
+
+        if($_POST['submit'])
+        {
+        $result = $this->Auth_Model->validate_account_security();
+        if($result == true){
+            $this->session->setFlashdata("success", "Password change successfully");
+        }
+        else{
+            $this->session->setFlashdata("error", "Password not change");
+        }
+
+        return redirect()->to('/index');
+        }
+    }
+
     function check_username_exist(){
         echo $this->Auth_Model->check_username_exist($_POST['username']);
     }
