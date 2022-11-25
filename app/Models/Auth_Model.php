@@ -78,11 +78,28 @@ class Auth_Model extends Model {
         $this->users->insert($data);
     }
 
+    public function get_sec_question($username)
+    {
+        $result = $this->users->where('username', $username)
+            ->get()->getResult();
+        foreach ($result as $row){
+            return $row->sec_question;
+        }
+    }
+
     public function check_username_exist($username)
     {
         $result = $this->users->where('username', $username)
             ->countAllResults();
         return($result == 0) ? true : false;
+    }
+
+    public function check_account_sec($username, $sec_answer)
+    {
+        $result = $this->users->where('username', $username)
+            ->where('sec_answer', $sec_answer)
+            ->countAllResults();
+        return($result > 0) ? true : false;
     }
 
     function getUserIpAddr(){

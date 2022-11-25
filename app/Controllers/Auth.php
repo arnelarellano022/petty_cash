@@ -147,4 +147,12 @@ class Auth extends BaseController{
     function check_username_exist(){
         echo $this->Auth_Model->check_username_exist($_POST['username']);
     }
+
+    function check_account_sec(){
+        echo $this->Auth_Model->check_account_sec($_POST['username'], $_POST['sec_answer']);
+    }
+
+    function get_sec_question(){
+        echo $this->Auth_Model->get_sec_question($_POST['username']);
+    }
 }

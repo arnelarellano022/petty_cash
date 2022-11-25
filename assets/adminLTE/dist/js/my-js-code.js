@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     //   ------------ MESSAGE NOTIF -------------
 
-    $( document ).ready(function() {$("#notif_fade").fadeOut(5000);});
+    $( document ).ready(function() {$("#notif_fade").fadeOut(20000);});
 
 //   ------------ END MESSAGE NOTIF -------------
 
