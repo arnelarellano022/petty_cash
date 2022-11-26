@@ -17,7 +17,7 @@ class Users_Model extends  Model
     {
 //        return $this->users->select('*')
 //        ->join('user_roles', 'ci_users.user_role = user_roles.id')
-        return $this->users->orderBy('ci_users.user_id', 'asc')
+        return $this->users->orderBy('user_id', 'asc')
             ->get()->getResult();
     }
 
@@ -37,7 +37,7 @@ class Users_Model extends  Model
             'lastname'      => $_POST['lastname'] ,
             'password'      => md5($_POST['password']),
             'sec_question'  =>  $_POST['sec_question'] ,
-            'sec_answer'    =>  $_POST['sec_answer'] ,
+            'sec_answer'    =>  md5($_POST['sec_answer']) ,
             'user_role'     => $_POST['user_role'],
             'last_ip'       => $this->getUserIpAddr(),
             'created_at'    => $date,
@@ -53,18 +53,21 @@ class Users_Model extends  Model
         $date = date('Y-m-d H:i:s');
 
         $data = array(
-            'firstname'     => $_POST['firstname'],
-            'lastname'      => $_POST['lastname'],
-            'user_role'     => $_POST['user_role'],
-            'last_ip'       => $this->getUserIpAddr(),
-            'updated_at'    => $date
+            'firstname'         => $_POST['firstname'],
+            'lastname'          => $_POST['lastname'],
+            'user_role'         => $_POST['user_role'],
+            'sec_question'      => $_POST['sec_question'],
+            'sec_answer'        => md5($_POST['sec_answer']) ,
+            'last_ip'           => $this->getUserIpAddr(),
+            'updated_at'        => $date,
         );
 
         $password = $_POST['password'];
+
         if($password != ''){
-            $data = array(
-            'password' => md5($_POST['password'])
-        );
+            $password = hash('sha512', $_POST['password']);
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $data = array_merge($data, array('password' =>$password));
         }
 
         $this->users->update($data, 'user_id =' . $user_id);

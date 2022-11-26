@@ -12,17 +12,17 @@ class Auth_Model extends Model {
         date_default_timezone_set('Asia/Manila');
     }
 
-    public function validate_Auth_login($username, $password){
+    public function validate_Auth_login($username, $_password){
 
+        $result = $this->users->where('username', $username)->get()->getResult();
+        foreach ($result as $row){
+            $hash_password = $row->password;
+        }
 
-        $password = md5($password);
+        $verify = (password_verify(hash('sha512', $_password), $hash_password));
 
-        $query = $this->users->where('username', $username)
-            ->where('password', $password)
-            ->get();
-
-        if ($query->getNumRows() == 1) {
-            foreach ($query->getResult() as $rs) {
+        if ($verify == true) {
+            foreach ($result as $rs) {
 
 
                 if ($rs->user_role != "-")
@@ -61,13 +61,17 @@ class Auth_Model extends Model {
 
         $date = date('Y-m-d H:i:s');
 
+        $_password = hash('sha512', $_POST['password']);
+        $password = password_hash($_password, PASSWORD_DEFAULT);
+
+
         $data = array(
             'username'      => $_POST['username'] ,
             'firstname'     => $_POST['firstname'] ,
             'lastname'      => $_POST['lastname'] ,
-            'password'      => md5($_POST['password']),
+            'password'      => $password,
             'sec_question'  => $_POST['sec_question'] ,
-            'sec_answer'    => $_POST['sec_answer'] ,
+            'sec_answer'    => md5($_POST['sec_answer']) ,
             'is_verify'     => 0,
             'status'        => 0,
             'last_ip'       => $this->getUserIpAddr(),
@@ -102,18 +106,29 @@ class Auth_Model extends Model {
         return($result > 0) ? true : false;
     }
 
-    public function validate_account_security()
+    public function validate_acct_security()
     {
+
         $date = date('Y-m-d H:i:s');
 
+        $result = $this->users->where('username', $_POST['username2'])
+            ->get()->getResult();
+        foreach ($result as $row){
+            $user_id = $row->user_id;
+        }
+
+        $_password = hash('sha512', $_POST['password']);
+        $password = password_hash($_password, PASSWORD_DEFAULT);
+
         $data = array(
-            'password'      => md5($_POST['password']),
+            'password'      => $password,
             'last_ip'       => $this->getUserIpAddr(),
             'updated_at'    => $date
         );
 
-        $this->users->update($data, 'username = superadmin' );
-        return $result = ($this->users->updateBatch() != 1) ? false : true;
+        $this->users->update($data, 'user_id ='. $user_id );
+
+        return ($this->users->updateBatch() != 1) ? false : true;
 
     }
 

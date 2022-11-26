@@ -35,11 +35,11 @@ CREATE TABLE `ci_users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','21232f297a57a5a743894a0e4a801fc3','Admin',1,1,1,'1234','','2022-10-16 18:18:05','2022-10-16 18:18:09'),(26,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc','User',1,1,0,'2','','2022-11-22 20:04:33','2022-11-22 20:04:33'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'1','','2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'2','','2022-11-14 19:25:01','2022-11-14 19:25:01'),(29,'qwerty','qwerty','qwerty','58b4e38f66bcdb546380845d6af27187','User',1,1,2,'kuruchan','','2022-11-23 01:46:22','2022-11-23 01:46:22'),(36,'ammiel','ammiel','pastrana','6eea9b7ef19179a06954edd0f6c05ceb','-',0,0,2,'asd','192.168.1.32','2022-11-23 20:32:39','2022-11-23 20:32:39'),(41,'superadmin','superadmin','superadmin','2a43bf7ab34cd6bf5401343115eaf325','User',1,1,3,'3','::1','2022-11-24 14:44:09','2022-11-25 21:16:16');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`last_ip`,`created_at`,`updated_at`) values (1,'admin','Arnel','Arellano','$2y$10$lD0LVsgPNQ.OceLENDlZgOqxCBxsQsDyOyBBB12hfNUiis7Gc5.gW','Admin',1,1,1,'aaebf4de9a2bb59aca378fdc25b6ee2d','::1','2022-10-16 18:18:05','2022-11-26 15:09:26'),(26,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc','User',1,1,0,'2','','2022-11-22 20:04:33','2022-11-22 20:04:33'),(4,'marketing','try','try','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'1','','2022-11-13 06:32:28','2022-11-13 06:32:28'),(5,'aarellano','Arnel','Arellano','81dc9bdb52d04dc20036dbd8313ed055','User',1,1,0,'2','','2022-11-14 19:25:01','2022-11-14 19:25:01'),(29,'qwerty','qwerty','qwerty','58b4e38f66bcdb546380845d6af27187','User',1,1,2,'kuruchan','','2022-11-23 01:46:22','2022-11-23 01:46:22'),(36,'ammiel','ammiel','pastrana','6eea9b7ef19179a06954edd0f6c05ceb','-',0,0,2,'asd','192.168.1.32','2022-11-23 20:32:39','2022-11-23 20:32:39'),(41,'superadmin','superadmin','superadmin','$2y$10$b2nxln.foubdmLvHu/WuS.6M3RXCRx39fyXoCtM4bU1YeHv3zHvD.','User',1,1,3,'559e60266e26d3429413caefffec7e7e','::1','2022-11-24 14:44:09','2022-11-26 15:31:17'),(48,'superadmin22','superadmin22','superadmin22','$2y$10$ZmlQFxks4Um75bgk.AoY5.TqGobIuJGbmj95iJIYscKdOiYw6PjWK','-',0,0,1,'1','::1','2022-11-26 09:14:26','2022-11-26 15:36:18'),(49,'superadmin33','superadmin33','superadmin33','$2y$10$ery.wz5YlS94IGX358n7QeUyBqgCReRYXWRLV1rzcRFqQqS2Lwx6.','-',0,0,5,'e4da3b7fbbce2345d7772b0674a318d5','::1','2022-11-26 15:36:37','2022-11-26 15:36:37'),(50,'laptop','laptop name','laptop surname','$2y$10$DLS5ec8FCjdDTRFrPX8FZ.fMppkfYe.yqorg3u5r0WGcOVE3y7v.S','-',0,0,1,'4752d51bd71f704beec34b798c76ca9e','192.168.1.33','2022-11-26 15:52:14','2022-11-26 15:52:14');
 
 /*Table structure for table `module` */
 
@@ -75,11 +75,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(63,1,1,1,'edit'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account'),(70,1,1,1,'edit');
 
 /*Table structure for table `sub_module` */
 

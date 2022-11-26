@@ -41,7 +41,10 @@
                                             <span class="fas fa-lock"></span>
                                         </div>
                                     </div>
+
+                                    <input type="hidden" name="username2" id="username2"/>
                                     <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+
                                     <div class="input-group-append">
                                         <div class="input-group-text">
                                             <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
@@ -56,7 +59,7 @@
                                             <span class="fas fa-lock"></span>
                                         </div>
                                     </div>
-                                    <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password" placeholder="Confirm Password">
+                                    <input onblur="check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password" placeholder="Confirm Password">
                                     <div class="input-group-append">
                                         <div class="input-group-text">
                                             <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
@@ -236,13 +239,15 @@
   }
 
     function check_b4_submit() {
+        var username = $("#username").val();
         var password = $("#password").val();
         var c_password = $("#c_password").val();
-        var pswlen = password.length;
+
         if (password != '' && c_password != '' && password != c_password) {
             alert('Password and Confirm Password must be the same');
             return false;
         }
+        $("#username2").val(username);
         return true;
     }
 

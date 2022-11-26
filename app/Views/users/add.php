@@ -46,14 +46,26 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input   class="form-control" type="password" name="password" value="" required="" id="password">
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <input class="form-control" type="password" name="password" value="" required="" id="password">
+                                                    <div class="input-group-text">
+                                                        <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
+                                                        <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
+                                                </div>
+                                                <div class="input-group-append">
                                                     <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
+                                                    <div class="input-group-text">
+                                                        <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
+                                                        <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -108,10 +120,6 @@
 </div>
 
 <script>
-    var password = $("#password").val();
-    var c_password = $("#c_password").val();
-    var pswlen = password.length;
-
     function check_b4_submit() {
         var password = $("#password").val();
         var c_password = $("#c_password").val();
@@ -160,4 +168,31 @@
             }
         });
     }
+function access_js() {
+
+    $(document).on("click", ".eye_open1",function () {
+        $("#password").attr("type","text");
+        $("#eye_open1").attr("hidden", "hidden");
+        $("#eye_close1").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close1", function(){
+        $("#password").attr("type","password");
+        $("#eye_open1").removeAttr("hidden", "hidden");
+        $("#eye_close1").attr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_open2",function () {
+        $("#c_password").attr("type","text");
+        $("#eye_open2").attr("hidden", "hidden");
+        $("#eye_close2").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close2", function(){
+        $("#c_password").attr("type","password");
+        $("#eye_open2").removeAttr("hidden", "hidden");
+        $("#eye_close2").attr("hidden", "hidden");
+    });
+}
+    
 </script>

@@ -53,7 +53,8 @@
                     <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                            <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
+                            <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
                         </div>
                     </div>
                 </div>
@@ -61,7 +62,8 @@
                     <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password" placeholder="Confirm Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                            <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
+                            <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
                         </div>
                     </div>
                 </div>
@@ -117,7 +119,7 @@
             </form>
 
             <div style="margin-top: 10px; margin-bottom: 5px">
-                <a href="<?= base_url('index') ?>" class="btn btn-block btn-success">
+                <a href="<?= base_url('index') ?>" class="tex">
                     I already have an account
                 </a>
 
@@ -192,6 +194,32 @@
             });
         }
     }
+
+
+    $(document).on("click", ".eye_open1",function () {
+        $("#password").attr("type","text");
+        $("#eye_open1").attr("hidden", "hidden");
+        $("#eye_close1").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close1", function(){
+        $("#password").attr("type","password");
+        $("#eye_open1").removeAttr("hidden", "hidden");
+        $("#eye_close1").attr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_open2",function () {
+        $("#c_password").attr("type","text");
+        $("#eye_open2").attr("hidden", "hidden");
+        $("#eye_close2").removeAttr("hidden", "hidden");
+    });
+
+    $(document).on("click", ".eye_close2", function(){
+        $("#c_password").attr("type","password");
+        $("#eye_open2").removeAttr("hidden", "hidden");
+        $("#eye_close2").attr("hidden", "hidden");
+    });
+
 </script>
 
 </body>

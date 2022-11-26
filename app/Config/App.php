@@ -24,6 +24,7 @@ class App extends BaseConfig
      * @var string
      */
     public $baseURL = 'http://localhost/codeigniter4/';
+//    public $baseURL = 'http://192.168.1.112/codeigniter4/';
 
     /**
      * --------------------------------------------------------------------------

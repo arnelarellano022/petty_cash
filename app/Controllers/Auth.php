@@ -146,10 +146,9 @@ class Auth extends BaseController{
 
     public function validate_account_security(){
 
-        if($_POST['submit'])
-        {
-        $result = $this->Auth_Model->validate_account_security();
-        if($result == true){
+
+        $result = $this->Auth_Model->validate_acct_security();
+        if($result == false){
             $this->session->setFlashdata("success", "Password change successfully");
         }
         else{
@@ -157,7 +156,7 @@ class Auth extends BaseController{
         }
 
         return redirect()->to('/index');
-        }
+
     }
 
     function check_username_exist(){
