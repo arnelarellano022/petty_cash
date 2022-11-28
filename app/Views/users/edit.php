@@ -43,12 +43,12 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Password</label>
-                                                    </div>
-                                                    <div class="input-group-append">
-                                                        <input class="form-control" type="password" name="password" value="" required="" id="password">
-                                                        <div class="input-group-text">
-                                                            <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
-                                                            <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
+                                                        <div class="input-group-append">
+                                                            <input class="form-control" type="password" name="password" value="" required="" id="password">
+                                                            <div class="input-group-text">
+                                                                <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
+                                                                <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -56,12 +56,12 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Confirm Password</label>
-                                                    </div>
-                                                    <div class="input-group-append">
-                                                        <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
-                                                        <div class="input-group-text">
-                                                            <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
-                                                            <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
+                                                        <div class="input-group-append">
+                                                            <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
+                                                            <div class="input-group-text">
+                                                                <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
+                                                                <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,7 +88,13 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Answer</label>
-                                                        <input class="form-control" type="text" name="sec_answer" value="<?= $row->sec_answer;?>" required="">
+                                                        <div class="input-group-append">
+                                                            <input class="form-control" type="password" name="sec_answer" value="<?= $row->sec_answer;?>" required="" id="sec_answer">
+                                                            <div class="input-group-text">
+                                                                <span id="eye_close3" class="fas fa-eye-slash eye_close3" hidden></span>
+                                                                <span id="eye_open3" class="fas fa-eye eye_open3" ></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -172,6 +178,18 @@
             $("#eye_open2").removeAttr("hidden", "hidden");
             $("#eye_close2").attr("hidden", "hidden");
         });
+        $(document).on("click", ".eye_open3",function () {
+            $("#sec_answer").attr("type","text");
+            $("#eye_open3").attr("hidden", "hidden");
+            $("#eye_close3").removeAttr("hidden", "hidden");
+        });
+
+        $(document).on("click", ".eye_close3", function(){
+            $("#sec_answer").attr("type","password");
+            $("#eye_open3").removeAttr("hidden", "hidden");
+            $("#eye_close3").attr("hidden", "hidden");
+        });
+
     }
 
 </script>
