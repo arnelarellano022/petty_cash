@@ -68,6 +68,8 @@ $routes->add('/edit_sub_module/(:any)', 'Module::edit_sub_module/$1');
 $routes->add('/add_sub_module/(:any)', 'Module::add_sub_module/$1');
 $routes->add('/delete_sub_module/(:any)', 'Module::delete_sub_module/$1');
 
+//Database Backup
+$routes->add('/db_index', 'DB_Backup::db_index');
 
 
 //Error
