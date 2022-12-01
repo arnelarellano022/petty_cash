@@ -5,7 +5,7 @@
         <div class="card card-default color-palette-bo">
             <div class="card-header">
                 <div class="d-inline-block">
-                    <h3 class="card-title"> <i class="fa fa-plus mt-2"></i>
+                    <h3 class="card-title"> <i class="fa fa-edit mt-2"></i>
                         &nbsp; <b><?= $title ?></b> </h3>
                 </div>
                 <div class="d-inline-block float-right">

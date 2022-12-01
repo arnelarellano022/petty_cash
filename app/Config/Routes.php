@@ -71,9 +71,27 @@ $routes->add('/delete_sub_module/(:any)', 'Module::delete_sub_module/$1');
 //Database Backup
 $routes->add('/db_index', 'DB_Backup::db_index');
 
-
 //Error
 $routes->add('/error_404', 'Auth::error_404');
+
+//COMPANY
+$routes->add('/company_index', 'Company::company_index');
+$routes->add('/edit_company/(:any)', 'Company::edit_company/$1');
+$routes->add('/add_company', 'Company::add_company');
+$routes->add('/delete_company/(:any)', 'Company::delete_company/$1');
+
+//DEPARTMENT
+$routes->add('/department_index', 'Department::department_index');
+$routes->add('/edit_department/(:any)', 'Department::edit_department/$1');
+$routes->add('/add_department', 'Department::add_department');
+$routes->add('/delete_department/(:any)', 'Department::delete_department/$1');
+
+//EMPLOYEE
+$routes->add('/employee_index', 'Employee::employee_index');
+$routes->add('/view_employee/(:any)', 'Employee::view_employee/$1');
+$routes->add('/edit_employee/(:any)', 'Employee::edit_employee/$1');
+$routes->add('/add_employee', 'Employee::add_employee');
+$routes->add('/delete_employee/(:any)', 'Employee::delete_employee/$1');
 
 
 /*

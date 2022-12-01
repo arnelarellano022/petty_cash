@@ -10,100 +10,78 @@ class Company extends BaseController
 
         helper(['form']);
 
-        $this->module_id     = 2 ;
-        $this->sub_module_id = 3 ;
+        $this->module_id     = 5 ;
+        $this->sub_module_id = 7 ;
     }
 
-    //Roles
-    public function roles_index(){
+    //Company
+    public function company_index(){
 
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
+        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
 
-            $module['fetch_data'] = $this->Company_Model->roles_fetch_data();
-            $module['title']='ROLES MANAGEMENT';
+        $data['fetch_data'] = $this->Company_Model->company_list();
+        $data['title']='COMPANY LIST';
 
-            echo view('partial/header',$module);
+            echo view('partial/header',$data);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
-            echo view('roles/list',$module);
+            echo view('company/list',$data);
             echo view('partial/footer');
 
     }
 
-    public function add_roles(){
+    public function add_company(){
 
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
-                $this->Company_Model->insert_roles();
+                $this->Company_Model->insert_company();
                 $this->session->setFlashdata("success", "Record Added Successfully");
-                return redirect()->to('/roles_index');
+                return redirect()->to('/company_index');
             }
 
-            $module['fetch_data'] = $this->Company_Model->roles_fetch_data();
-            $module['title'] = 'ADD NEW ROLES';
+            $module['title'] = 'ADD NEW COMPANY';
 
             echo view('partial/header', $module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
-            echo view('roles/add', $module);
+            echo view('company/add', $module);
             echo view('partial/footer');
     }
 
-    public function edit_roles($id)
+    public function edit_company($id)
     {
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
-                $this->Company_Model->update_roles($id);
+                $this->Company_Model->update_company($id);
                 //check value from model Y/N
                 $this->session->setFlashdata("success", "Record Updated Successfully");
-                return redirect()->to('/roles_index');
+                return redirect()->to('/company_index');
             }
 
 
-            $module['fetch_data'] = $this->Company_Model->get_role_by_id($id);
-            $module['title'] = 'EDIT ROLES';
+            $module['fetch_data'] = $this->Company_Model->get_company_by_id($id);
+            $module['title'] = 'EDIT COMPANY';
 
             echo view('partial/header', $module);
             echo view('partial/top_menu');
             echo view('partial/side_menu');
-            echo view('roles/edit', $module);
+            echo view('company/edit', $module);
             echo view('partial/footer');
     }
 
-    public function delete_roles($delete_ID)
+    public function delete_company($delete_ID)
     {
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-            $this->Company_Model->delete_roles($delete_ID);
+            $this->Company_Model->delete_company($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");
-            return redirect()->to('/roles_index');
+            return redirect()->to('/company_index');
     }
 
-    public function access_roles($id)
-    {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-
-            $module['fetch_data'] = $this->Company_Model->get_modules($id);
-            $module['title'] = 'EDIT ROLES';
-
-            $module['roles']= $this->Company_Model->get_roles($id);
-            $module['roles_id'] = $id;
-            $module['module_access']= $this->Company_Model->get_module_access($id);
-            $module['sub_modules']= $this->Company_Model->get_sub_modules();
-
-
-
-            echo view('partial/header', $module);
-            echo view('partial/top_menu');
-            echo view('partial/side_menu');
-            echo view('roles/access', $module);
-            echo view('partial/footer');
-    }
-
-    public function set_access(){
-        $this->Company_Model->set_access();
-    }
 }
