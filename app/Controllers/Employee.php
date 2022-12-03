@@ -44,7 +44,8 @@ class Employee extends BaseController
                 return redirect()->to('/employee_index');
             }
 
-            $module['employee_role_list'] = $this->Employee_Model->get_Roles_List();
+            $module['company_list'] = $this->Employee_Model->get_Company_List();
+            $module['department_list'] = $this->Employee_Model->get_Department_List();
             $module['title'] = 'ADD NEW EMPLOYEE';
 
             echo view('partial/header', $module);
@@ -62,7 +63,7 @@ class Employee extends BaseController
 
 
             $module['fetch_data'] = $this->Employee_Model->get_employee_by_id($id);
-            $module['title'] = 'VIEW EMPLOYEE';
+            $module['title'] = 'EMPLOYEE DATA';
 
             echo view('partial/header', $module);
             echo view('partial/top_menu');

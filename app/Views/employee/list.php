@@ -25,7 +25,7 @@
                         <th style="text-align: center">First Name</th>
                         <th style="text-align: center">Company</th>
                         <th style="text-align: center">Employment Status</th>
-                        <?php  if($edit_access == 1 or $delete_access == 1){ ?>
+                        <?php  if($edit_access == 1 or $delete_access == 1 or $view_access == 1){ ?>
                         <th style="text-align: center">Action</th>
                         <?php } ?>
                     </tr>
@@ -40,40 +40,34 @@
 
                    foreach ($fetch_data as $row) { $row_count++;?>
                         <tr>
-                            <td style="text-align: center"><?php echo $row_count;?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?=  $row_count;?></td>
                             <td style="text-align: center"><?php
                                 $image_data = $row->image_src_filename;
                                 //if no image
                                 if($image_data == null){
-                                    $image_data = "noimage.png";
+                                    $image_data = "no_image.png";
                                 }
                                 $dirname =  "uploads/";
                                 //                                                ?>
-                                <img src="<?php echo base_url("uploads/".$image_data) ?>" alt="Emp Image" width=60, height=60 /><br></td>
-                            <td style="text-align: center"><?php echo $row->id_no;?></td>
-                            <td style="text-align: center"><?php echo $row->last_name;?></td>
-                            <td style="text-align: center"><?php echo $row->first_name;?></td>
-                            <td style="text-align: center">
-                                <?php $comp_name = $row->company;
-                                if($comp_name == 1){
-                                    echo "Sweetchoice Direct";}
-                                elseif($comp_name == 2){
-                                    echo "Sweetchoice Agency";}?>
-                            </td>
-                            <td style="text-align: center"><?php echo $row->employment_status;?></td>
+                                <img src="<?= base_url("uploads/".$image_data) ?>" alt="Emp Image" width=80, height=80 /><br></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?= $row->id_no;?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?= $row->last_name;?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?= $row->first_name;?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?= $row->company_name; ?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?= $row->employment_status;?></td>
 
                         <?php  if($edit_access == 1 or $delete_access == 1 or $view_access == 1) {  ?>
-                            <td style="text-align: center">
+                            <td style="text-align: center ;padding: 40px 0;">
                         <?php if($view_access == 1){ ?>
-                               <a href="<?php echo base_url("view_employee/". $row->id); ?>" class="btn btn-info btn-xs mr5">
+                               <a href="<?php echo base_url("view_employee/". $row->employee_id); ?>" class="btn btn-info btn-xs mr5">
                                    <i class="fas fa-eye"></i>
                                </a>
                         <?php } if($edit_access == 1){ ?>
-                                <a href="<?php echo base_url("edit_employee/". $row->id); ?>" class="btn btn-warning btn-xs mr5">
+                                <a href="<?php echo base_url("edit_employee/". $row->employee_id); ?>" class="btn btn-warning btn-xs mr5">
                                     <i class="fas fa-edit"></i>
                                 </a>
                         <?php } if($delete_access == 1){?>
-                                <a href="<?php echo base_url("delete_employee/". $row->id); ?>" class="btn btn-danger btn-xs mr5 "   data-confirm="Are you sure you want to delete this record?">
+                                <a href="<?php echo base_url("delete_employee/". $row->employee_id); ?>" class="btn btn-danger btn-xs mr5 "   data-confirm="Are you sure you want to delete this record?">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                         <?php } ?>

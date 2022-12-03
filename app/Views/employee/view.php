@@ -5,7 +5,7 @@
         <div class="card card-default color-palette-bo">
             <div class="card-header">
                 <div class="d-inline-block">
-                    <h3 class="card-title"> <i class="fa fa-plus mt-2"></i>
+                    <h3 class="card-title"> <i class="fa fa-address-card mt-2"></i>
                         &nbsp; <b><?= $title ?></b> </h3>
                 </div>
                 <div class="d-inline-block float-right">
@@ -21,86 +21,104 @@
                                 <?php if($fetch_data){foreach ($fetch_data as $row) {?>
 
 
+                                <div class ="row">
+                                    <h1><?php echo $Full_Name ?></h1>
+                                    <div class="col-sm-2">
+                                        <?PHP $image_data = $row->image_src_filename;
+                                        //if no image
+                                        if($image_data == null){
+                                            $image_data = "no_image.png";
+                                        }
+                                        ?>
+                                        <p><img class="img-thumbnail" src="<?php echo base_url('uploads/' . $image_data)?>" style="width:auto; height:auto; border-width:3px"></p>
+                                        <div class = "text-center">
+                                            <a class="btn btn-primary col-sm-5"
+                                               href="<?php echo base_url(); ?>employee_update/<?php echo $row->id; ?>"><b>Update</b></a>
+                                            <a class="btn btn-danger col-sm-5"
+                                               href="<?php echo base_url(); ?>delete_employee/<?php echo $row->id; ?>"
+                                               data-confirm="Are you sure you want to delete this item?" data-method="post"><b>Delete</b></a>
+                                        </div>
+                                    </div>
 
 
 
-                                <?php }}?>
+                                    <div class=" col-sm-10" >
+                                        <table class="table table-bordered" style="text-align: center; font-size: large" >
+                                            <tr>
+                                                <th style="background-color: #D9EDF7; text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> EMPLOYEE INFORMATION</b></h5></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >ID NUMBER</th><th colspan="5"><?= $row->id_no ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">LAST NAME</th><th><?= $row->last_name ?></th> <th style="width: 15%;background-color: #F4FAFD">FIRST NAME</th><th><?= $row->first_name ?></th> <th style="width: 15%;background-color: #F4FAFD">MIDDLE NAME</th><th><?= $row->middle_name ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >EDUCATIONAL</th><th colspan="5"><?= $row->educational_attainment ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >PRESENT ADDRESS</th><th colspan="5"><?= $row->present_address ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >PROVINCIAL ADDRESS</th><th colspan="5"><?= $row->provincial_address ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">BIRTHDAY</th><th colspan="2"><?= $row->birthday ?></th> <th style="width: 15%;background-color: #F4FAFD">CONTACT NUMBER</th><th colspan="2"><?= $row->contact_number ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">GENDER</th><th colspan="2"><?= $row->gender ?></th> <th style="width: 15%;background-color: #F4FAFD">CIVIL STATUS</th><th colspan="2"><?= $row->civil_status ?></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> GOVERNMENT ID</b></h5></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">SSS NUMBER</th><th colspan="2"><?= $row->sss ?></th> <th style="width: 15%;background-color: #F4FAFD">PHILHEALTH NUMBER</th><th colspan="2"><?= $row->phic ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">PAG-IBIG NUMBER</th><th colspan="2"><?= $row->hdmf ?></th> <th style="width: 15%;background-color: #F4FAFD">TIN NUMBER</th><th colspan="2"><?= $row->tin ?></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b> <i class="fa fa-info-circle mt-2"></i> CONTACT INFO</b></h5></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >CONTACT PERSON</th><th colspan="5"><?= $row->e_contact_person ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >ADDRESS</th><th colspan="5"><?= $row->e_address ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >CONTACT NUMBER </th><th colspan="5"><?= $row->e_contact_no ?></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> EMPLOYMENT INFORMATION</b></h5></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">COMPANY</th><th colspan="2"><?= $row->company_name ?></th> <th style="width: 15%;background-color: #F4FAFD">DATE HIRED</th><th colspan="2"><?= $row->date_hired ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">POSITION</th><th colspan="2"><?= $row->position ?></th> <th style="width: 15%;background-color: #F4FAFD">DEPARTMENT</th><th colspan="2"><?= $row->dept_name ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">EMPLOYMENT STATUS</th><th><?= $row->employment_status ?></th> <th style="width: 15%;background-color: #F4FAFD">EMPLOYEE RANK</th><th><?= $row->employee_rank ?></th> <th style="width: 15%;background-color: #F4FAFD">DATE OF SEPARATION</th><th><?= $row->date_of_separation ?></th>
+                                            </tr>
+                                        </table>
+
+
+
+                                    </div>
+
+
+
+                                    <?php }}?>
+                                </div>
                             </div>
                         </div>
                     </div>
     </section>
 </div>
-
-<script>
-    function check_b4_submit() {
-        var password = $("#password").val();
-        var c_password = $("#c_password").val();
-
-        if (password != '' && c_password != '' && password != c_password) {
-            alert('Password and Confirm Password must be the same');
-            return false;
-        }
-        return true;
-    }
-
-    function cpw_length_check() {
-        var password = $("#password").val();
-        var c_password = $("#c_password").val();
-        var pswlen = password.length;
-        if(password != ''){
-            if (pswlen < 8 && password != '' ) {
-                alert('Password must be at least 8 characters');
-                $("#password").focus();
-            }
-            if ( c_password != '' && pswlen < 8 ) {
-                alert('Confirm Password must be at least 8 characters');
-                $("#c_password").focus();
-            }
-        }else{
-            alert("You must input the Password first");
-            $("#password").focus();
-        }
-    }
-
-    function access_js() {
-        $(document).on("click", ".eye_open1",function () {
-            $("#password").attr("type","text");
-            $("#eye_open1").attr("hidden", "hidden");
-            $("#eye_close1").removeAttr("hidden", "hidden");
-        });
-
-        $(document).on("click", ".eye_close1", function(){
-            $("#password").attr("type","password");
-            $("#eye_open1").removeAttr("hidden", "hidden");
-            $("#eye_close1").attr("hidden", "hidden");
-        });
-
-        $(document).on("click", ".eye_open2",function () {
-            $("#c_password").attr("type","text");
-            $("#eye_open2").attr("hidden", "hidden");
-            $("#eye_close2").removeAttr("hidden", "hidden");
-        });
-
-        $(document).on("click", ".eye_close2", function(){
-            $("#c_password").attr("type","password");
-            $("#eye_open2").removeAttr("hidden", "hidden");
-            $("#eye_close2").attr("hidden", "hidden");
-        });
-        $(document).on("click", ".eye_open3",function () {
-            $("#sec_answer").attr("type","text");
-            $("#eye_open3").attr("hidden", "hidden");
-            $("#eye_close3").removeAttr("hidden", "hidden");
-        });
-
-        $(document).on("click", ".eye_close3", function(){
-            $("#sec_answer").attr("type","password");
-            $("#eye_open3").removeAttr("hidden", "hidden");
-            $("#eye_close3").attr("hidden", "hidden");
-        });
-
-    }
-
-</script>
 
 
 

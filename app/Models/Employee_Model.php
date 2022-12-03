@@ -16,7 +16,9 @@ class Employee_Model extends  Model
 
     public function employee_list()
     {
-        return $this->employee->orderBy('last_name', 'asc')
+        return $this->employee->select('*')
+            ->join('company', 'employee.company = company.company_id')
+            ->orderBy('employee.last_name', 'asc')
             ->get()->getResult();
     }
 
@@ -123,7 +125,10 @@ class Employee_Model extends  Model
 
     public function get_employee_by_id($employee_id)
     {
-        return $this->employee->where('id', $employee_id)
+            return $this->employee->select('*')
+            ->join('department', 'employee.department = department.dept_id')
+            ->join('company', 'employee.company = company.company_id')
+            ->where('employee.employee_id', $employee_id)
             ->get()->getResult();
     }
 

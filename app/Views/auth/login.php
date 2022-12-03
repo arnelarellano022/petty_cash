@@ -22,7 +22,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center" style="margin-top: 10px; margin-bottom: 5px">
-            <a href="#" class="h3">SCMC Inventory System</a>
+            <a href="#" class="h3">SCMC-HRIS</a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
