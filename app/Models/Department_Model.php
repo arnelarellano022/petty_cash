@@ -13,7 +13,7 @@ class Department_Model extends Model
 
     public function department_list()
     {
-        return $this->department->orderBy('id', 'asc')
+        return $this->department->orderBy('dept_id', 'asc')
             ->get()->getResult();
     }
 
@@ -26,27 +26,27 @@ class Department_Model extends Model
         $this->department->insert($data);
     }
 
-    public function update_department($id)
+    public function update_department($dept_id)
     {
         $data = array(
             'dept_name'      => $_POST['dept_name'] 
         );
         
-        $this->department->update($data, 'id =' . $id);
+        $this->department->update($data, 'dept_id =' . $dept_id);
         $result = ($this->department->updateBatch() != 1) ? false : true;
 
         return array(
             'result' => $result
         );
     }
-    public function delete_department($id)
+    public function delete_department($dept_id)
     {
-        $this->department->delete(['id' => $id]);
+        $this->department->delete(['dept_id' => $dept_id]);
     }
 
-    public function get_department_by_id($id)
+    public function get_department_by_id($dept_id)
     {
-        return $this->department->where('id', $id)
+        return $this->department->where('dept_id', $dept_id)
             ->get()->getResult();
     }
 

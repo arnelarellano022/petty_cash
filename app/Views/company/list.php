@@ -29,16 +29,16 @@
                     <tbody>
                     <?php if($fetch_data){foreach ($fetch_data as $row) {?>
                         <tr>
-                            <td style="text-align: center"><?= $row->id;?></td>
+                            <td style="text-align: center"><?= $row->company_id;?></td>
                             <td style="text-align: center"><?= $row->company_name;?></td>
                         <?php if($edit_access == 1 or $delete_access == 1){  ?>
                             <td style="text-align: center">
                         <?php if($edit_access == 1){ ?>
-                                <a href="<?php echo base_url("edit_company/". $row->id); ?>" class="btn btn-warning btn-xs mr5">
+                                <a href="<?php echo base_url("edit_company/". $row->company_id); ?>" class="btn btn-warning btn-xs mr5">
                                     <i class="fas fa-edit"></i>
                                 </a>
                         <?php } if($delete_access == 1){?>
-                                <a href="<?php echo base_url("delete_company/". $row->id); ?>" class="btn btn-danger btn-xs mr5 "   data-confirm="Are you sure you want to delete this record?">
+                                <a href="<?php echo base_url("delete_company/". $row->company_id); ?>" class="btn btn-danger btn-xs mr5 "   data-confirm="Are you sure you want to delete this record?">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                         <?php } ?>

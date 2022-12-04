@@ -18,6 +18,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/ionicons/css/ionicons.min.css')?>">
 
+
     <!-- switch -->
 <!--    <link rel="stylesheet" href="--><?//= base_url('assets/adminLTE/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css')?><!--">-->
 <!--    <link rel="stylesheet" href="--><?//= base_url('assets/adminLTE/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css')?><!--">-->
@@ -39,8 +40,20 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/dist/css/adminlte.min.css')?>">
 
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css')?>">
+
     <!-- toogle-switch -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/toogle-switch/toogle-switch.css')?>">
+
+    <!-- File Input -->
+<!--    <link rel="stylesheet" href="--><?//= base_url('assets/adminLTE/plugins/bs-custom-file-input.min.css')?><!--">-->
+
+    <!-- DaterangePicker -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/daterangepicker/daterangepicker.css')?>">
+
+    <!-- Datetime Picker -->
+    <link rel="stylesheet" href="<?= base_url('assets/adminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')?>">
 
     <!-- overlayScrollbars -->
 <!--    <link rel="stylesheet" href="--><?//= base_url('assets/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')?><!--">-->

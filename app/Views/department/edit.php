@@ -19,7 +19,7 @@
                             <!-- form start -->
                             <div class="box-body">
                                 <?php if($fetch_data){foreach ($fetch_data as $row) {?>
-                                    <form action="<?= base_url("edit_department/". $row->id); ?>" method="post">
+                                    <form action="<?= base_url("edit_department/". $row->dept_id); ?>" method="post">
                                         <div class="box-body">
                                             <div class="row">
                                                 <div class="col-sm-12">

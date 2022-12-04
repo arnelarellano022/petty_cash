@@ -35,8 +35,13 @@
 <!--<script src="--><?//=base_url('assets/adminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js')?><!--"></script>-->
 <!-- jQuery Knob Chart -->
 <!--<script src="--><?//=base_url('assets/adminLTE/plugins/jquery-knob/jquery.knob.min.js')?><!--"></script>-->
-<!-- daterangepicker -->
+
+<!-- moment -->
 <script src="<?=base_url('assets/adminLTE/plugins/moment/moment.min.js')?>"></script>
+
+<!-- File Input -->
+<!--<script src="--><?//=base_url('assets/adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')?><!--"></script>-->
+
 <!--<script src="--><?//=base_url('assets/adminLTE/plugins/daterangepicker/daterangepicker.js')?><!--"></script>-->
 <!-- Tempusdominus Bootstrap 4 -->
 <!--<script src="--><?//=base_url('assets/adminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')?><!--"></script>-->
@@ -58,6 +63,12 @@
 <script src="<?=base_url('assets/adminLTE/plugins/datatables-buttons/js/buttons.html5.min.js')?>"></script>
 <script src="<?=base_url('assets/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js')?>"></script>
 <script src="<?=base_url('assets/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js')?>"></script>
+
+<!-- Daterange picker -->
+<script src="<?=base_url('assets/adminLTE/plugins/daterangepicker/daterangepicker.js')?>"></script>
+
+<!-- Datetime picker -->
+<script src="<?=base_url('assets/adminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')?>"></script>
 
 <!-- AdminLTE App -->
 <!--<script src="--><?//=base_url('assets/adminLTE/dist/js/adminlte.js')?><!--"></script>-->

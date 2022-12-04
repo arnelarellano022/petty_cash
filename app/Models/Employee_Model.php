@@ -24,13 +24,13 @@ class Employee_Model extends  Model
 
     public function get_Company_List()
     {
-        return $this->company->orderBy('id', 'asc')
+        return $this->company->orderBy('company_id', 'asc')
             ->get()->getResult();
     }
     
     public function get_Department_List()
     {
-        return $this->department->orderBy('id', 'asc')
+        return $this->department->orderBy('dept_id', 'asc')
             ->get()->getResult();
     }
 

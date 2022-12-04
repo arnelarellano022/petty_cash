@@ -14,7 +14,7 @@ class Company_Model extends Model
 
     public function company_list()
     {
-        return $this->company->orderBy('id', 'asc')
+        return $this->company->orderBy('company_id', 'asc')
             ->get()->getResult();
     }
 
@@ -27,27 +27,27 @@ class Company_Model extends Model
         $this->company->insert($data);
     }
 
-    public function update_company($id)
+    public function update_company($company_id)
     {
         $data = array(
             'company_name'      => $_POST['company_name'] 
         );
         
-        $this->company->update($data, 'id =' . $id);
+        $this->company->update($data, 'company_id =' . $company_id);
         $result = ($this->company->updateBatch() != 1) ? false : true;
 
         return array(
             'result' => $result
         );
     }
-    public function delete_company($id)
+    public function delete_company($company_id)
     {
-        $this->company->delete(['id' => $id]);
+        $this->company->delete(['company_id' => $company_id]);
     }
 
-    public function get_company_by_id($id)
+    public function get_company_by_id($company_id)
     {
-        return $this->company->where('id', $id)
+        return $this->company->where('company_id', $company_id)
             ->get()->getResult();
     }
 

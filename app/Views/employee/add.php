@@ -23,94 +23,233 @@
                             <div class="box-body">
                                 <form action="<?= base_url('add_user');?>" method="post">
                                     <div class="box-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>User Name</label>
-                                                    <input onblur="check_username()" class="form-control " type="text" name="username" value="" required="" id="username">
+                                        <div class="col-sm-12">
+                                          <legend class = "text-info" style="border-bottom: 1px solid gainsboro; margin-bottom: 15px;">EMPLOYEE INFORMATION</legend>
+                                            <div class="row">
+                                                <div class="form-group col-sm-3">
+                                                    <label>ID NUMBER</label>
+                                                    <input onblur="check_id_no()" class="form-control " type="text" name="id_no" value="" required="" id="id_no" placeholder="Enter ID Number">
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>First Name</label>
-                                                    <input class="form-control" type="text" name="firstname" value="" required="">
+                                                <div class="form-group col-sm-3">
+                                                    <label>LAST NAME</label>
+                                                    <input class="form-control " type="text" name="last_name" value="" required="" id="last_name" placeholder="Enter Last Name">
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Last Name</label>
-                                                    <input class="form-control" type="text" name="lastname" value="" required="">
+                                                <div class="form-group col-sm-3">
+                                                    <label>FIRST NAME</label>
+                                                    <input class="form-control " type="text" name="first_name" value="" required="" id="first_name" placeholder="Enter First Name">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>MIDDLE NAME</label>
+                                                    <input class="form-control " type="text" name="middle_name" value="" required="" id="middle_name" placeholder="Enter Middle Name">
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Password</label>
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <label>PRESENT ADDRESS</label>
+                                                    <textarea class="form-control" type="text" name="present_address" placeholder="Enter Current Address" required="" id="present_address"></textarea>
                                                 </div>
-                                                <div class="input-group-append">
-                                                    <input class="form-control" type="password" name="password" value="" required="" id="password">
-                                                    <div class="input-group-text">
-                                                        <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
-                                                        <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
+                                                <div class="form-group col-sm-6">
+                                                    <label>PERMANENT ADDRESS</label>
+                                                    <textarea class="form-control" type="text" name="permanent_address" placeholder="Enter Permanent Address" required="" id="permanent_address"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <!-- Date -->
+                                                <div class="form-group col-sm-3">
+                                                    <label>DATE</label>
+                                                    <div class="input-group date" id="birthdate" data-target-input="nearest">
+                                                        <input type="text" name="birthday" id="birthdate_val" class="form-control datetimepicker-input" data-target="#birthdate" placeholder="Enter Date of Birth" />
+                                                        <div class="input-group-append" data-target="#birthdate" data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                        <div class="input-group-text" onclick="$('#birthdate_val').val('');" ><i class="fa fa-times" ></i></div>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Confirm Password</label>
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
-                                                    <div class="input-group-text">
-                                                        <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
-                                                        <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
+                                                <!--  Radio Button-->
+                                                <div class="form-group col-sm-3" >
+                                                    <label>GENDER</label><br>
+                                                    <div style="text-align: center; border: 1px solid gainsboro ; height: 38px; ">
+                                                        <div style="margin-top: 7px"  >
+                                                            <div class="icheck-success d-inline" style="margin-right: 30px;">
+                                                                <input type="radio" name="gender" checked id="radioSuccess1" value="Male">
+                                                                <label for="radioSuccess1"> MALE</label>
+                                                            </div>
+                                                            <div class="icheck-danger d-inline">
+                                                                <input type="radio" name="gender" id="radioSuccess2" value="Female">
+                                                                <label for="radioSuccess2"> FEMALE</label>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <div class="form-group col-sm-3">
 
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label class="col-md-12 control-label">Security Question</label>
-                                                    <select name="sec_question" class="form-control" required >
-                                                        <option value="" hidden>Select Security Question</option>
-                                                        <option value="1">What is your favorite food?</option>
-                                                        <option value="2">In what city were you born?</option>
-                                                        <option value="3">What was your childhood nickname?</option>
-                                                        <option value="4">What is your mother's maiden name?</option>
-                                                        <option value="5">What is the name of your favorite pet?</option>
-                                                        <option value="6">Where did you meet your spouse/partner?</option>
-                                                        <option value="7">What year was your father (or mother) born?</option>
-                                                        <option value="8">In what city or town was your first job?</option>
-                                                        <option value="9">What was the name of your elementary school?</option>
-                                                        <option value="10">What is the name of your favorite childhood friend?</option>
+                                                    <label class=" control-label">CIVIL STATUS</label>
+                                                    <select name="civil_status" class="form-control" required >
+                                                        <option hidden>Select Status</option>
+                                                        <option value="1">Single</option>
+                                                        <option value="2">Single w/ Children</option>
+                                                        <option value="3">Married</option>
+                                                        <option value="4">Married w/ Children</option>
                                                     </select>
                                                 </div>
-                                            </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Answer</label>
-                                                    <input class="form-control" type="text" name="sec_answer" value="" required="">
+                                                <div class="form-group col-sm-3">
+                                                    <label>CONTACT NUMBER</label>
+                                                    <input class="form-control " type="text" name="contact_number" value="" required="" id="middle_name" placeholder="Enter Contact Number">
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label class="col-md-12 control-label">Select User Role</label>
-                                                        <select name="user_role" class="form-control" required>
-                                                            <option value="" hidden>Select Role</option>
-                                                            <?php foreach($user_role_list as $role_row): ?>
-                                                                <option value="<?= $role_row->roles; ?>"><?= $role_row->roles; ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
+                                            <div class="row">
+                                                <div class="form-group col-sm-3">
+                                                    <label>SSS NUMBER</label>
+                                                    <input class="form-control " type="text" name="sss" value="" required="" id="sss" placeholder="Enter SSS Number">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>PHILHEALTH NUMBER</label>
+                                                    <input class="form-control " type="text" name="phic" value="" required="" id="phic" placeholder="Enter Philhealth Number">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>PAG-IBIG NUMBER</label>
+                                                    <input class="form-control " type="text" name="hdmf" value="" required="" id="hdmf" placeholder="Enter Pag-ibig Number">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>TIN NUMBER</label>
+                                                    <input class="form-control " type="text" name="tin" value="" required="" id="tin" placeholder="Enter TIN Number">
                                                 </div>
                                             </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-3">
+                                                    <label>EDUCATIONAL ATTAINMENT</label>
+                                                    <input class="form-control " type="text" name="educational_attainment" value="" required="" id="educational_attainment" placeholder="Enter Educational Attainment">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>EMERGENCY CONTACT PERSON</label>
+                                                    <input class="form-control " type="text" name="e_contact_person" value="" required="" id="e_contact_person" placeholder="Enter Emergency Contact Person">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>ADDRESS OF EMERGENCY CONTACT</label>
+                                                    <input class="form-control " type="text" name="e_address" value="" required="" id="e_address" placeholder="Enter Address of Emergency Contact">
+                                                </div>
+                                                <div class="form-group col-sm-3">
+                                                    <label>CONTACT NUMBER OF EMERGENCY CONTACT</label>
+                                                    <input class="form-control " type="text" name="e_contact_no" value="" required="" id="e_contact_no" placeholder="Enter Contact Number of Emergency Contact">
+                                                </div>
+                                            </div>
+
+                                          <legend class = "text-info" style="border-bottom: 1px solid gainsboro; margin-bottom: 15px;">EMPLOYMENT DETAILS</legend>
+
+                                            <div class="row">
+
+                                                <div class="form-group col-sm-3">
+
+                                                    <label class=" control-label">COMPANY</label>
+                                                    <select name="company" class="form-control" required >
+                                                        <option hidden>Select Company</option>
+                                                        <?php foreach($company_list as $row): ?>
+                                                            <option value="<?= $row->company_id; ?>"><?= $row->company_name; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-sm-3">
+                                                    <label>POSITION</label>
+                                                    <input class="form-control " type="text" name="position" value="" required="" id="position" placeholder="Enter Position">
+                                                </div>
+
+                                                <div class="form-group col-sm-3">
+
+                                                    <label class=" control-label">DEPARTMENT</label>
+                                                    <select name="department" class="form-control" required >
+                                                        <option hidden>Select Departmant</option>
+                                                        <?php foreach($department_list as $row): ?>
+                                                            <option value="<?= $row->dept_id; ?>"><?= $row->dept_name; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Date -->
+                                                <div class="form-group col-sm-3">
+                                                    <label>DATE HIRED</label>
+                                                    <div class="input-group date" id="date_hired" data-target-input="nearest">
+                                                        <input type="text" name="date_hired" id="date_hired_val" class="form-control datetimepicker-input" data-target="#date_hired" placeholder="Enter Date Hired" />
+                                                        <div class="input-group-append" data-target="#date_hired" data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                        <div class="input-group-text" onclick="$('#date_hired_val').val('');" ><i class="fa fa-times"></i></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="row">
+
+                                                <div class="form-group col-sm-4">
+
+                                                    <label class=" control-label">EMPLOYEE STATUS</label>
+                                                    <select name="employment_status" class="form-control" required >
+                                                        <option hidden>Select Status</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="2">Probationary</option>
+                                                        <option value="3">Resigned</option>
+                                                        <option value="4">AWOL</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-sm-4">
+
+                                                    <label class=" control-label">EMPLOYEE RANK</label>
+                                                    <select name="employee_rank" class="form-control" required >
+                                                        <option hidden>Select Employee Rank</option>
+                                                        <option value="1">S1</option>
+                                                        <option value="2">S2</option>
+                                                        <option value="3">S3</option>
+                                                        <option value="4">S4</option>
+                                                        <option value="5">S5</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Date -->
+                                                <div class="form-group col-sm-4">
+                                                    <label>DATE OF SEPARATION</label>
+                                                    <div class="input-group date" id="date_of_separation" data-target-input="nearest">
+                                                        <input type="text" name="date_of_separation" id="date_of_separation_val" class="form-control datetimepicker-input" data-target="#date_of_separation" placeholder="Enter Date of Birth" />
+                                                        <div class="input-group-append" data-target="#date_of_separation" data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                        <div class="input-group-text" onclick="$('#date_of_separation_val').val('');" ><i class="fa fa-times"></i></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <legend class = "text-info" style="border-bottom: 1px solid gainsboro; margin-bottom: 15px;">UPLOAD EMPLOYEE PICTURE</legend>
+
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label for="exampleInputFile">File input</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                            <label class="custom-file-label" for="exampleInputFile">Select Picture</label>
+                                                        </div>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">Upload</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
                                         </div>
                                     </div>
                                     <div class="box-footer">
                                         <input type="hidden" name="submit" value="submit"/>
-                                        <button onclick="return check_b4_submit();" type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
+                                        <button type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
                                     </div>
                                 </form>
                             </div>
@@ -120,43 +259,14 @@
 </div>
 
 <script>
-    function check_b4_submit() {
-        var password = $("#password").val();
-        var c_password = $("#c_password").val();
-        var pswlen = password.length;
-            if (password != '' && c_password != '' && password != c_password) {
-                alert('Password and Confirm Password must be the same');
-                return false;
-            }
-            return true;
-        }
-
-        function cpw_length_check() {
-            var password = $("#password").val();
-            var c_password = $("#c_password").val();
-            var pswlen = password.length;
-            if(password != ''){
-                if (pswlen < 8 && password != '' ) {
-                    alert('Password must be at least 8 characters');
-                    $("#password").focus();
-                }
-                if ( c_password != '' && pswlen < 8 ) {
-                    alert('Confirm Password must be at least 8 characters');
-                    $("#c_password").focus();
-                }
-            }else{
-                alert("You must input the Password first");
-                $("#password").focus();
-            }
-        }
 
     //Check Username Exist
-    function check_username()
+    function check_id_no()
     {
         var username = $("#username").val();
 
         $.ajax({
-            url: "<?= base_url("Users/check_username_exist");?>",
+            url: "<?= base_url("Users/check_id_no_exist");?>",
             method: "POST",
             data: {username: username},
             success: function (data) {
@@ -168,31 +278,20 @@
             }
         });
     }
+
 function access_js() {
 
-    $(document).on("click", ".eye_open1",function () {
-        $("#password").attr("type","text");
-        $("#eye_open1").attr("hidden", "hidden");
-        $("#eye_close1").removeAttr("hidden", "hidden");
+    //Date picker
+    $('#birthdate').datetimepicker({
+        format: "YYYY-MM-DD"
+    });
+    $('#date_hired').datetimepicker({
+        format: "YYYY-MM-DD"
+    });
+    $('#date_of_separation').datetimepicker({
+        format: "YYYY-MM-DD"
     });
 
-    $(document).on("click", ".eye_close1", function(){
-        $("#password").attr("type","password");
-        $("#eye_open1").removeAttr("hidden", "hidden");
-        $("#eye_close1").attr("hidden", "hidden");
-    });
-
-    $(document).on("click", ".eye_open2",function () {
-        $("#c_password").attr("type","text");
-        $("#eye_open2").attr("hidden", "hidden");
-        $("#eye_close2").removeAttr("hidden", "hidden");
-    });
-
-    $(document).on("click", ".eye_close2", function(){
-        $("#c_password").attr("type","password");
-        $("#eye_open2").removeAttr("hidden", "hidden");
-        $("#eye_close2").attr("hidden", "hidden");
-    });
 }
-    
+
 </script>

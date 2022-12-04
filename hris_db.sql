@@ -49,7 +49,7 @@ CREATE TABLE `company` (
   `company_id` int(11) NOT NULL AUTO_INCREMENT,
   `company_name` varchar(50) NOT NULL,
   PRIMARY KEY (`company_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `company` */
 
@@ -85,7 +85,7 @@ CREATE TABLE `department` (
   `dept_id` int(11) NOT NULL AUTO_INCREMENT,
   `dept_name` varchar(50) NOT NULL,
   PRIMARY KEY (`dept_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `department` */
 
