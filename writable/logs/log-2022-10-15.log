@@ -1,0 +1,104 @@
+CRITICAL - 2022-10-15 09:34:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:35:46 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:36:29 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:36:31 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:18 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:19 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:19 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:19 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:19 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:20 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:23 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:38:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:39:22 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:39:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:39:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:39:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:39:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:40:34 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 09:40:36 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 10:48:38 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-10-15 08:53:36 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\codeigniter4\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}

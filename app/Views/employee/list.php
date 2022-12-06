@@ -54,7 +54,12 @@
                             <td style="text-align: center ;padding: 40px 0;"><?= $row->last_name;?></td>
                             <td style="text-align: center ;padding: 40px 0;"><?= $row->first_name;?></td>
                             <td style="text-align: center ;padding: 40px 0;"><?= $row->company_name; ?></td>
-                            <td style="text-align: center ;padding: 40px 0;"><?= $row->employment_status;?></td>
+                            <td style="text-align: center ;padding: 40px 0;"><?php
+                               if($row->employment_status == 1){echo "Regular";}
+                               if($row->employment_status == 2){echo "Probationary";}
+                               if($row->employment_status == 3){echo "Resigned";}
+                               if($row->employment_status == 4){echo "AWOL";} ?>
+                            </td>
 
                         <?php  if($edit_access == 1 or $delete_access == 1 or $view_access == 1) {  ?>
                             <td style="text-align: center ;padding: 40px 0;">

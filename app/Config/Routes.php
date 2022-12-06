@@ -90,6 +90,7 @@ $routes->add('/delete_department/(:any)', 'Department::delete_department/$1');
 $routes->add('/employee_index', 'Employee::employee_index');
 $routes->add('/view_employee/(:any)', 'Employee::view_employee/$1');
 $routes->add('/edit_employee/(:any)', 'Employee::edit_employee/$1');
+//$routes->match(['get', 'post'], '/add_employee', 'Employee::add_employee');
 $routes->add('/add_employee', 'Employee::add_employee');
 $routes->add('/delete_employee/(:any)', 'Employee::delete_employee/$1');
 

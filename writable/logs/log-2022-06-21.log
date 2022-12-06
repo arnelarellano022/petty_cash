@@ -1,0 +1,97 @@
+CRITICAL - 2022-06-21 01:06:03 --> Cannot call constructor
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:12:45 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-06-21 01:19:45 --> Namespace declaration statement has to be the very first statement or after any declare call in the script
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-06-21 01:25:55 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:35:45 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:39:07 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:41:54 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:43:06 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:46:00 --> Call to a member function load_index_data() on null
+#0 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-21 01:47:10 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::order_by()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 01:53:05 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::orderBy()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 01:53:07 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::orderBy()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 02:24:35 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::order_by()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 02:27:27 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::order_by()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 02:27:28 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::order_by()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-21 03:10:59 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::get()
+#0 C:\xampp\htdocs\codigniter4\app\Controllers\login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

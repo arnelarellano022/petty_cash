@@ -1,0 +1,185 @@
+ERROR - 2022-06-30 00:32:30 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:32:30 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::where()
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:32:43 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:32:43 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::where()
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:38:49 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:38:49 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::get()
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:39:24 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:39:24 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:40:00 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:40:00 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:40:54 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:40:54 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-30 00:41:25 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->index()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-06-30 00:41:58 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:41:58 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:45:40 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:45:40 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:45:41 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:45:41 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-06-30 00:48:09 --> Unknown column 'pri' in 'order clause'
+CRITICAL - 2022-06-30 00:48:09 --> Call to a member function getNumRows() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(14): App\Models\Login_Model->load_index_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\login->__construct()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-30 00:50:45 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->index()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 00:52:52 --> Call to undefined function validation_errors()
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(22): view('login')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-30 00:54:51 --> Call to a member function listErrors() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(22): view('login')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-30 00:56:03 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('login', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(22): view('login')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-30 01:13:03 --> Call to a member function set_rules() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 01:19:33 --> Call to a member function run() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 01:36:26 --> Call to a member function run() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 01:39:56 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Login_Model.php(66): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(46): App\Models\Login_Model->validate_login()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-30 01:40:36 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Login_Model.php(66): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(46): App\Models\Login_Model->validate_login_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-30 01:54:05 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::row()
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(52): App\Models\Login_Model->validate_login_model('admin', '21232f297a57a5a...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-30 01:54:38 --> Call to a member function set_userdata() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 03:17:45 --> Call to a member function set_userdata() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-06-30 03:18:01 --> Call to a member function set_userdata() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

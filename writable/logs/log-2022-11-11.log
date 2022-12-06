@@ -1,0 +1,239 @@
+CRITICAL - 2022-11-11 00:07:36 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:07:43 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('2')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:07:47 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('5')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:08 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('5')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:08 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('5')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:16 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:28 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:31 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:32 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:08:43 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:09:09 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:09:09 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:09:09 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:09:17 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:09:19 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('3')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:10:05 --> Call to undefined method App\Models\Roles_Model::sub_
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(97): CodeIgniter\Model->__call('sub_', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('3')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 00:10:15 --> Call to undefined method App\Models\Roles_Model::get_modules
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(102): CodeIgniter\Model->__call('get_modules', Array)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('3')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-11-11 00:39:35 --> Table 'project_db.user_info' doesn't exist
+CRITICAL - 2022-11-11 00:39:35 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(30): App\Models\Users_Model->users_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-11-11 01:13:28 --> strtoupper() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strtoupper() ex...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Views\roles\access.php(21): strtoupper(Array)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('roles/access', Array, true)
+#5 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(109): view('roles/access', Array)
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('3')
+#7 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#8 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-11 01:18:40 --> Class 'roles' not found
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-11-11 01:30:06 --> Call to a member function get_csrf_token_name() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('roles/access', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(109): view('roles/access', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-11 20:35:59 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('roles/access', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(109): view('roles/access', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->access_roles('1')
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-11-11 21:25:33 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:25:53 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:25:55 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:25:56 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:26:07 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:26:08 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:26:14 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:26:16 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:28:53 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:28:55 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:29:40 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:29:42 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:00 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:05 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:06 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:19 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:22 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:28 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:30:31 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:22 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:24 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:25 --> Column 'module_id' cannot be null
+CRITICAL - 2022-11-11 21:31:26 --> Call to a member function where() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(115): App\Models\Roles_Model->set_access()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->set_access()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-11-11 21:31:28 --> Column 'module_id' cannot be null
+CRITICAL - 2022-11-11 21:31:29 --> Call to a member function where() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(115): App\Models\Roles_Model->set_access()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->set_access()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-11-11 21:31:30 --> Column 'module_id' cannot be null
+CRITICAL - 2022-11-11 21:31:31 --> Call to a member function where() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(115): App\Models\Roles_Model->set_access()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->set_access()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-11-11 21:31:32 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:33 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:37 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:39 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:31:41 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:23 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:24 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:42 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:45 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:45 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:32:47 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:16 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:17 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:49 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:51 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:58 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:33:59 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:00 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:00 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:01 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:40 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:41 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:41 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:43 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:34:59 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:00 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:00 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:01 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:01 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:02 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:19 --> Column 'module_id' cannot be null
+ERROR - 2022-11-11 21:35:21 --> Column 'module_id' cannot be null

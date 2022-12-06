@@ -5,13 +5,14 @@ use CodeIgniter\Model;
 
 
 class Employee_Model extends  Model
-{
+{   protected $helpers = ['form'];
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->employee = $db->table('employee');
         $this->company = $db->table('company');
         $this->department = $db->table('department');
         date_default_timezone_set('Asia/Manila');
+
     }
 
     public function employee_list()
@@ -34,54 +35,44 @@ class Employee_Model extends  Model
             ->get()->getResult();
     }
 
-    public function insert_employee($image_name)
+    public function insert_employee($filename)
     {
-        $attach_filename = "";
-        $full_name =  $_SESSION['last_name'] . ", " . $_SESSION['first_name'];
 
-        if (!empty($_FILES['Filename']['name'])) {
-
-            $path_parts = pathinfo($_FILES["Filename"]["name"]);
-            $extension = $path_parts['extension'];
-
-            $attach_filename = $image_name['img_name'] . "." . $extension;
-        }
 
         $date = date('Y-m-d H:i:s');
-        $created_by = $_SESSION['user_id'];
+        $created_by = $_POST['user_id'];
 
         $data = array(
-            'id_no'                         => $_SESSION['id_no'],
-            'last_name'                     => $_SESSION['last_name'],
-            'first_name'                    => $_SESSION['first_name'],
-            'middle_name'                   => $_SESSION['middle_name'],
-            'present_address'               => $_SESSION['present_address'],
-            'provincial_address'            => $_SESSION['provincial_address'],
-            'birthday'                      => $_SESSION['birthday'],
-            'gender'                        => $_SESSION['gender'],
-            'civil_status'                  => $_SESSION['civil_status'],
-            'contact_number'                => $_SESSION['contact_number'],
-            'sss'                           => $_SESSION['sss'],
-            'phic'                          => $_SESSION['phic'],
-            'hdmf'                          => $_SESSION['hdmf'],
-            'tin'                           => $_SESSION['tin'],
-            'educational_attainment'        => $_SESSION['educational_attainment'],
-            'e_contact_person'              => $_SESSION['e_contact_person'],
-            'e_address'                     => $_SESSION['e_address'],
-            'e_contact_no'                  => $_SESSION['e_contact_no'],
-            'company'                       => $_SESSION['company'],
-            'position'                      => $_SESSION['position'],
-            'department'                    => $_SESSION['department'],
-            'date_hired'                    => $_SESSION['date_hired'],
-            'employment_status'             => $_SESSION['employment_status'],
-            'employee_rank'                 => $_SESSION['employee_rank'],
-            'date_of_separation'            => $_SESSION['date_of_separation'],
+            'id_no'                         => $_POST['id_no'],
+            'last_name'                     => $_POST['last_name'],
+            'first_name'                    => $_POST['first_name'],
+            'middle_name'                   => $_POST['middle_name'],
+            'present_address'               => $_POST['present_address'],
+            'permanent_address'            => $_POST['permanent_address'],
+            'birthday'                      => $_POST['birthday'],
+            'gender'                        => $_POST['gender'],
+            'civil_status'                  => $_POST['civil_status'],
+            'contact_number'                => $_POST['contact_number'],
+            'sss'                           => $_POST['sss'],
+            'phic'                          => $_POST['phic'],
+            'hdmf'                          => $_POST['hdmf'],
+            'tin'                           => $_POST['tin'],
+            'educational_attainment'        => $_POST['educational_attainment'],
+            'e_contact_person'              => $_POST['e_contact_person'],
+            'e_address'                     => $_POST['e_address'],
+            'e_contact_no'                  => $_POST['e_contact_no'],
+            'company'                       => $_POST['company'],
+            'position'                      => $_POST['position'],
+            'department'                    => $_POST['department'],
+            'date_hired'                    => $_POST['date_hired'],
+            'employment_status'             => $_POST['employment_status'],
+            'employee_rank'                 => $_POST['employee_rank'],
+            'date_of_separation'            => $_POST['date_of_separation'],
             'created_by'                    => $created_by,
             'created_at'                    => $date,
             'updated_by'                    => $created_by,
             'updated_at'                    => $date,
-            'image_src_filename'            => $attach_filename,
-            'full_name'                     => $full_name
+            'image_src_filename'            => $filename
 
         );
 
@@ -120,6 +111,7 @@ class Employee_Model extends  Model
     }
     public function delete_employee($employee_id)
     {
+//        unlink( "./uploads/" . $row->photo_filename );
         $this->employee->delete(['employee_id' => $employee_id]);
     }
 
@@ -128,6 +120,7 @@ class Employee_Model extends  Model
             return $this->employee->select('*')
             ->join('department', 'employee.department = department.dept_id')
             ->join('company', 'employee.company = company.company_id')
+            ->join('user_roles', 'employee.created_by = user_roles.user_id')
             ->where('employee.employee_id', $employee_id)
             ->get()->getResult();
     }

@@ -60,13 +60,17 @@
                                                 <th style="width: 15%; background-color: #F4FAFD" colspan="1" >PRESENT ADDRESS</th><th colspan="5"><?= $row->present_address ?></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >PROVINCIAL ADDRESS</th><th colspan="5"><?= $row->provincial_address ?></th>
+                                                <th style="width: 15%; background-color: #F4FAFD" colspan="1" >PROVINCIAL ADDRESS</th><th colspan="5"><?= $row->permanent_address ?></th>
                                             </tr>
                                             <tr>
                                                 <th style="width: 15%;background-color: #F4FAFD">BIRTHDAY</th><th colspan="2"><?= $row->birthday ?></th> <th style="width: 15%;background-color: #F4FAFD">CONTACT NUMBER</th><th colspan="2"><?= $row->contact_number ?></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 15%;background-color: #F4FAFD">GENDER</th><th colspan="2"><?= $row->gender ?></th> <th style="width: 15%;background-color: #F4FAFD">CIVIL STATUS</th><th colspan="2"><?= $row->civil_status ?></th>
+                                                <th style="width: 15%;background-color: #F4FAFD">GENDER</th><th colspan="2"><?= $row->gender ?></th> <th style="width: 15%;background-color: #F4FAFD">CIVIL STATUS</th><th colspan="2"><?php
+                                                    if($row->civil_status == 1){echo "Single";}
+                                                    if($row->civil_status == 2){echo "Single w/ Children";}
+                                                    if($row->civil_status == 3){echo "Married";}
+                                                    if($row->civil_status == 4){echo "Married w/ Children";} ?> </th>
                                             </tr>
 
                                             <tr>
@@ -102,7 +106,27 @@
                                                 <th style="width: 15%;background-color: #F4FAFD">POSITION</th><th colspan="2"><?= $row->position ?></th> <th style="width: 15%;background-color: #F4FAFD">DEPARTMENT</th><th colspan="2"><?= $row->dept_name ?></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 15%;background-color: #F4FAFD">EMPLOYMENT STATUS</th><th><?= $row->employment_status ?></th> <th style="width: 15%;background-color: #F4FAFD">EMPLOYEE RANK</th><th><?= $row->employee_rank ?></th> <th style="width: 15%;background-color: #F4FAFD">DATE OF SEPARATION</th><th><?= $row->date_of_separation ?></th>
+                                                <th style="width: 15%;background-color: #F4FAFD">EMPLOYMENT STATUS</th><th><?php
+                                                    if($row->employment_status == 1){echo "Regular";}
+                                                    if($row->employment_status == 2){echo "Probationary";}
+                                                    if($row->employment_status == 3){echo "Resigned";}
+                                                    if($row->employment_status == 4){echo "AWOL";} ?> </th>
+                                                <th style="width: 15%;background-color: #F4FAFD">EMPLOYEE RANK</th><th><?php
+                                                    if($row->employee_rank == 1){echo "S1";}
+                                                    if($row->employment_status == 2){echo "S2";}
+                                                    if($row->employment_status == 3){echo "S3";}
+                                                    if($row->employment_status == 4){echo "S4";}
+                                                    if($row->employment_status == 5){echo "S5";}?></th> <th style="width: 15%;background-color: #F4FAFD">DATE OF SEPARATION</th><th><?= $row->date_of_separation ?></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> RECORD INFO</b></h5></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">CREATED BY</th><th colspan="2"><?= $row->created_by ?></th> <th style="width: 15%;background-color: #F4FAFD">CREATED AT</th><th colspan="2"><?= $row->created_at ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="width: 15%;background-color: #F4FAFD">UPDATED BY</th><th colspan="2"><?= $row->updated_by ?></th> <th style="width: 15%;background-color: #F4FAFD">UPDATED AT</th><th colspan="2"><?= $row->updated_at ?></th>
                                             </tr>
                                         </table>
 

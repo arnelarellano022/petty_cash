@@ -1,0 +1,47 @@
+CRITICAL - 2022-07-07 21:35:10 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::to() must be of the type int or null, string given, called in C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php on line 76
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(76): CodeIgniter\HTTP\RedirectResponse->to('/dashboard', 'refresh')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->validate_login()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-07 21:39:37 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('dashboard_view/...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(105): view('dashboard_view/...', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-07 22:59:10 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('dashboard_view/...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(107): view('dashboard_view/...', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-07 22:59:36 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('dashboard_view/...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(107): view('dashboard_view/...', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-07 23:00:14 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('dashboard_view/...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Login.php(107): view('dashboard_view/...', Array)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\login->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\login))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -40,7 +40,7 @@
 <script src="<?=base_url('assets/adminLTE/plugins/moment/moment.min.js')?>"></script>
 
 <!-- File Input -->
-<!--<script src="--><?//=base_url('assets/adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')?><!--"></script>-->
+<script src="<?=base_url('assets/adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js')?>"></script>
 
 <!--<script src="--><?//=base_url('assets/adminLTE/plugins/daterangepicker/daterangepicker.js')?><!--"></script>-->
 <!-- Tempusdominus Bootstrap 4 -->

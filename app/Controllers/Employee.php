@@ -39,9 +39,38 @@ class Employee extends BaseController
 
             if($_POST['submit'])
             {
-                $this->Employee_Model->insert_employee();
-                $this->session->setFlashdata("success", "Employee Added Successfully");
-                return redirect()->to('/employee_index');
+                helper(['form', 'url']);
+
+                $input = $this->validate([
+                    'file' => [
+                        'label' => 'Image File',
+                        'rules' => 'uploaded[file]'
+                            . '|is_image[file]'
+                            . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                            . '|max_size[file,10000]'
+                            . '|max_dims[file,1024,768]',
+                    ],
+                ]);
+
+                if (!$input) {
+                    $this->session->setFlashdata("error", "Invalid Picture");
+                    return redirect()->to('add_employee');
+                }
+                else {
+                    $img = $this->request->getFile('file');
+
+                    if ($img->isValid() && !$img->hasMoved()) {
+                        $filename = $img->getRandomName();
+                        $img->move(  './uploads/', $filename );
+
+                        $this->Employee_Model->insert_employee($filename);
+                        $this->session->setFlashdata("success", "Employee Added Successfully");
+                        return redirect()->to('/employee_index');
+                    }
+
+
+
+                }
             }
 
             $module['company_list'] = $this->Employee_Model->get_Company_List();

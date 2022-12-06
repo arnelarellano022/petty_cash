@@ -1,0 +1,158 @@
+CRITICAL - 2022-10-14 00:48:41 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(37): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(78): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 00:49:58 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(37): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(78): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-10-14 01:04:51 --> Error connecting to the database: Unknown database 'marketing_dsb'
+CRITICAL - 2022-10-14 01:04:51 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'marketing_dsb'
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\codeigniter4\app\Models\Login_Model.php(24): CodeIgniter\Database\BaseConnection->query('Select * FROM a...')
+#2 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(15): App\Models\Login_Model->load_index_data()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\users->__construct()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-14 01:09:46 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(40): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:10:12 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(40): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:18:41 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(40): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:22:01 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(45): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:22:05 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(45): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:23:03 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(45): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:24:53 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(40): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 01:25:38 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(693): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(40): CodeIgniter\Model->__get('input')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-14 03:17:02 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-14 03:18:06 --> Call to a member function getPost() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-14 03:19:31 --> Call to a member function getPost() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-14 03:23:59 --> Object of class CodeIgniter\HTTP\IncomingRequest could not be converted to string
+#0 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(51): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 51, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-10-14 03:24:09 --> Call to a member function getPost() on null
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-14 03:39:56 --> Allowed fields must be specified for model: App\Models\Users_Model
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\BaseModel.php(1138): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\BaseModel.php(713): CodeIgniter\BaseModel->doProtectFields(Array)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(59): CodeIgniter\Model->insert(Array)
+#4 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(79): App\Models\Users_Model->insert_user_model()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->insert_user()
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#7 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

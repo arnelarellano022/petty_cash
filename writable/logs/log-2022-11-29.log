@@ -1,0 +1,40 @@
+CRITICAL - 2022-11-29 10:02:25 --> File not found: C:\xampp\htdocs\codeigniter4\writable\uploads/project_db_2022-11-29 10:02:25.sql.gz
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(774): CodeIgniter\HTTP\DownloadResponse->setFilePath('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\DB_Backup.php(22): CodeIgniter\HTTP\Response->download('project_db_2022...', NULL)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DB_Backup->db_index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DB_Backup))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-29 10:03:06 --> File not found: C:\xampp\htdocs\codeigniter4\writable\uploads/project_db_2022-11-29 10:03:06.sql.gz
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(774): CodeIgniter\HTTP\DownloadResponse->setFilePath('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\DB_Backup.php(22): CodeIgniter\HTTP\Response->download('project_db_2022...', NULL)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DB_Backup->db_index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DB_Backup))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-29 10:03:46 --> File not found: C:\xampp\htdocs\codeigniter4\writable\uploads/project_db_2022-11-29_10:03:46.sql.gz
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(774): CodeIgniter\HTTP\DownloadResponse->setFilePath('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\DB_Backup.php(22): CodeIgniter\HTTP\Response->download('project_db_2022...', NULL)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DB_Backup->db_index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DB_Backup))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-11-29 10:25:33 --> File not found: C:\xampp\htdocs\codeigniter4\writable\uploads/BackupDB_2022-11-29_10:25:33.sql.gz
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(774): CodeIgniter\HTTP\DownloadResponse->setFilePath('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\DB_Backup.php(22): CodeIgniter\HTTP\Response->download('BackupDB_2022-1...', NULL)
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DB_Backup->db_index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DB_Backup))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

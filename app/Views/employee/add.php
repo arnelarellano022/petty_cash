@@ -15,43 +15,46 @@
                     <a href="#" onclick="window.history.go(-1); return false;" class="btn btn-primary pull-right"><i class="fa fa-reply mr5"></i> <b>BACK</b></a>
                 </div>
             </div>
+
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-                                <form action="<?= base_url('add_user');?>" method="post">
+<!--                                <form action="--><?//= base_url('add_employee');?><!--" method="post">-->
+
+                                    <?= form_open_multipart('add_employee') ?>
                                     <div class="box-body">
                                         <div class="col-sm-12">
                                           <legend class = "text-info" style="border-bottom: 1px solid gainsboro; margin-bottom: 15px;">EMPLOYEE INFORMATION</legend>
                                             <div class="row">
                                                 <div class="form-group col-sm-3">
                                                     <label>ID NUMBER</label>
-                                                    <input onblur="check_id_no()" class="form-control " type="text" name="id_no" value="" required="" id="id_no" placeholder="Enter ID Number">
+                                                    <input onblur="check_id_no()" class="form-control " type="text" name="id_no" value=""  id="id_no" placeholder="Enter ID Number">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>LAST NAME</label>
-                                                    <input class="form-control " type="text" name="last_name" value="" required="" id="last_name" placeholder="Enter Last Name">
+                                                    <input class="form-control " type="text" name="last_name" value=""  id="last_name" placeholder="Enter Last Name">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>FIRST NAME</label>
-                                                    <input class="form-control " type="text" name="first_name" value="" required="" id="first_name" placeholder="Enter First Name">
+                                                    <input class="form-control " type="text" name="first_name" value=""  id="first_name" placeholder="Enter First Name">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>MIDDLE NAME</label>
-                                                    <input class="form-control " type="text" name="middle_name" value="" required="" id="middle_name" placeholder="Enter Middle Name">
+                                                    <input class="form-control " type="text" name="middle_name" value=""  id="middle_name" placeholder="Enter Middle Name">
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="form-group col-sm-6">
                                                     <label>PRESENT ADDRESS</label>
-                                                    <textarea class="form-control" type="text" name="present_address" placeholder="Enter Current Address" required="" id="present_address"></textarea>
+                                                    <textarea class="form-control" type="text" name="present_address" placeholder="Enter Current Address"  id="present_address"></textarea>
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label>PERMANENT ADDRESS</label>
-                                                    <textarea class="form-control" type="text" name="permanent_address" placeholder="Enter Permanent Address" required="" id="permanent_address"></textarea>
+                                                    <textarea class="form-control" type="text" name="permanent_address" placeholder="Enter Permanent Address"  id="permanent_address"></textarea>
                                                 </div>
                                             </div>
 
@@ -96,45 +99,45 @@
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>CONTACT NUMBER</label>
-                                                    <input class="form-control " type="text" name="contact_number" value="" required="" id="middle_name" placeholder="Enter Contact Number">
+                                                    <input class="form-control " type="text" name="contact_number" value=""  id="middle_name" placeholder="Enter Contact Number">
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="form-group col-sm-3">
                                                     <label>SSS NUMBER</label>
-                                                    <input class="form-control " type="text" name="sss" value="" required="" id="sss" placeholder="Enter SSS Number">
+                                                    <input class="form-control " type="text" name="sss" value=""  id="sss" placeholder="Enter SSS Number">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>PHILHEALTH NUMBER</label>
-                                                    <input class="form-control " type="text" name="phic" value="" required="" id="phic" placeholder="Enter Philhealth Number">
+                                                    <input class="form-control " type="text" name="phic" value=""  id="phic" placeholder="Enter Philhealth Number">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>PAG-IBIG NUMBER</label>
-                                                    <input class="form-control " type="text" name="hdmf" value="" required="" id="hdmf" placeholder="Enter Pag-ibig Number">
+                                                    <input class="form-control " type="text" name="hdmf" value=""  id="hdmf" placeholder="Enter Pag-ibig Number">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>TIN NUMBER</label>
-                                                    <input class="form-control " type="text" name="tin" value="" required="" id="tin" placeholder="Enter TIN Number">
+                                                    <input class="form-control " type="text" name="tin" value=""  id="tin" placeholder="Enter TIN Number">
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="form-group col-sm-3">
                                                     <label>EDUCATIONAL ATTAINMENT</label>
-                                                    <input class="form-control " type="text" name="educational_attainment" value="" required="" id="educational_attainment" placeholder="Enter Educational Attainment">
+                                                    <input class="form-control " type="text" name="educational_attainment" value=""  id="educational_attainment" placeholder="Enter Educational Attainment">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>EMERGENCY CONTACT PERSON</label>
-                                                    <input class="form-control " type="text" name="e_contact_person" value="" required="" id="e_contact_person" placeholder="Enter Emergency Contact Person">
+                                                    <input class="form-control " type="text" name="e_contact_person" value=""  id="e_contact_person" placeholder="Enter Emergency Contact Person">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>ADDRESS OF EMERGENCY CONTACT</label>
-                                                    <input class="form-control " type="text" name="e_address" value="" required="" id="e_address" placeholder="Enter Address of Emergency Contact">
+                                                    <input class="form-control " type="text" name="e_address" value=""  id="e_address" placeholder="Enter Address of Emergency Contact">
                                                 </div>
                                                 <div class="form-group col-sm-3">
                                                     <label>CONTACT NUMBER OF EMERGENCY CONTACT</label>
-                                                    <input class="form-control " type="text" name="e_contact_no" value="" required="" id="e_contact_no" placeholder="Enter Contact Number of Emergency Contact">
+                                                    <input class="form-control " type="text" name="e_contact_no" value=""  id="e_contact_no" placeholder="Enter Contact Number of Emergency Contact">
                                                 </div>
                                             </div>
 
@@ -155,7 +158,7 @@
 
                                                 <div class="form-group col-sm-3">
                                                     <label>POSITION</label>
-                                                    <input class="form-control " type="text" name="position" value="" required="" id="position" placeholder="Enter Position">
+                                                    <input class="form-control " type="text" name="position" value=""  id="position" placeholder="Enter Position">
                                                 </div>
 
                                                 <div class="form-group col-sm-3">
@@ -230,14 +233,11 @@
 
                                             <div class="form-group">
                                                 <div class="form-group">
-                                                    <label for="exampleInputFile">File input</label>
+                                                    <label for="file">PICTURE</label>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                            <label class="custom-file-label" for="exampleInputFile">Select Picture</label>
-                                                        </div>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Upload</span>
+                                                            <input type="file" class="custom-file-input" id="file" name="file">
+                                                            <label class="custom-file-label" for="file">Select Picture</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -291,6 +291,11 @@ function access_js() {
     $('#date_of_separation').datetimepicker({
         format: "YYYY-MM-DD"
     });
+
+    $(function () {
+        bsCustomFileInput.init();
+    });
+
 
 }
 

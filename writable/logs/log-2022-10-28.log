@@ -1,0 +1,74 @@
+ERROR - 2022-10-28 00:59:11 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 00:59:11 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:06 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:06 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:07 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:07 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:07 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:07 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:07 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:07 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:07 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:07 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:08 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:08 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-10-28 01:00:08 --> Got error 194 "Tablespace is missing for a table" from storage engine InnoDB
+CRITICAL - 2022-10-28 01:00:08 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Roles.php(32): App\Models\Roles_Model->roles_fetch_data()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Roles->roles_index()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Roles))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-28 01:37:54 --> Call to a member function segment() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('partial/side_me...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Module.php(36): view('partial/side_me...')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Module->module_index()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Module))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

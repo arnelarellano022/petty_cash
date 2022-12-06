@@ -1,0 +1,108 @@
+ERROR - 2022-11-26 08:05:59 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 08:38:14 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 09:23:54 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:25:11 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:29:43 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:34:13 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:36:37 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:37:08 --> Unknown column 'usernamesuperadmin' in 'where clause'
+ERROR - 2022-11-26 09:56:59 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 10:05:26 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 10:05:57 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 10:08:30 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 10:09:45 --> Unknown column 'superadmin' in 'where clause'
+ERROR - 2022-11-26 10:11:36 --> Unknown column 'superadmin' in 'where clause'
+CRITICAL - 2022-11-26 11:22:41 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 C:\xampp\htdocs\codeigniter4\app\Models\Auth_Model.php(121): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 121, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(150): App\Models\Auth_Model->validate_acct_security()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_account_security()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-11-26 11:23:22 --> Unknown column 'Array' in 'where clause'
+ERROR - 2022-11-26 11:23:38 --> Unknown column 'Array' in 'where clause'
+CRITICAL - 2022-11-26 11:24:31 --> Object of class stdClass could not be converted to string
+#0 C:\xampp\htdocs\codeigniter4\app\Models\Auth_Model.php(121): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 121, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(150): App\Models\Auth_Model->validate_acct_security()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_account_security()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-11-26 13:39:41 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('21232f297a57a5a743894a0e4a801fc3')
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 13:40:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = :0:, 1 = :1:
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 13:43:32 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('294228dbca14b20d3a7f8d206589c185')
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 13:43:59 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('21232f297a57a5a743894a0e4a801fc3')
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 13:45:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('21232f297a57a5a743894a0e4a801fc3')
+WHERE `user_id` = 1' at line 1
+CRITICAL - 2022-11-26 13:52:43 --> array_combine(): Both parameters should have an equal number of elements
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_combine()...', 'C:\\xampp\\htdocs...', 68, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(68): array_combine(Array, Array)
+#2 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(64): App\Models\Users_Model->update_user('1')
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->edit_user('1')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-26 13:52:56 --> array_map() expects parameter 1 to be a valid callback, array must have exactly two members
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_map() exp...', 'C:\\xampp\\htdocs...', 68, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Models\Users_Model.php(68): array_map(Array, Array)
+#2 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(64): App\Models\Users_Model->update_user('1')
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->edit_user('1')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-11-26 14:13:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = :0:
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 14:17:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = :0:
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 14:20:01 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = :0:
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 14:20:36 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = :0:
+WHERE `user_id` = 1' at line 1
+ERROR - 2022-11-26 14:23:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('21232f297a57a5a743894a0e4a801fc3')
+WHERE `user_id` = 1' at line 1
+CRITICAL - 2022-11-26 00:25:08 --> syntax error, unexpected ')'
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\User...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\User...')
+#3 [internal function]: spl_autoload_call('App\\Models\\User...')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Config\Factories.php(136): class_exists('App\\Models\\User...')
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Config\Factories.php(106): CodeIgniter\Config\Factories::locateClass(Array, 'Users_Model')
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(780): CodeIgniter\Config\Factories::__callStatic('models', Array)
+#7 C:\xampp\htdocs\codeigniter4\app\Controllers\Users.php(7): model('Users_Model')
+#8 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\users->__construct()
+#9 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#10 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-11-26 14:25:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = ('Arnel up22','Arellano up222','Admin','2','cc','::1','2022-11-26 14:25:5...' at line 1
+CRITICAL - 2022-11-26 15:00:45 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\codeigniter4\app\Models\Auth_Model.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('superadmin', 'superadmin')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-26 15:01:03 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\codeigniter4\app\Models\Auth_Model.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('superadmin', 'superadmin')
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-26 15:08:02 --> Call to a member function getResult() on array
+#0 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('superadmin', 'superadmin')
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

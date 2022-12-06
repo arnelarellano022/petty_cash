@@ -1,0 +1,20 @@
+CRITICAL - 2022-10-29 00:36:58 --> Call to a member function segment() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('partial/side_me...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(104): view('partial/side_me...')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-29 00:37:43 --> Call to a member function segment() on null
+#0 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('partial/side_me...', Array, true)
+#3 C:\xampp\htdocs\codeigniter4\app\Controllers\Auth.php(104): view('partial/side_me...')
+#4 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\codeigniter4\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
