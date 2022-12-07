@@ -48,7 +48,7 @@ class Employee extends BaseController
                             . '|is_image[file]'
                             . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
                             . '|max_size[file,10000]'
-                            . '|max_dims[file,1024,768]',
+
                     ],
                 ]);
 
@@ -67,8 +67,6 @@ class Employee extends BaseController
                         $this->session->setFlashdata("success", "Employee Added Successfully");
                         return redirect()->to('/employee_index');
                     }
-
-
 
                 }
             }
@@ -132,6 +130,10 @@ class Employee extends BaseController
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");
             return redirect()->to('/employee_index');
+    }
+
+    function check_id_no_exist(){
+        echo $this->Employee_Model->check_id_no_exist($_POST['id_no']);
     }
     
 }

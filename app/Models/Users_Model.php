@@ -23,7 +23,7 @@ class Users_Model extends  Model
 
     public function get_Roles_List()
     {
-        return $this->roles->orderBy('id', 'asc')
+        return $this->roles->orderBy('user_roles_id', 'asc')
             ->get()->getResult();
     }
 
@@ -31,13 +31,16 @@ class Users_Model extends  Model
     {
         $date = date('Y-m-d H:i:s');
 
+        $password = hash('sha512', $_POST['password']);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
         $data = array(
             'username'      => $_POST['username'] ,
             'firstname'     => $_POST['firstname'] ,
             'lastname'      => $_POST['lastname'] ,
-            'password'      => md5($_POST['password']),
+            'password'      => $password,
             'sec_question'  =>  $_POST['sec_question'] ,
-            'sec_answer'    =>  md5($_POST['sec_answer']) ,
+            'sec_answer'    =>  $_POST['sec_answer'] ,
             'user_role'     => $_POST['user_role'],
             'last_ip'       => $this->getUserIpAddr(),
             'created_at'    => $date,
@@ -57,7 +60,7 @@ class Users_Model extends  Model
             'lastname'          => $_POST['lastname'],
             'user_role'         => $_POST['user_role'],
             'sec_question'      => $_POST['sec_question'],
-            'sec_answer'        => md5($_POST['sec_answer']) ,
+            'sec_answer'        => $_POST['sec_answer'] ,
             'last_ip'           => $this->getUserIpAddr(),
             'updated_at'        => $date,
         );

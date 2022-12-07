@@ -29,7 +29,7 @@ class Auth_Model extends Model {
                 {
                 $query_roles = $this->roles->where('roles', $rs->user_role)->get()->getResult();
                     foreach ($query_roles as $row){
-                        $user_role_id = $row->id;
+                        $user_role_id = $row->user_roles_id;
                     }
                 }else { $user_role_id = $rs->user_role;}
 
@@ -54,6 +54,9 @@ class Auth_Model extends Model {
                 'firstname'     => $firstname,
                 'lastname'      => $lastname
             );
+        }
+        else{
+            return array( 'success'       => false);
         }
     }
 

@@ -22,8 +22,6 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-<!--                                <form action="--><?//= base_url('add_employee');?><!--" method="post">-->
-
                                     <?= form_open_multipart('add_employee') ?>
                                     <div class="box-body">
                                         <div class="col-sm-12">
@@ -263,17 +261,17 @@
     //Check Username Exist
     function check_id_no()
     {
-        var username = $("#username").val();
+        var id_no = $("#id_no").val();
 
         $.ajax({
-            url: "<?= base_url("Users/check_id_no_exist");?>",
+            url: "<?= base_url("Employee/check_id_no_exist");?>",
             method: "POST",
-            data: {username: username},
+            data: {id_no: id_no},
             success: function (data) {
                 if (data == 1) {
-                    alert("Username already exist!");
-                    $("#username").val('');
-                    $("#username").focus();
+                    alert("ID Number already exist!");
+                    $("#id_no").val('');
+                    $("#id_no").focus();
                 }
             }
         });
@@ -295,8 +293,6 @@ function access_js() {
     $(function () {
         bsCustomFileInput.init();
     });
-
-
 }
 
 </script>

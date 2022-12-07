@@ -29,18 +29,18 @@
                     <tbody>
                     <?php if($fetch_data){foreach ($fetch_data as $row) {?>
                             <tr>
-                                <td style="text-align: center"><?= $row->id;?></td>
+                                <td style="text-align: center"><?= $row->user_roles_id;?></td>
                                 <td style="text-align: center"><?= $row->roles;?></td>
                                 <td style="text-align: center">
-                                    <a href="<?php echo base_url("access_roles/". $row->id); ?>" class="btn btn-info btn-xs mr5" >
+                                    <a href="<?php echo base_url("access_roles/". $row->user_roles_id); ?>" class="btn btn-info btn-xs mr5" >
                                         <i class="fas fa-sliders-h"></i>
                                     </a>
                                 </td>
                                 <td style="text-align: center">
-                                    <a href="<?php echo base_url("edit_roles/". $row->id); ?>" class="btn btn-warning btn-xs mr5">
+                                    <a href="<?php echo base_url("edit_roles/". $row->user_roles_id); ?>" class="btn btn-warning btn-xs mr5">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="<?php echo base_url("delete_roles/". $row->id); ?>" class="btn btn-danger btn-xs mr5" data-confirm="Are you sure you want to delete this record?">
+                                    <a href="<?php echo base_url("delete_roles/". $row->user_roles_id); ?>" class="btn btn-danger btn-xs mr5" data-confirm="Are you sure you want to delete this record?">
                                         <i class="fa fa-trash-alt"></i>
                                     </a>
 

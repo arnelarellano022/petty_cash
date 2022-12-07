@@ -19,7 +19,7 @@ class Roles_Model extends  Model
     //Roles
     public function roles_fetch_data()
     {
-        return $this->builder->orderBy('id', 'asc')
+        return $this->builder->orderBy('user_roles_id', 'asc')
         ->get()->getResult();
     }
 
@@ -37,12 +37,11 @@ class Roles_Model extends  Model
 
     public function update_roles($id)
     {
-
         $data = array(
             'roles' => $_POST['roles']
         );
 
-        $this->builder->update($data, 'id =' . $id);
+        $this->builder->update($data, 'user_roles_id =' . $id);
         $result = ($this->builder->updateBatch() != 1) ? false : true;
 
         return array(
@@ -51,11 +50,11 @@ class Roles_Model extends  Model
     }
     public function delete_roles($id)
     {
-        $this->builder->delete(['id' => $id]);
+        $this->builder->delete(['user_roles_id' => $id]);
     }
 
     public function get_roles($id){
-        $query =  $this->builder->where('id', $id)->get();
+        $query =  $this->builder->where('user_roles_id', $id)->get();
         foreach ($query->getResult() as $row) {
             return $row->roles;
         }
@@ -63,7 +62,7 @@ class Roles_Model extends  Model
 
     public function get_role_by_id($id)
     {
-        return $this->builder->where('id', $id)
+        return $this->builder->where('user_roles_id', $id)
             ->get()->getResult();
     }
 

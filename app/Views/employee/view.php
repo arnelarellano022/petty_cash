@@ -33,14 +33,12 @@
                                         <p><img class="img-thumbnail" src="<?php echo base_url('uploads/' . $image_data)?>" style="width:auto; height:auto; border-width:3px"></p>
                                         <div class = "text-center">
                                             <a class="btn btn-primary col-sm-5"
-                                               href="<?php echo base_url(); ?>employee_update/<?php echo $row->id; ?>"><b>Update</b></a>
+                                               href="<?php echo base_url("edit_employee/". $row->employee_id); ?>"><b>Update</b></a>
                                             <a class="btn btn-danger col-sm-5"
-                                               href="<?php echo base_url(); ?>delete_employee/<?php echo $row->id; ?>"
+                                               href="<?php echo base_url("delete_employee/". $row->employee_id); ?>"
                                                data-confirm="Are you sure you want to delete this item?" data-method="post"><b>Delete</b></a>
                                         </div>
                                     </div>
-
-
 
                                     <div class=" col-sm-10" >
                                         <table class="table table-bordered" style="text-align: center; font-size: large" >
@@ -123,10 +121,10 @@
                                                 <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> RECORD INFO</b></h5></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 15%;background-color: #F4FAFD">CREATED BY</th><th colspan="2"><?= $row->created_by ?></th> <th style="width: 15%;background-color: #F4FAFD">CREATED AT</th><th colspan="2"><?= $row->created_at ?></th>
+                                                <th style="width: 15%;background-color: #F4FAFD">CREATED BY</th><th colspan="2"><?= get_user_role($row->created_by)  ?></th> <th style="width: 15%;background-color: #F4FAFD">CREATED AT</th><th colspan="2"><?= $row->created_at ?></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 15%;background-color: #F4FAFD">UPDATED BY</th><th colspan="2"><?= $row->updated_by ?></th> <th style="width: 15%;background-color: #F4FAFD">UPDATED AT</th><th colspan="2"><?= $row->updated_at ?></th>
+                                                <th style="width: 15%;background-color: #F4FAFD">UPDATED BY</th><th colspan="2"><?= get_user_role($row->updated_by) ?></th> <th style="width: 15%;background-color: #F4FAFD">UPDATED AT</th><th colspan="2"><?= $row->updated_at ?></th>
                                             </tr>
                                         </table>
 

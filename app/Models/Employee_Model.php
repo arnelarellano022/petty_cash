@@ -38,9 +38,8 @@ class Employee_Model extends  Model
     public function insert_employee($filename)
     {
 
-
         $date = date('Y-m-d H:i:s');
-        $created_by = $_POST['user_id'];
+        $user_id = $_SESSION['user_id'];
 
         $data = array(
             'id_no'                         => $_POST['id_no'],
@@ -68,12 +67,11 @@ class Employee_Model extends  Model
             'employment_status'             => $_POST['employment_status'],
             'employee_rank'                 => $_POST['employee_rank'],
             'date_of_separation'            => $_POST['date_of_separation'],
-            'created_by'                    => $created_by,
+            'created_by'                    => $user_id,
             'created_at'                    => $date,
-            'updated_by'                    => $created_by,
+            'updated_by'                    => $user_id,
             'updated_at'                    => $date,
             'image_src_filename'            => $filename
-
         );
 
         $this->employee->insert($data);
@@ -120,17 +118,16 @@ class Employee_Model extends  Model
             return $this->employee->select('*')
             ->join('department', 'employee.department = department.dept_id')
             ->join('company', 'employee.company = company.company_id')
-            ->join('user_roles', 'employee.created_by = user_roles.user_id')
             ->where('employee.employee_id', $employee_id)
             ->get()->getResult();
     }
 
 
-    public function check_employeename_exist($employeename)
+    public function check_id_no_exist($id_no)
     {
-        $result = $this->employee->where('employeename', $employeename)
+        $result = $this->employee->where('id_no', $id_no)
             ->countAllResults();
-        return($result > 0) ? true : false;
+        return($result > 0) ? 1 : 0;
     }
 
 }

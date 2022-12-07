@@ -96,5 +96,21 @@ if (!function_exists('check_module_access')) {
 }
 // -----------------------------------------------------------------------------
 
+// Get CREATED UPDATED BY
+if (!function_exists('get_user_role')) {
+    function get_user_role( $user_id )
+    {
+        $user_role = '-';
+        $db      = \Config\Database::connect();
+        $roles = $db->table('user_roles');
+        $result = $roles->where('user_roles_id', $user_id)->get()->getResult();
+        foreach ($result as $row){
+            $user_role = $row->roles;
+        }
+        return $user_role;
+    }
+}
+// -----------------------------------------------------------------------------
+
 
 
