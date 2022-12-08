@@ -16,13 +16,9 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <?php
-
-                $image_data = get_user_image($_SESSION['user_id']);
+                <?php $image_data = get_user_image($_SESSION['user_id']);
                 //if no image
-                if($image_data == null){
-                    $image_data = "no_image.png";
-                } ?>
+                if($image_data == null){$image_data = "no_image.png";} ?>
                 <img src="<?= base_url("uploads/".$image_data) ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
