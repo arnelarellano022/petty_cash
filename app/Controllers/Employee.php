@@ -39,36 +39,38 @@ class Employee extends BaseController
 
             if($_POST['submit'])
             {
-                helper(['form', 'url']);
+                $filename = '';
+                if(!empty($_POST['file'])){
+                    helper(['form', 'url']);
 
-                $input = $this->validate([
-                    'file' => [
-                        'label' => 'Image File',
-                        'rules' => 'uploaded[file]'
-                            . '|is_image[file]'
-                            . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-                            . '|max_size[file,10000]'
+                    $input = $this->validate([
+                        'file' => [
+                            'label' => 'Image File',
+                            'rules' => 'uploaded[file]'
+                                . '|is_image[file]'
+                                . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                . '|max_size[file,10000]'
+                        ],
+                    ]);
 
-                    ],
-                ]);
-
-                if (!$input) {
-                    $this->session->setFlashdata("error", "Invalid Picture");
-                    return redirect()->to('add_employee');
-                }
-                else {
-                    $img = $this->request->getFile('file');
-
-                    if ($img->isValid() && !$img->hasMoved()) {
-                        $filename = $img->getRandomName();
-                        $img->move(  './uploads/', $filename );
-
-                        $this->Employee_Model->insert_employee($filename);
-                        $this->session->setFlashdata("success", "Employee Added Successfully");
-                        return redirect()->to('/employee_index');
+                    if (!$input) {
+                        $this->session->setFlashdata("error", "Invalid Picture");
+                        return redirect()->to('add_employee');
                     }
+                    else {
+                        $img = $this->request->getFile('file');
 
+                        if ($img->isValid() && !$img->hasMoved()) {
+                            $filename = $img->getRandomName();
+                            $img->move(  './uploads/', $filename );
+                        }
+                    }
                 }
+
+                    $this->Employee_Model->insert_employee($filename);
+                    $this->session->setFlashdata("success", "Employee Added Successfully");
+                    return redirect()->to('/employee_index');
+
             }
 
             $module['company_list'] = $this->Employee_Model->get_Company_List();
@@ -103,15 +105,46 @@ class Employee extends BaseController
     {
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == false) {return redirect()->to('/error_404');};
 
-            if($_POST['submit']) {
-                $this->Employee_Model->update_employee($id);
-                //check value from model Y/N
-                $this->session->setFlashdata("success", "Record Updated Successfully");
-                return redirect()->to('/employee_index');
-            }
+        if($_POST['submit'])
+        {
+            $filename = '';
+            if(!empty($_FILES['file']['name'])){
+                helper(['form', 'url']);
 
-            $module['fetch_data'] = $this->Employee_Model->get_employee_by_employee_id($id);
-            $module['employee_role_list'] = $this->Employee_Model->get_Roles_List();
+                $input = $this->validate([
+                    'file' => [
+                        'label' => 'Image File',
+                        'rules' => 'uploaded[file]'
+                            . '|is_image[file]'
+                            . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                            . '|max_size[file,10000]'
+                    ],
+                ]);
+
+                if (!$input) {
+                    $this->session->setFlashdata("error", "Invalid Picture");
+                    return redirect()->to('add_employee');
+                }
+                else {
+                    $img = $this->request->getFile('file');
+
+                    if ($img->isValid() && !$img->hasMoved()) {
+                        $filename = $img->getRandomName();
+                        $img->move(  './uploads/', $filename );
+                    }
+                }
+            }
+            $data = array('employee_id' => $id, 'filename' => $filename);
+
+            $this->Employee_Model->update_employee($data);
+            $this->session->setFlashdata("success", "Employee Updated Successfully");
+            return redirect()->to('/employee_index');
+
+        }
+
+            $module['fetch_data'] = $this->Employee_Model->get_employee_by_id($id);
+            $module['company_list'] = $this->Employee_Model->get_Company_List();
+            $module['department_list'] = $this->Employee_Model->get_Department_List();
             $module['title'] = 'EDIT EMPLOYEE';
 
             echo view('partial/header', $module);

@@ -110,7 +110,7 @@
                                                     if($row->employment_status == 3){echo "Resigned";}
                                                     if($row->employment_status == 4){echo "AWOL";} ?> </th>
                                                 <th style="width: 15%;background-color: #F4FAFD">EMPLOYEE RANK</th><th><?php
-                                                    if($row->employee_rank == 1){echo "S1";}
+                                                    if($row->employment_status == 1){echo "S1";}
                                                     if($row->employment_status == 2){echo "S2";}
                                                     if($row->employment_status == 3){echo "S3";}
                                                     if($row->employment_status == 4){echo "S4";}

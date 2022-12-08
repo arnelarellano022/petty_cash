@@ -7,7 +7,7 @@
         <div class="card card-default color-palette-bo">
             <div class="card-header">
                 <div class="d-inline-block">
-                    <h3 class="card-title"> <i class="fa fa-plus mt-2"></i>
+                    <h3 class="card-title"> <i class="fa fa-edit mt-2"></i>
                         &nbsp; <b><?= $title ?></b> </h3>
                 </div>
                 <!--                --><?php //if(){} ?>
@@ -22,38 +22,39 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-
-                                <?= form_open_multipart('add_employee') ?>
+                                <?php if ($fetch_data){
+                                    foreach ($fetch_data as $row){?>
+                                <?= form_open_multipart('edit_employee/' . $row->employee_id) ?>
                                 <div class="box-body">
                                     <div class="col-sm-12">
                                         <legend class = "text-info" style="border-bottom: 1px solid gainsboro; margin-bottom: 15px;">EMPLOYEE INFORMATION</legend>
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label>ID NUMBER</label>
-                                                <input onblur="check_id_no()" class="form-control " type="text" name="id_no" value=""  id="id_no" placeholder="Enter ID Number">
+                                                <input onblur="check_id_no()" class="form-control " type="text" name="id_no" value="<?= $row->id_no ?>"  id="id_no" placeholder="Enter ID Number">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>LAST NAME</label>
-                                                <input class="form-control " type="text" name="last_name" value=""  id="last_name" placeholder="Enter Last Name">
+                                                <input class="form-control " type="text" name="last_name" value="<?= $row->last_name ?>"  id="last_name" placeholder="Enter Last Name">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>FIRST NAME</label>
-                                                <input class="form-control " type="text" name="first_name" value=""  id="first_name" placeholder="Enter First Name">
+                                                <input class="form-control " type="text" name="first_name" value="<?= $row->first_name ?>"  id="first_name" placeholder="Enter First Name">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>MIDDLE NAME</label>
-                                                <input class="form-control " type="text" name="middle_name" value=""  id="middle_name" placeholder="Enter Middle Name">
+                                                <input class="form-control " type="text" name="middle_name" value="<?= $row->middle_name ?>"  id="middle_name" placeholder="Enter Middle Name">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-sm-6">
                                                 <label>PRESENT ADDRESS</label>
-                                                <textarea class="form-control" type="text" name="present_address" placeholder="Enter Current Address"  id="present_address"></textarea>
+                                                <textarea class="form-control" type="text" name="present_address" placeholder="Enter Current Address"  id="present_address"><?= $row->present_address ?></textarea>
                                             </div>
                                             <div class="form-group col-sm-6">
                                                 <label>PERMANENT ADDRESS</label>
-                                                <textarea class="form-control" type="text" name="permanent_address" placeholder="Enter Permanent Address"  id="permanent_address"></textarea>
+                                                <textarea class="form-control" type="text" name="permanent_address" placeholder="Enter Permanent Address"  id="permanent_address"><?= $row->permanent_address ?></textarea>
                                             </div>
                                         </div>
 
@@ -62,7 +63,7 @@
                                             <div class="form-group col-sm-3">
                                                 <label>DATE</label>
                                                 <div class="input-group date" id="birthdate" data-target-input="nearest">
-                                                    <input type="text" name="birthday" id="birthdate_val" class="form-control datetimepicker-input" data-target="#birthdate" placeholder="Enter Date of Birth" />
+                                                    <input type="text" name="birthday" id="birthdate_val" class="form-control datetimepicker-input" data-target="#birthdate" placeholder="Enter Date of Birth" value="<?= $row->birthday ?>" />
                                                     <div class="input-group-append" data-target="#birthdate" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
@@ -75,11 +76,11 @@
                                                 <div style="text-align: center; border: 1px solid gainsboro ; height: 38px; ">
                                                     <div style="margin-top: 7px"  >
                                                         <div class="icheck-success d-inline" style="margin-right: 30px;">
-                                                            <input type="radio" name="gender" checked id="radioSuccess1" value="Male">
+                                                            <input type="radio" name="gender" checked id="radioSuccess1" value="Male" <?php if($row->gender == "Male"){echo "checked";}?>>
                                                             <label for="radioSuccess1"> MALE</label>
                                                         </div>
                                                         <div class="icheck-danger d-inline">
-                                                            <input type="radio" name="gender" id="radioSuccess2" value="Female">
+                                                            <input type="radio" name="gender" id="radioSuccess2" value="Female" <?php if($row->gender == "Female"){echo "checked";}?>>
                                                             <label for="radioSuccess2"> FEMALE</label>
                                                         </div>
                                                     </div>
@@ -90,53 +91,53 @@
                                                 <label class=" control-label">CIVIL STATUS</label>
                                                 <select name="civil_status" class="form-control" required >
                                                     <option hidden>Select Status</option>
-                                                    <option value="1">Single</option>
-                                                    <option value="2">Single w/ Children</option>
-                                                    <option value="3">Married</option>
-                                                    <option value="4">Married w/ Children</option>
+                                                    <option value="1" <?php if($row->civil_status == 1){ echo "selected";}?>>Single</option>
+                                                    <option value="2" <?php if($row->civil_status == 2){ echo "selected";}?>>Single w/ Children</option>
+                                                    <option value="3" <?php if($row->civil_status == 3){ echo "selected";}?>>Married</option>
+                                                    <option value="4" <?php if($row->civil_status == 4){ echo "selected";}?>>Married w/ Children</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>CONTACT NUMBER</label>
-                                                <input class="form-control " type="text" name="contact_number" value=""  id="middle_name" placeholder="Enter Contact Number">
+                                                <input class="form-control " type="text" name="contact_number" value="<?= $row->contact_number ?>"  id="middle_name" placeholder="Enter Contact Number">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label>SSS NUMBER</label>
-                                                <input class="form-control " type="text" name="sss" value=""  id="sss" placeholder="Enter SSS Number">
+                                                <input class="form-control " type="text" name="sss" value="<?= $row->sss ?>"  id="sss" placeholder="Enter SSS Number">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>PHILHEALTH NUMBER</label>
-                                                <input class="form-control " type="text" name="phic" value=""  id="phic" placeholder="Enter Philhealth Number">
+                                                <input class="form-control " type="text" name="phic" value="<?= $row->phic ?>"  id="phic" placeholder="Enter Philhealth Number">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>PAG-IBIG NUMBER</label>
-                                                <input class="form-control " type="text" name="hdmf" value=""  id="hdmf" placeholder="Enter Pag-ibig Number">
+                                                <input class="form-control " type="text" name="hdmf" value="<?= $row->hdmf ?>"  id="hdmf" placeholder="Enter Pag-ibig Number">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>TIN NUMBER</label>
-                                                <input class="form-control " type="text" name="tin" value=""  id="tin" placeholder="Enter TIN Number">
+                                                <input class="form-control " type="text" name="tin" value="<?= $row->tin ?>"  id="tin" placeholder="Enter TIN Number">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label>EDUCATIONAL ATTAINMENT</label>
-                                                <input class="form-control " type="text" name="educational_attainment" value=""  id="educational_attainment" placeholder="Enter Educational Attainment">
+                                                <input class="form-control " type="text" name="educational_attainment" value="<?= $row->educational_attainment ?>"  id="educational_attainment" placeholder="Enter Educational Attainment">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>EMERGENCY CONTACT PERSON</label>
-                                                <input class="form-control " type="text" name="e_contact_person" value=""  id="e_contact_person" placeholder="Enter Emergency Contact Person">
+                                                <input class="form-control " type="text" name="e_contact_person" value="<?= $row->e_contact_person ?>"  id="e_contact_person" placeholder="Enter Emergency Contact Person">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>ADDRESS OF EMERGENCY CONTACT</label>
-                                                <input class="form-control " type="text" name="e_address" value=""  id="e_address" placeholder="Enter Address of Emergency Contact">
+                                                <input class="form-control " type="text" name="e_address" value="<?= $row->e_address ?>"  id="e_address" placeholder="Enter Address of Emergency Contact">
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <label>CONTACT NUMBER OF EMERGENCY CONTACT</label>
-                                                <input class="form-control " type="text" name="e_contact_no" value=""  id="e_contact_no" placeholder="Enter Contact Number of Emergency Contact">
+                                                <input class="form-control " type="text" name="e_contact_no" value="<?= $row->e_contact_no ?>"  id="e_contact_no" placeholder="Enter Contact Number of Emergency Contact">
                                             </div>
                                         </div>
 
@@ -149,15 +150,15 @@
                                                 <label class=" control-label">COMPANY</label>
                                                 <select name="company" class="form-control" required >
                                                     <option hidden>Select Company</option>
-                                                    <?php foreach($company_list as $row): ?>
-                                                        <option value="<?= $row->company_id; ?>"><?= $row->company_name; ?></option>
+                                                    <?php foreach($company_list as $row_cl): ?>
+                                                        <option value="<?= $row_cl->company_id; ?>" <?php if($row_cl->company_id == $row->company){echo "selected";} ?>><?= $row_cl->company_name; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
 
                                             <div class="form-group col-sm-3">
                                                 <label>POSITION</label>
-                                                <input class="form-control " type="text" name="position" value=""  id="position" placeholder="Enter Position">
+                                                <input class="form-control " type="text" name="position" value="<?= $row->position ?>"  id="position" placeholder="Enter Position">
                                             </div>
 
                                             <div class="form-group col-sm-3">
@@ -165,8 +166,8 @@
                                                 <label class=" control-label">DEPARTMENT</label>
                                                 <select name="department" class="form-control" required >
                                                     <option hidden>Select Departmant</option>
-                                                    <?php foreach($department_list as $row): ?>
-                                                        <option value="<?= $row->dept_id; ?>"><?= $row->dept_name; ?></option>
+                                                    <?php foreach($department_list as $row_dl): ?>
+                                                        <option value="<?= $row_dl->dept_id; ?>" <?php if($row_dl->dept_id == $row->department){echo "selected";} ?>><?= $row_dl->dept_name; ?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
@@ -175,7 +176,7 @@
                                             <div class="form-group col-sm-3">
                                                 <label>DATE HIRED</label>
                                                 <div class="input-group date" id="date_hired" data-target-input="nearest">
-                                                    <input type="text" name="date_hired" id="date_hired_val" class="form-control datetimepicker-input" data-target="#date_hired" placeholder="Enter Date Hired" />
+                                                    <input type="text" name="date_hired" id="date_hired_val" class="form-control datetimepicker-input" data-target="#date_hired" placeholder="Enter Date Hired" value="<?= $row->date_hired ?>" />
                                                     <div class="input-group-append" data-target="#date_hired" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
@@ -193,10 +194,10 @@
                                                 <label class=" control-label">EMPLOYEE STATUS</label>
                                                 <select name="employment_status" class="form-control" required >
                                                     <option hidden>Select Status</option>
-                                                    <option value="1">Regular</option>
-                                                    <option value="2">Probationary</option>
-                                                    <option value="3">Resigned</option>
-                                                    <option value="4">AWOL</option>
+                                                    <option value="1" <?php if($row->employment_status == "1"){echo "selected";}?> >Regular</option>
+                                                    <option value="2" <?php if($row->employment_status == "2"){echo "selected";}?>>Probationary</option>
+                                                    <option value="3" <?php if($row->employment_status == "3"){echo "selected";}?>>Resigned</option>
+                                                    <option value="4" <?php if($row->employment_status == "4"){echo "selected";}?>>AWOL</option>
                                                 </select>
                                             </div>
 
@@ -205,11 +206,11 @@
                                                 <label class=" control-label">EMPLOYEE RANK</label>
                                                 <select name="employee_rank" class="form-control" required >
                                                     <option hidden>Select Employee Rank</option>
-                                                    <option value="1">S1</option>
-                                                    <option value="2">S2</option>
-                                                    <option value="3">S3</option>
-                                                    <option value="4">S4</option>
-                                                    <option value="5">S5</option>
+                                                    <option value="1" <?php if($row->employee_rank == "1"){echo "selected";}?>>S1</option>
+                                                    <option value="2" <?php if($row->employee_rank == "2"){echo "selected";}?>>S2</option>
+                                                    <option value="3" <?php if($row->employee_rank == "3"){echo "selected";}?>>S3</option>
+                                                    <option value="4" <?php if($row->employee_rank == "4"){echo "selected";}?>>S4</option>
+                                                    <option value="5" <?php if($row->employee_rank == "5"){echo "selected";}?>>S5</option>
                                                 </select>
                                             </div>
 
@@ -217,7 +218,7 @@
                                             <div class="form-group col-sm-4">
                                                 <label>DATE OF SEPARATION</label>
                                                 <div class="input-group date" id="date_of_separation" data-target-input="nearest">
-                                                    <input type="text" name="date_of_separation" id="date_of_separation_val" class="form-control datetimepicker-input" data-target="#date_of_separation" placeholder="Enter Date of Birth" />
+                                                    <input type="text" name="date_of_separation" id="date_of_separation_val" class="form-control datetimepicker-input" data-target="#date_of_separation" placeholder="Enter Date of Birth" value="<?= $row->date_of_separation ?>" />
                                                     <div class="input-group-append" data-target="#date_of_separation" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
@@ -251,6 +252,8 @@
                                     <button type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
                                 </div>
                                 </form>
+
+                                <?php }} ?>
                             </div>
                         </div>
                     </div>

@@ -78,29 +78,47 @@ class Employee_Model extends  Model
 
     }
 
-    public function update_employee($employee_id)
+    public function update_employee($data_pass)
     {
         $date = date('Y-m-d H:i:s');
+        $user_id = $_SESSION['user_id'];
+
+
 
         $data = array(
-            'firstname'         => $_POST['firstname'],
-            'lastname'          => $_POST['lastname'],
-            'employee_role'         => $_POST['employee_role'],
-            'sec_question'      => $_POST['sec_question'],
-            'sec_answer'        => md5($_POST['sec_answer']) ,
-            'last_ip'           => $this->getemployeeIpAddr(),
-            'updated_at'        => $date,
+            'id_no'                         => $_POST['id_no'],
+            'last_name'                     => $_POST['last_name'],
+            'first_name'                    => $_POST['first_name'],
+            'middle_name'                   => $_POST['middle_name'],
+            'present_address'               => $_POST['present_address'],
+            'permanent_address'            => $_POST['permanent_address'],
+            'birthday'                      => $_POST['birthday'],
+            'gender'                        => $_POST['gender'],
+            'civil_status'                  => $_POST['civil_status'],
+            'contact_number'                => $_POST['contact_number'],
+            'sss'                           => $_POST['sss'],
+            'phic'                          => $_POST['phic'],
+            'hdmf'                          => $_POST['hdmf'],
+            'tin'                           => $_POST['tin'],
+            'educational_attainment'        => $_POST['educational_attainment'],
+            'e_contact_person'              => $_POST['e_contact_person'],
+            'e_address'                     => $_POST['e_address'],
+            'e_contact_no'                  => $_POST['e_contact_no'],
+            'company'                       => $_POST['company'],
+            'position'                      => $_POST['position'],
+            'department'                    => $_POST['department'],
+            'date_hired'                    => $_POST['date_hired'],
+            'employment_status'             => $_POST['employment_status'],
+            'employee_rank'                 => $_POST['employee_rank'],
+            'date_of_separation'            => $_POST['date_of_separation'],
+            'updated_by'                    => $user_id,
+            'updated_at'                    => $date,
+
         );
 
-        $password = $_POST['password'];
+        if(!empty($_FILES['file']['name'])){ $data = array_merge($data, array( 'image_src_filename' => $data_pass['filename']));}
 
-        if($password != ''){
-            $password = hash('sha512', $_POST['password']);
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $data = array_merge($data, array('password' =>$password));
-        }
-
-        $this->employee->update($data, 'employee_id =' . $employee_id);
+        $this->employee->update($data, 'employee_id =' . $data_pass['employee_id']);
         $result = ($this->employee->updateBatch() != 1) ? false : true;
 
         return array(
