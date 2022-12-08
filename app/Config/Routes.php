@@ -94,6 +94,24 @@ $routes->add('/edit_employee/(:any)', 'Employee::edit_employee/$1');
 $routes->add('/add_employee', 'Employee::add_employee');
 $routes->add('/delete_employee/(:any)', 'Employee::delete_employee/$1');
 
+//ACCOUNT
+$routes->add('/account_index', 'account::account_index');
+$routes->add('/edit_account/(:any)', 'account::edit_account/$1');
+$routes->add('/add_account', 'account::add_account');
+$routes->add('/delete_account/(:any)', 'account::delete_account/$1');
+
+//PLANTA
+$routes->add('/planta_index', 'planta::planta_index');
+$routes->add('/edit_planta/(:any)', 'planta::edit_planta/$1');
+$routes->add('/add_planta', 'planta::add_planta');
+$routes->add('/delete_planta/(:any)', 'planta::delete_planta/$1');
+
+//REQUESTER
+$routes->add('/requester_index', 'requester::requester_index');
+$routes->add('/edit_requester/(:any)', 'requester::edit_requester/$1');
+$routes->add('/add_requester', 'requester::add_requester');
+$routes->add('/delete_requester/(:any)', 'requester::delete_requester/$1');
+
 
 /*
  * --------------------------------------------------------------------

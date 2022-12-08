@@ -134,9 +134,9 @@ class Employee extends BaseController
                     }
                 }
             }
-            $data = array('employee_id' => $id, 'filename' => $filename);
+            $data_pass = array('employee_id' => $id, 'filename' => $filename);
 
-            $this->Employee_Model->update_employee($data);
+            $this->Employee_Model->update_employee($data_pass);
             $this->session->setFlashdata("success", "Employee Updated Successfully");
             return redirect()->to('/employee_index');
 

@@ -37,7 +37,6 @@ class Employee_Model extends  Model
 
     public function insert_employee($filename)
     {
-
         $date = date('Y-m-d H:i:s');
         $user_id = $_SESSION['user_id'];
 
@@ -75,15 +74,12 @@ class Employee_Model extends  Model
         );
 
         $this->employee->insert($data);
-
     }
 
     public function update_employee($data_pass)
     {
         $date = date('Y-m-d H:i:s');
         $user_id = $_SESSION['user_id'];
-
-
 
         $data = array(
             'id_no'                         => $_POST['id_no'],
@@ -113,7 +109,6 @@ class Employee_Model extends  Model
             'date_of_separation'            => $_POST['date_of_separation'],
             'updated_by'                    => $user_id,
             'updated_at'                    => $date,
-
         );
 
         if(!empty($_FILES['file']['name'])){ $data = array_merge($data, array( 'image_src_filename' => $data_pass['filename']));}
@@ -121,9 +116,7 @@ class Employee_Model extends  Model
         $this->employee->update($data, 'employee_id =' . $data_pass['employee_id']);
         $result = ($this->employee->updateBatch() != 1) ? false : true;
 
-        return array(
-            'result' => $result
-        );
+        return array('result' => $result);
     }
     public function delete_employee($employee_id)
     {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/dist/css/adminlte.min.css')?>">
 </head>
 
-<body class="hold-transition login-page" style="background: url('<?= base_url("assets/adminLTE/dist/img/bg_pics.jpg");?>') bottom;" >
+<body class="hold-transition login-page" style="background: url('<?= base_url("assets/adminLTE/dist/img/bg_pics2.jpg");?>') ;background-size: cover;" >
 
 <div class="login-box">
 
@@ -86,7 +86,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center" style="margin-top: 10px; margin-bottom: 5px">
-            <a href="#" class="h3">SCMC Inventory System</a>
+            <a href="#" class="h4">SCMC Management System</a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>

@@ -15,11 +15,12 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('assets/adminLTE/dist/css/adminlte.min.css')?>">
 </head>
-<body class="hold-transition register-page" style="background: url('<?= base_url("assets/adminLTE/dist/img/bg_pics.jpg");?>') bottom;">
+<body class="hold-transition register-page" style="background: url('<?= base_url("assets/adminLTE/dist/img/bg_pics2.jpg");?>') ;background-size: cover;" >
+
 <div class="register-box">
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="#" class="h3">SCMC Inventory System</a>
+            <a href="#" class="h4">SCMC Management System</a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>

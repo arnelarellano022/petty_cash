@@ -8,7 +8,7 @@
     <a href="<?php echo base_url('dashboard');?>" class="brand-link">
 
         <img src="<?=base_url('assets/adminLTE/dist/img/columbia.jpg')?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">SCMC-HRIS</span>
+        <span class="brand-text font-weight-light">SCMC-MS</span>
     </a>
 
     <!-- Sidebar -->

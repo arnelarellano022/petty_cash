@@ -10,8 +10,8 @@ class Company extends BaseController
 
         helper(['form']);
 
-        $this->module_id     = 5 ;
-        $this->sub_module_id = 7 ;
+        $this->module_id     = 8 ;
+        $this->sub_module_id = 10 ;
     }
 
     //Company

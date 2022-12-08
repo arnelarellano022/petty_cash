@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 style="font-size: 70px">Welcome to <br>SCMC-Human Resources Information System</h1>
+                    <h1 style="font-size: 70px">Welcome to <br>SCMC Management System</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
