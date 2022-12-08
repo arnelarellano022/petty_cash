@@ -53,3 +53,44 @@ CRITICAL - 2022-12-08 14:01:14 --> Unsupported feature of the database platform 
 #4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 {main}
+CRITICAL - 2022-12-08 18:04:49 --> syntax error, unexpected '?>'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/list', Array, true)
+#2 C:\xampp\htdocs\hris\app\Controllers\Users.php(32): view('users/list', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-08 18:50:50 --> Object of class App\Models\Users_Model could not be converted to string
+#0 C:\xampp\htdocs\hris\app\Models\Users_Model.php(20): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\hris\app\Controllers\Users.php(26): App\Models\Users_Model->users_list()
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-12-08 18:52:05 --> Object of class App\Models\Users_Model could not be converted to string
+#0 C:\xampp\htdocs\hris\app\Models\Users_Model.php(20): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\hris\app\Controllers\Users.php(26): App\Models\Users_Model->users_list()
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-12-08 18:52:11 --> Object of class App\Models\Users_Model could not be converted to string
+#0 C:\xampp\htdocs\hris\app\Models\Users_Model.php(20): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\hris\app\Controllers\Users.php(26): App\Models\Users_Model->users_list()
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-12-08 18:54:02 --> Object of class App\Models\Users_Model could not be converted to string
+#0 C:\xampp\htdocs\hris\app\Models\Users_Model.php(20): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\hris\app\Controllers\Users.php(26): App\Models\Users_Model->users_list()
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\users->users_index()
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\users))
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

@@ -40,7 +40,35 @@ class users extends BaseController
 
             if($_POST['submit'])
             {
-                $this->Users_Model->insert_user();
+                $filename = '';
+                if(!empty($_FILES['file']['name'])){
+                    helper(['form', 'url']);
+
+                    $input = $this->validate([
+                        'file' => [
+                            'label' => 'Image File',
+                            'rules' => 'uploaded[file]'
+                                . '|is_image[file]'
+                                . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                . '|max_size[file,10000]'
+                        ],
+                    ]);
+
+                    if (!$input) {
+                        $this->session->setFlashdata("error", "Invalid Picture");
+                        return redirect()->to('add_user');
+                    }
+                    else {
+                        $img = $this->request->getFile('file');
+
+                        if ($img->isValid() && !$img->hasMoved()) {
+                            $filename = $img->getRandomName();
+                            $img->move(  './uploads/', $filename );
+                        }
+                    }
+                }
+
+                $this->Users_Model->insert_user($filename);
                 $this->session->setFlashdata("success", "User Added Successfully");
                 return redirect()->to('/users_index');
             }
@@ -61,7 +89,37 @@ class users extends BaseController
         if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
-                $this->Users_Model->update_user($id);
+
+                $filename = '';
+                if(!empty($_FILES['file']['name'])){
+                    helper(['form', 'url']);
+
+                    $input = $this->validate([
+                        'file' => [
+                            'label' => 'Image File',
+                            'rules' => 'uploaded[file]'
+                                . '|is_image[file]'
+                                . '|mime_in[file,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                . '|max_size[file,10000]'
+                        ],
+                    ]);
+
+                    if (!$input) {
+                        $this->session->setFlashdata("error", "Invalid Picture");
+                        return redirect()->to('edit_user');
+                    }
+                    else {
+                        $img = $this->request->getFile('file');
+
+                        if ($img->isValid() && !$img->hasMoved()) {
+                            $filename = $img->getRandomName();
+                            $img->move(  './uploads/', $filename );
+                        }
+                    }
+                }
+                $data_pass = array('user_id' => $id, 'filename' => $filename);
+
+                $this->Users_Model->update_user($data_pass);
                 //check value from model Y/N
                 $this->session->setFlashdata("success", "Record Updated Successfully");
                 return redirect()->to('/users_index');

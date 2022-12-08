@@ -19,7 +19,7 @@
                             <!-- form start -->
                             <div class="box-body">
                                 <?php if($fetch_data){foreach ($fetch_data as $row) {?>
-                                    <form action="<?= base_url("edit_user/". $row->user_id); ?>" method="post">
+                                        <?= form_open_multipart('edit_user/' . $row->user_id) ?>
                                         <div class="box-body">
                                             <div class="row">
                                                 <div class="col-sm-12">
@@ -44,7 +44,7 @@
                                                     <div class="form-group">
                                                         <label>Password</label>
                                                         <div class="input-group-append">
-                                                            <input class="form-control" type="password" name="password" value="" required="" id="password">
+                                                            <input class="form-control" type="password" name="password" value=""  id="password">
                                                             <div class="input-group-text">
                                                                 <span id="eye_close1" class="fas fa-eye-slash eye_close1" hidden></span>
                                                                 <span id="eye_open1" class="fas fa-eye eye_open1" ></span>
@@ -57,7 +57,7 @@
                                                     <div class="form-group">
                                                         <label>Confirm Password</label>
                                                         <div class="input-group-append">
-                                                            <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" required="" id="c_password">
+                                                            <input onblur=" check_b4_submit()"  onclick=" cpw_length_check();" class="form-control" type="password" name="c_password" value="" id="c_password">
                                                             <div class="input-group-text">
                                                                 <span id="eye_close2" class="fas fa-eye-slash eye_close2" hidden></span>
                                                                 <span id="eye_open2" class="fas fa-eye eye_open2" ></span>
@@ -107,6 +107,18 @@
                                                                 <option value="<?= $role_row->roles; ?>" <?php if($row->user_role == $role_row->roles){ echo "selected";} ?> ><?= $role_row->roles; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="file">PICTURE</label>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="file" name="file">
+                                                                <label class="custom-file-label" for="file">Select Picture</label>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -190,6 +202,9 @@
             $("#eye_close3").attr("hidden", "hidden");
         });
 
+        $(function () {
+            bsCustomFileInput.init();
+        });
     }
 
 </script>

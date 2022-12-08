@@ -27,9 +27,10 @@ class Users_Model extends  Model
             ->get()->getResult();
     }
 
-    public function insert_user()
+    public function insert_user($filename)
     {
         $date = date('Y-m-d H:i:s');
+        $user_id = $_SESSION['user_id'];
 
         $password = hash('sha512', $_POST['password']);
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -43,17 +44,21 @@ class Users_Model extends  Model
             'sec_answer'    =>  $_POST['sec_answer'] ,
             'user_role'     => $_POST['user_role'],
             'last_ip'       => $this->getUserIpAddr(),
+            'created_by'    => $user_id,
             'created_at'    => $date,
-            'updated_at'    => $date
+            'updated_by'    => $user_id,
+            'updated_at'    => $date,
+            'image_src_filename'  => $filename
         );
 
         $this->users->insert($data);
 
     }
 
-    public function update_user($user_id)
+    public function update_user($data_pass)
     {
         $date = date('Y-m-d H:i:s');
+        $user_role_id = $_SESSION['user_id'];
 
         $data = array(
             'firstname'         => $_POST['firstname'],
@@ -62,6 +67,7 @@ class Users_Model extends  Model
             'sec_question'      => $_POST['sec_question'],
             'sec_answer'        => $_POST['sec_answer'] ,
             'last_ip'           => $this->getUserIpAddr(),
+            'updated_by'        => $user_role_id,
             'updated_at'        => $date,
         );
 
@@ -70,10 +76,12 @@ class Users_Model extends  Model
         if($password != ''){
             $password = hash('sha512', $_POST['password']);
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $data = array_merge($data, array('password' =>$password));
+            $data = array_merge($data, array('password' => $password));
         }
 
-        $this->users->update($data, 'user_id =' . $user_id);
+        if(!empty($_FILES['file']['name'])){ $data = array_merge($data, array( 'image_src_filename' => $data_pass['filename']));}
+
+        $this->users->update($data, 'user_id =' . $data_pass['user_id']);
         $result = ($this->users->updateBatch() != 1) ? false : true;
 
         return array(

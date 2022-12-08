@@ -21,7 +21,7 @@
                         <div class="box">
                             <!-- form start -->
                             <div class="box-body">
-                                <form action="<?= base_url('add_user');?>" method="post">
+                                    <?= form_open_multipart('add_user') ?>
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -106,6 +106,19 @@
                                                         </select>
                                                 </div>
                                             </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="file">PICTURE</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="file" name="file">
+                                                            <label class="custom-file-label" for="file">Select Picture</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="box-footer">
@@ -192,6 +205,10 @@ function access_js() {
         $("#c_password").attr("type","password");
         $("#eye_open2").removeAttr("hidden", "hidden");
         $("#eye_close2").attr("hidden", "hidden");
+    });
+
+    $(function () {
+        bsCustomFileInput.init();
     });
 }
     

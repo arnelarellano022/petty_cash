@@ -112,5 +112,22 @@ if (!function_exists('get_user_role')) {
 }
 // -----------------------------------------------------------------------------
 
+// Get user image
+if (!function_exists('get_user_image')) {
+    function get_user_image( $user_id )
+    {
+        $image_src_filename = '';
+        $db      = \Config\Database::connect();
+        $users = $db->table('ci_users');
+        $result = $users->where('user_id', $user_id)->get()->getResult();
+        foreach ($result as $row){
+            $image_src_filename = $row->image_src_filename;
+        }
+        return $image_src_filename;
+    }
+}
+// -----------------------------------------------------------------------------
+
+
 
 

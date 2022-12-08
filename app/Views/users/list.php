@@ -19,11 +19,13 @@
                     <thead>
                     <tr>
                         <th style="text-align: center">ID</th>
+                        <th style="text-align: center">Picture</th>
                         <th style="text-align: center">Username</th>
                         <th style="text-align: center">Roles</th>
-                        <th style="text-align: center">First Name</th>
-                        <th style="text-align: center">Last Name</th>
+                        <th style="text-align: center">Full Name</th>
+                        <th style="text-align: center">Created by</th>
                         <th style="text-align: center">Created at</th>
+                        <th style="text-align: center">Updated by</th>
                         <th style="text-align: center">Updated at</th>
                         <?php if($status_access == 1){ ?>
                         <th style="text-align: center">Status</th>
@@ -38,15 +40,23 @@
                     <tbody>
                     <?php if($fetch_data){foreach ($fetch_data as $row) {?>
                         <tr>
-                            <td style="text-align: center"><?= $row->user_id;?></td>
-                            <td style="text-align: center"><?= $row->username;?></td>
-                            <td style="text-align: center"><?= $row->user_role;?></td>
-                            <td style="text-align: center"><?= $row->firstname;?></td>
-                            <td style="text-align: center"><?= $row->lastname?></td>
-                            <td style="text-align: center"><?= $row->created_at;?></td>
-                            <td style="text-align: center"><?= $row->updated_at;?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->user_id;?></td>
+                            <td style="text-align: center"><?php
+                                $image_data = $row->image_src_filename;
+                                //if no image
+                                if($image_data == null){
+                                    $image_data = "no_image.png";
+                                } ?>
+                                <img src="<?= base_url("uploads/".$image_data) ?>" alt="Emp Image" width=80, height=80 /><br></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->username;?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->user_role;?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->firstname . " " . $row->lastname;?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= get_user_role($row->created_by)?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->created_at;?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?=get_user_role($row->updated_by)?></td>
+                            <td style="text-align: center;padding: 40px 0;"><?= $row->updated_at;?></td>
                         <?php if($status_access == 1){ ?>
-                            <td style="text-align: center">
+                            <td style="text-align: center;padding: 40px 0;">
                                     <input type='checkbox'
                                            class='tgl tgl-ios tgl_checkbox'
                                            data-id='<?= $row->user_id ?>'
@@ -57,7 +67,7 @@
                             </td>
 
                             <?php } if($verify_account_access == 1){ ?>
-                                <td style="text-align: center">
+                                <td style="text-align: center;padding: 40px 0;">
                                     <input type='checkbox'
                                            class='tgl tgl-ios tgl_checkbox_2'
                                            data-id='<?= $row->user_id ?>'
@@ -68,7 +78,7 @@
                                 </td>
 
                         <?php } if($edit_access == 1 or $delete_access == 1){  ?>
-                            <td style="text-align: center">
+                            <td style="text-align: center;padding: 40px 0;">
                         <?php if($edit_access == 1){ ?>
                                 <a href="<?php echo base_url("edit_user/". $row->user_id); ?>" class="btn btn-warning btn-xs mr5">
                                     <i class="fas fa-edit"></i>

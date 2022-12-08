@@ -40,7 +40,7 @@ class Employee extends BaseController
             if($_POST['submit'])
             {
                 $filename = '';
-                if(!empty($_POST['file'])){
+                if(!empty($_FILES['file']['name'])){
                     helper(['form', 'url']);
 
                     $input = $this->validate([
@@ -123,7 +123,7 @@ class Employee extends BaseController
 
                 if (!$input) {
                     $this->session->setFlashdata("error", "Invalid Picture");
-                    return redirect()->to('add_employee');
+                    return redirect()->to('edit_employee');
                 }
                 else {
                     $img = $this->request->getFile('file');
