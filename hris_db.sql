@@ -30,6 +30,21 @@ CREATE TABLE `account` (
 
 insert  into `account`(`account_id`,`title`) values (2,'ACCOUNT TITLE 1');
 
+/*Table structure for table `boss_entry` */
+
+DROP TABLE IF EXISTS `boss_entry`;
+
+CREATE TABLE `boss_entry` (
+  `boss_entry_id` int(11) NOT NULL AUTO_INCREMENT,
+  `reference_code` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `transaction_type` varchar(30) NOT NULL,
+  `amount` decimal(15,2) NOT NULL,
+  PRIMARY KEY (`boss_entry_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `boss_entry` */
+
 /*Table structure for table `ci_users` */
 
 DROP TABLE IF EXISTS `ci_users`;
@@ -56,7 +71,7 @@ CREATE TABLE `ci_users` (
 
 /*Data for the table `ci_users` */
 
-insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`last_ip`,`created_by`,`created_at`,`updated_by`,`updated_at`,`image_src_filename`) values (1,'admin','Arnel','Arellano','$2y$10$lD0LVsgPNQ.OceLENDlZgOqxCBxsQsDyOyBBB12hfNUiis7Gc5.gW','Admin',1,1,1,'aaebf4de9a2bb59aca378fdc25b6ee2d','::1',1,'2022-10-16 18:18:05',1,'2022-12-08 19:05:59','1670497559_a12652b2222b3138a17e.jpg'),(2,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc','User',1,1,0,'2','',1,'2022-11-22 20:04:33',1,'2022-11-22 20:04:33',NULL),(3,'user2','user first','user','b889a8241bd8519769c339d31c9b1e15','Accountant',1,1,1,'41e0b03f95738c8b1b2749f6a1ffc7e4','::1',1,'2022-12-07 09:56:04',1,'2022-12-07 09:56:04',NULL),(8,'add_user','add_user','add_user','$2y$10$2W4/GKlmt3PpntGjkcqvV.IyPpWEUAibpUEucujL16lhXHyJcRm6i','User',1,1,1,'add_user','::1',1,'2022-12-08 18:29:43',1,'2022-12-08 18:56:15','1670496975_49d4755758bb1bcbcbb3.png'),(9,'superadmin','superadmin upppp','superadmin uppp','$2y$10$Vg9fIufUSvuyoTdzcPcfQe/ikluP3rUbvTMETu1pWlrUX/Wb.Yqum','Accountant',1,1,1,'tae','::1',1,'2022-12-08 18:37:30',1,'2022-12-08 19:08:35','1670496419_b521fa8613d01ca7e981.jpg');
+insert  into `ci_users`(`user_id`,`username`,`firstname`,`lastname`,`password`,`user_role`,`is_verify`,`status`,`sec_question`,`sec_answer`,`last_ip`,`created_by`,`created_at`,`updated_by`,`updated_at`,`image_src_filename`) values (1,'admin','Arnel','Arellano','$2y$10$lD0LVsgPNQ.OceLENDlZgOqxCBxsQsDyOyBBB12hfNUiis7Gc5.gW','Admin',1,1,1,'aaebf4de9a2bb59aca378fdc25b6ee2d','::1',1,'2022-10-16 18:18:05',1,'2022-12-09 11:56:19','1670558179_451e34c9ce15671afc4e.jpg'),(2,'user','user','user','b5b73fae0d87d8b4e2573105f8fbe7bc','User',1,1,0,'2','',1,'2022-11-22 20:04:33',1,'2022-11-22 20:04:33',NULL),(3,'user2','user first','user','b889a8241bd8519769c339d31c9b1e15','Accountant',1,1,1,'41e0b03f95738c8b1b2749f6a1ffc7e4','::1',1,'2022-12-07 09:56:04',1,'2022-12-07 09:56:04',NULL),(8,'add_user','add_user','add_user','$2y$10$2W4/GKlmt3PpntGjkcqvV.IyPpWEUAibpUEucujL16lhXHyJcRm6i','User',1,1,1,'add_user','::1',1,'2022-12-08 18:29:43',1,'2022-12-08 18:56:15','1670496975_49d4755758bb1bcbcbb3.png'),(9,'superadmin','superadmin upppp','superadmin uppp','$2y$10$Vg9fIufUSvuyoTdzcPcfQe/ikluP3rUbvTMETu1pWlrUX/Wb.Yqum','Accountant',1,1,1,'tae','::1',1,'2022-12-08 18:37:30',1,'2022-12-08 19:08:35','1670496419_b521fa8613d01ca7e981.jpg');
 
 /*Table structure for table `company` */
 
@@ -172,7 +187,7 @@ CREATE TABLE `module` (
 
 /*Data for the table `module` */
 
-insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',1),(2,'Role & Permissions','Roles','fa-book',2),(3,'Settings','Settings','fa-cogs',4),(4,'Backup & Export',NULL,'fa-database',3),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',1);
+insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',1),(2,'Role & Permissions','Roles','fa-book',2),(3,'Settings','Settings','fa-cogs',4),(4,'Backup & Export',NULL,'fa-database',3),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',10);
 
 /*Table structure for table `module_access` */
 
