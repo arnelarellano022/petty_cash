@@ -183,11 +183,11 @@ CREATE TABLE `module` (
   `fa_icon` varchar(100) NOT NULL,
   `sort_order` tinyint(4) NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module` */
 
-insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',1),(2,'Role & Permissions','Roles','fa-book',2),(3,'Settings','Settings','fa-cogs',4),(4,'Backup & Export',NULL,'fa-database',3),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',10);
+insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',1),(2,'Role & Permissions','Roles','fa-book',2),(3,'Settings','Settings','fa-cogs',4),(4,'Backup & Export',NULL,'fa-database',3),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',10),(11,'Management',NULL,'fa-credit-card',11);
 
 /*Table structure for table `module_access` */
 
@@ -206,11 +206,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`user_roles_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account'),(70,1,1,1,'edit'),(71,1,4,6,'access'),(72,1,5,7,'access'),(73,1,5,7,'add'),(74,1,5,7,'edit'),(75,1,5,7,'delete'),(76,1,6,8,'access'),(77,1,6,8,'add'),(78,1,6,8,'edit'),(79,1,6,8,'delete'),(80,1,7,9,'access'),(93,1,7,9,'add'),(95,1,7,9,'delete'),(96,1,7,9,'view'),(97,1,7,9,'edit'),(98,1,8,10,'add'),(99,1,8,10,'edit'),(100,1,8,10,'delete'),(101,1,8,10,'access'),(102,1,9,11,'access'),(103,1,9,11,'add'),(104,1,9,11,'edit'),(105,1,9,11,'delete'),(106,1,10,12,'access'),(107,1,10,12,'add'),(108,1,10,12,'edit'),(109,1,10,12,'delete');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account'),(70,1,1,1,'edit'),(71,1,4,6,'access'),(72,1,5,7,'access'),(73,1,5,7,'add'),(74,1,5,7,'edit'),(75,1,5,7,'delete'),(76,1,6,8,'access'),(77,1,6,8,'add'),(78,1,6,8,'edit'),(79,1,6,8,'delete'),(80,1,7,9,'access'),(93,1,7,9,'add'),(95,1,7,9,'delete'),(96,1,7,9,'view'),(97,1,7,9,'edit'),(98,1,8,10,'add'),(99,1,8,10,'edit'),(100,1,8,10,'delete'),(101,1,8,10,'access'),(102,1,9,11,'access'),(103,1,9,11,'add'),(104,1,9,11,'edit'),(105,1,9,11,'delete'),(106,1,10,12,'access'),(107,1,10,12,'add'),(108,1,10,12,'edit'),(109,1,10,12,'delete'),(110,1,11,13,'access'),(111,1,11,13,'delete'),(112,1,11,13,'add'),(113,1,11,13,'edit'),(114,1,11,13,'view');
 
 /*Table structure for table `planta` */
 
@@ -256,11 +256,11 @@ CREATE TABLE `sub_module` (
   PRIMARY KEY (`sub_module_id`),
   KEY `Parent Module ID` (`module_id`),
   CONSTRAINT `FK-Module-ID` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sub_module` */
 
-insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete|change_status|verify_account'),(2,2,'Module Setting','module_index',3,'access'),(3,2,'Roles & Permissions','roles_index',4,'access'),(4,3,'General Settings','settings_index',5,'access'),(5,3,'Email Template Settings','email_index',6,'access'),(6,4,'Backup Database','db_index',1,'access'),(7,5,'Company List','company_index',1,'access|add|edit|delete'),(8,6,'Department List','department_index',1,'access|add|edit|delete'),(9,7,'Employee List','employee_index',1,'access|view|add|edit|delete'),(10,8,'Account Title List','account_index',1,'access|add|edit|delete'),(11,9,'Planta List','planta_index',1,'access|add|edit|delete'),(12,10,'Requster List','requester_index',1,'access|add|edit|delete');
+insert  into `sub_module`(`sub_module_id`,`module_id`,`sub_module_name`,`link`,`sort_order`,`operation`) values (1,1,'Users List','users_index',1,'access|add|edit|delete|change_status|verify_account'),(2,2,'Module Setting','module_index',3,'access'),(3,2,'Roles & Permissions','roles_index',4,'access'),(4,3,'General Settings','settings_index',5,'access'),(5,3,'Email Template Settings','email_index',6,'access'),(6,4,'Backup Database','db_index',1,'access'),(7,5,'Company List','company_index',1,'access|add|edit|delete'),(8,6,'Department List','department_index',1,'access|add|edit|delete'),(9,7,'Employee List','employee_index',1,'access|view|add|edit|delete'),(10,8,'Account Title List','account_index',1,'access|add|edit|delete'),(11,9,'Planta List','planta_index',1,'access|add|edit|delete'),(12,10,'Requster List','requester_index',1,'access|add|edit|delete'),(13,11,'Boss Entry','boss_entry_index',1,'access|add|edit|view|delete');
 
 /*Table structure for table `user_roles` */
 

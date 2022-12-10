@@ -112,6 +112,12 @@ $routes->add('/edit_requester/(:any)', 'requester::edit_requester/$1');
 $routes->add('/add_requester', 'requester::add_requester');
 $routes->add('/delete_requester/(:any)', 'requester::delete_requester/$1');
 
+//BOSS ENTRY
+$routes->add('/boss_entry_index', 'boss_entry::boss_entry_index');
+$routes->add('/edit_boss_entry/(:any)', 'boss_entry::edit_boss_entry/$1');
+$routes->add('/add_boss_entry', 'boss_entry::add_boss_entry');
+$routes->add('/delete_boss_entry/(:any)', 'boss_entry::delete_boss_entry/$1');
+
 
 /*
  * --------------------------------------------------------------------
