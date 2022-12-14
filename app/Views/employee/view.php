@@ -19,10 +19,7 @@
                             <!-- form start -->
                             <div class="box-body">
                                 <?php if($fetch_data){foreach ($fetch_data as $row) {?>
-
-
                                 <div class ="row">
-                                    <h1><?php echo $Full_Name ?></h1>
                                     <div class="col-sm-2">
                                         <?PHP $image_data = $row->image_src_filename;
                                         //if no image
@@ -139,6 +136,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
 

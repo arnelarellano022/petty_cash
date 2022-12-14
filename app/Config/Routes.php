@@ -112,11 +112,18 @@ $routes->add('/edit_requester/(:any)', 'requester::edit_requester/$1');
 $routes->add('/add_requester', 'requester::add_requester');
 $routes->add('/delete_requester/(:any)', 'requester::delete_requester/$1');
 
-//BOSS ENTRY
-$routes->add('/boss_entry_index', 'boss_entry::boss_entry_index');
-$routes->add('/edit_boss_entry/(:any)', 'boss_entry::edit_boss_entry/$1');
-$routes->add('/add_boss_entry', 'boss_entry::add_boss_entry');
-$routes->add('/delete_boss_entry/(:any)', 'boss_entry::delete_boss_entry/$1');
+//MANAGEMENT TRANSACTION
+$routes->add('/management_transaction_index', 'management_transaction::management_transaction_index');
+$routes->add('/edit_management_transaction/(:any)', 'management_transaction::edit_management_transaction/$1');
+$routes->add('/view_management_transaction/(:any)', 'management_transaction::view_management_transaction/$1');
+$routes->add('/add_management_transaction', 'management_transaction::add_management_transaction');
+$routes->add('/delete_management_transaction/(:any)', 'management_transaction::delete_management_transaction/$1');
+
+//PETTY CASH
+$routes->add('/petty_cash_index', 'petty_cash::petty_cash_index');
+$routes->add('/edit_petty_cash/(:any)', 'petty_cash::edit_petty_cash/$1');
+$routes->add('/add_petty_cash', 'petty_cash::add_petty_cash');
+$routes->add('/delete_petty_cash/(:any)', 'petty_cash::delete_petty_cash/$1');
 
 
 /*

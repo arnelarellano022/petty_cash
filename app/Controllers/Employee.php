@@ -92,7 +92,7 @@ class Employee extends BaseController
 
 
             $module['fetch_data'] = $this->Employee_Model->get_employee_by_id($id);
-            $module['title'] = 'EMPLOYEE DATA';
+            $module['title'] = 'VIEW EMPLOYEE';
 
             echo view('partial/header', $module);
             echo view('partial/top_menu');

@@ -1,0 +1,63 @@
+CRITICAL - 2022-12-14 13:19:24 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(25): CodeIgniter\Model->__call('management_tran...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->management_transaction_index()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 13:21:28 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(25): CodeIgniter\Model->__call('management_tran...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->management_transaction_index()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 13:21:32 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(25): CodeIgniter\Model->__call('management_tran...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->management_transaction_index()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 13:22:01 --> Invalid file: management_transaction/list.php
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('management_tran...')
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('management_tran...', Array, true)
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(31): view('management_tran...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->management_transaction_index()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 14:54:37 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(62): CodeIgniter\Model->__call('get_management_...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->view_management_transaction('1')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 14:54:48 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(62): CodeIgniter\Model->__call('get_management_...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->view_management_transaction('1')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-12-14 14:55:33 --> Invalid file: management_transaction/view.php
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('management_tran...')
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('management_tran...', Array, true)
+#2 C:\xampp\htdocs\hris\app\Controllers\Management_Transaction.php(68): view('management_tran...', Array)
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->view_management_transaction('1')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
