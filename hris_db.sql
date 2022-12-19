@@ -172,11 +172,11 @@ CREATE TABLE `management_transaction` (
   `updated_by` varchar(50) NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`transaction_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `management_transaction` */
 
-insert  into `management_transaction`(`transaction_id`,`reference_code`,`date`,`transaction_type`,`amount`,`created_by`,`created_at`,`updated_by`,`updated_at`) values (1,'REF 0000111','2022-12-13','Cash Out','9000.00','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),(3,'REF 2022-00002','2022-12-12','Cash In','5000.00','1','2022-12-14 15:53:12','1','2022-12-14 15:53:12');
+insert  into `management_transaction`(`transaction_id`,`reference_code`,`date`,`transaction_type`,`amount`,`created_by`,`created_at`,`updated_by`,`updated_at`) values (1,'REF 0000111','2022-12-13','Cash Out','9000.00','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),(3,'REF 2022-00002','2022-12-12','Cash In','5000.00','1','2022-12-14 15:53:12','1','2022-12-14 15:53:12'),(4,'REF 00003','2022-12-14','Cash In','500.00','1','2022-12-15 08:21:33','1','2022-12-15 08:21:33');
 
 /*Table structure for table `module` */
 

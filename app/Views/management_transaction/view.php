@@ -2,8 +2,8 @@
 <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
-        <div class="card card-default color-palette-bo" ">
-            <div class="card-header">
+        <div class="card card-default color-palette-bo" >
+            <div class="card-header" >
                 <div class="d-inline-block">
                     <h3 class="card-title"> <i class="fa fa-address-card mt-2"></i>
                         &nbsp; <b><?= $title ?></b> </h3>
