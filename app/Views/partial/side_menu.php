@@ -8,7 +8,7 @@
     <a href="<?php echo base_url('dashboard');?>" class="brand-link">
 
         <img src="<?=base_url('assets/adminLTE/dist/img/columbia.jpg')?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
-        <span class="brand-text font-weight-light">SCMC-MS</span>
+        <span class="brand-text font-weight-light">SCMC-Petty Cash</span>
     </a>
 
     <!-- Sidebar -->
@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a href="<?php echo base_url('dashboard');?>" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v1</p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
 <!--                        <li class="nav-item">-->

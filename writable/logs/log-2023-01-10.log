@@ -1,0 +1,264 @@
+ERROR - 2023-01-10 16:37:37 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:37:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:37:37 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:40:24 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:40:24 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin1234')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:40:24 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:40:28 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:40:28 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin123')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:40:28 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:43:40 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:43:40 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:43:40 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:55:18 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:55:18 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:55:18 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:55:58 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:55:58 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:55:58 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:57:05 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:57:05 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:57:05 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:57:07 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:57:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:57:07 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:57:12 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:57:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:57:12 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:57:52 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:57:52 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:57:52 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-10 16:57:54 --> Error connecting to the database: Unknown database 'hris_db'
+CRITICAL - 2023-01-10 16:57:54 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hris_db'
+#0 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\hris\app\Models\Auth_Model.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\hris\app\Controllers\Auth.php(39): App\Models\Auth_Model->validate_Auth_login('admin', 'admin')
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Auth->validate_login()
+#5 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\hris\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 16:57:54 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\hris\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Auth), true)
+#2 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(234): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(237): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\hris\vendor\codeigniter4\framework\system\Debug\Exceptions.php(121): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
