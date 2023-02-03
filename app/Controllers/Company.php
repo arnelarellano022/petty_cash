@@ -7,23 +7,19 @@ class Company extends BaseController
         $this->Company_Model = model('Company_Model');
         $this->session = \Config\Services::session();
         $this->session->start();
-
         helper(['form']);
-
-        $this->module_id     = 8 ;
-        $this->sub_module_id = 10 ;
     }
 
     //Company
     public function company_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Company_Model->company_list();
-        $data['title']='COMPANY LIST';
+        $data['title']= "COMPANY LIST";
 
             echo view('partial/header',$data);
             echo view('partial/top_menu');
@@ -35,7 +31,7 @@ class Company extends BaseController
 
     public function add_company(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -55,7 +51,7 @@ class Company extends BaseController
 
     public function edit_company($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Company_Model->update_company($id);
@@ -77,7 +73,7 @@ class Company extends BaseController
 
     public function delete_company($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
             $this->Company_Model->delete_company($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");

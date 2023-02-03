@@ -7,20 +7,16 @@ class department extends BaseController
         $this->Department_Model = model('Department_Model');
         $this->session = \Config\Services::session();
         $this->session->start();
-
         helper(['form']);
-
-        $this->module_id     = 6 ;
-        $this->sub_module_id = 8 ;
     }
 
     //Department
     public function department_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Department_Model->department_list();
         $data['title']='DEPARTMENT LIST';
@@ -35,7 +31,7 @@ class department extends BaseController
 
     public function add_department(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -55,7 +51,7 @@ class department extends BaseController
 
     public function edit_department($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Department_Model->update_department($id);
@@ -77,7 +73,7 @@ class department extends BaseController
 
     public function delete_department($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
             $this->Department_Model->delete_department($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");

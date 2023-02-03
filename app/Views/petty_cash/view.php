@@ -26,7 +26,7 @@
                                                 <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b> <i class="fa fa-info-circle mt-2"></i> TRANSACTION INFO</b></h5></th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 50%; background-color: #F4FAFD" colspan="1" >Reference Code</th><th colspan="5"><?= $row->reference_code ?></th>
+                                                <th style="width: 50%; background-color: #F4FAFD" colspan="1" >Reference Code </th><th colspan="5"><?= $row->reference_code ?></th>
                                             </tr>
                                             <tr>
                                                 <th style="width: 50%; background-color: #F4FAFD" colspan="1" >Transaction Date</th><th colspan="5"><?= $row->date ?></th>
@@ -37,18 +37,21 @@
                                             <tr>
                                                 <th style="width: 50%; background-color: #F4FAFD" colspan="1" >Amount</th><th colspan="5"><?= $row->amount ?></th>
                                             </tr>
+                                            <tr>
+                                                <th style="width: 50%; background-color: #F4FAFD" colspan="1" >Record Type</th><th colspan="5"><?= $row->record_type ?></th>
+                                            </tr>
                                         </table>
 
-                                        <table class="table table-bordered" style="text-align: center; font-size: large" >
+                                        <table class="table table-bordered" style="text-align: center; font-size: large; " >
 
                                             <tr>
-                                                <th style="background-color: #D9EDF7;text-align: left" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> RECORD INFO</b></h5></th>
+                                                <th style="background-color: #D9EDF7;text-align: left;" colspan="6" ><h5><b><i class="fa fa-info-circle mt-2"></i> RECORD INFO</b></h5></th>
                                             </tr>
                                             <tr>
-                                                <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD; ">Created By</th><th style="vertical-align: middle; width: 25%" colspan="2"><?= get_user_role($row->created_by)  ?></th> <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD">Created At</th><th style="width: 25%" colspan="2"><?= $row->created_at ?></th>
+                                                <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD; ">Created By </th><th style="vertical-align: middle; width: 25%" colspan="2"><?= get_user_role($row->created_by)  ?></th> <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD">Created At </th><th style="width: 25%" colspan="2"><?= $row->created_at ?></th>
                                             </tr>
                                             <tr>
-                                                <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD">Updated By</th><th style="vertical-align: middle; width: 25%" colspan="2"><?= get_user_role($row->updated_by) ?></th> <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD">Updated At </th><th style="width: 25%" colspan="2"><?= $row->updated_at ?></th>
+                                                <th style="vertical-align: middle ;width: 25%;background-color: #F4FAFD">Updated By </th><th style="vertical-align: middle; width: 25%" colspan="2"><?= get_user_role($row->updated_by) ?></th> <th style="vertical-align: middle; width: 25%;background-color: #F4FAFD">Updated AT</th><th style="width: 25%" colspan="2"><?= $row->updated_at ?></th>
                                             </tr>
                                         </table>
 

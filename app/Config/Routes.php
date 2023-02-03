@@ -123,6 +123,7 @@ $routes->add('/delete_management_transaction/(:any)', 'management_transaction::d
 $routes->add('/petty_cash_index', 'petty_cash::petty_cash_index');
 $routes->add('/edit_petty_cash/(:any)', 'petty_cash::edit_petty_cash/$1');
 $routes->add('/add_petty_cash', 'petty_cash::add_petty_cash');
+$routes->add('/view_petty_cash/(:any)', 'petty_cash::view_petty_cash/$1');
 $routes->add('/delete_petty_cash/(:any)', 'petty_cash::delete_petty_cash/$1');
 
 

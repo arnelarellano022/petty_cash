@@ -7,17 +7,13 @@ class Roles extends BaseController
         $this->Roles_Model = model('Roles_Model');
         $this->session = \Config\Services::session();
         $this->session->start();
-
         helper(['form']);
-
-        $this->module_id     = 2 ;
-        $this->sub_module_id = 3 ;
     }
 
     //Roles
     public function roles_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             $module['fetch_data'] = $this->Roles_Model->roles_fetch_data();
             $module['title']='ROLES MANAGEMENT';
@@ -32,7 +28,7 @@ class Roles extends BaseController
 
     public function add_roles(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -53,7 +49,7 @@ class Roles extends BaseController
 
     public function edit_roles($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Roles_Model->update_roles($id);
@@ -75,7 +71,7 @@ class Roles extends BaseController
 
     public function delete_roles($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
             $this->Roles_Model->delete_roles($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");
@@ -84,7 +80,7 @@ class Roles extends BaseController
 
     public function access_roles($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             $module['fetch_data'] = $this->Roles_Model->get_modules($id);
             $module['title'] = 'EDIT ROLES';

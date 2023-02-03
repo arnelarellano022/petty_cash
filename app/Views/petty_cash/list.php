@@ -18,13 +18,13 @@
                 <table id="example" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th style="text-align: center">Transaction ID</th>
+                        <th style="text-align: center">ID</th>
                         <th style="text-align: center">Reference Code</th>
-                        <th style="text-align: center">Date</th>
+                        <th style="text-align: center">Transaction Date</th>
                         <th style="text-align: center">Transaction Type</th>
                         <th style="text-align: center">Amount</th>
                         <th style="text-align: center">Record Type</th>
-                        <?php if($edit_access == 1 or $delete_access == 1){ ?>
+                        <?php if($edit_access == 1 or $delete_access == 1  or $view_access == 1){ ?>
                         <th style="text-align: center">Action</th>
                         <?php } ?>
                     </tr>
@@ -39,9 +39,14 @@
                             <td style="text-align: center"><?= $row->transaction_type;?></td>
                             <td style="text-align: center"><?= $row->amount;?></td>
                             <td style="text-align: center"><?= $row->record_type;?></td>
-                        <?php if($edit_access == 1 or $delete_access == 1){  ?>
+                        <?php if($edit_access == 1 or $delete_access == 1 or $view_access == 1){  ?>
                             <td style="text-align: center">
-                        <?php if($edit_access == 1){ ?>
+                            <?php if($view_access == 1){ ?>
+                                <a href="<?php echo base_url("view_petty_cash/". $row->petty_cash_id); ?>" class="btn btn-info btn-xs mr5">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+
+                        <?php } if($edit_access == 1){ ?>
                                 <a href="<?php echo base_url("edit_petty_cash/". $row->petty_cash_id); ?>" class="btn btn-warning btn-xs mr5">
                                     <i class="fas fa-edit"></i>
                                 </a>

@@ -17,10 +17,11 @@ class Petty_Cash extends BaseController
     //Petty Cash
     public function petty_cash_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'view') == true) {$data['view_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Petty_Cash_Model->petty_cash_list();
         $data['title']='PETTY CASH TRANSACTION LIST';
@@ -34,7 +35,7 @@ class Petty_Cash extends BaseController
 
     public function add_petty_cash(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -52,9 +53,26 @@ class Petty_Cash extends BaseController
             echo view('partial/footer');
     }
 
+    public function view_petty_cash($id)
+    {
+        if(check_module_access(get_class(), $_SESSION['user_role'],'view') == false) {return redirect()->to('/error_404');};
+
+
+
+        $module['fetch_data'] = $this->Petty_Cash_Model->get_petty_cash_by_id($id);
+        $module['title'] = 'VIEW TRANSACTION';
+
+        echo view('partial/header', $module);
+        echo view('partial/top_menu');
+        echo view('partial/side_menu');
+        echo view('petty_cash/view', $module);
+        echo view('partial/footer');
+    }
+
+
     public function edit_petty_cash($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Petty_Cash_Model->update_petty_cash($id);
@@ -76,7 +94,7 @@ class Petty_Cash extends BaseController
 
     public function delete_petty_cash($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
             $this->Petty_Cash_Model->delete_petty_cash($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");

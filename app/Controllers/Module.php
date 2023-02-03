@@ -7,16 +7,12 @@ class Module extends BaseController
         $this->Module_Model = model('Module_Model');
         $this->session = \Config\Services::session();
         $this->session->start();
-
         helper(['form']);
-
-        $this->module_id     = 2 ;
-        $this->sub_module_id = 2 ;
     }
 
     public function module_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             $module['fetch_data'] = $this->Module_Model->module_list();
             $module['title']='MODULE SETTING';
@@ -31,7 +27,7 @@ class Module extends BaseController
 
     public function add_module(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -50,7 +46,7 @@ class Module extends BaseController
 
     public function edit_module($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Module_Model->update_module($id);
@@ -71,7 +67,7 @@ class Module extends BaseController
 
     public function delete_module($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             $this->Module_Model->delete_module($delete_ID);
 
@@ -82,7 +78,7 @@ class Module extends BaseController
     //Sub Module
     public function sub_module_index($module_id){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if (!isset($_SESSION['user_role'])) {
                 return redirect()->to('/index');
@@ -103,7 +99,7 @@ class Module extends BaseController
 
     public function add_sub_module($module_id){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -124,7 +120,7 @@ class Module extends BaseController
 
     public function edit_sub_module($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Module_Model->update_sub_module($id);
@@ -146,7 +142,7 @@ class Module extends BaseController
 
     public function delete_sub_module($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             $this->Module_Model->delete_sub_module($delete_ID);
 

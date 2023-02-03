@@ -82,9 +82,21 @@ if (!function_exists('get_sub_module_permission')) {
 
 // CHECK MODULE PERMISSION
 if (!function_exists('check_module_access')) {
-    function check_module_access( $module_id, $sub_module_id, $user_role, $operation)
+    function check_module_access( $class_name, $user_role, $operation)
     {
+        $classname = str_replace("App\\Controllers\\","",$class_name);
+        $class_name = $classname . "_index";
+
         $db      = \Config\Database::connect();
+        $sub_module = $db->table('sub_module');
+        $result1 =    $sub_module->where('link', $class_name)
+        ->get()->getResult();
+        foreach ($result1 as $row){
+            $module_id = $row->module_id;
+            $sub_module_id = $row->sub_module_id;
+        }
+
+
         $module = $db->table('module_access');
         $result = $module->where('user_role', $user_role)
             ->where('module_id', $module_id)
@@ -115,6 +127,23 @@ if (!function_exists('get_user_role')) {
 // Get user image
 if (!function_exists('get_user_image')) {
     function get_user_image( $user_id )
+    {
+        $image_src_filename = '';
+        $db      = \Config\Database::connect();
+        $users = $db->table('ci_users');
+        $result = $users->where('user_id', $user_id)->get()->getResult();
+        foreach ($result as $row){
+            $image_src_filename = $row->image_src_filename;
+        }
+        return $image_src_filename;
+    }
+}
+// -----------------------------------------------------------------------------
+
+
+// Get Class Name
+if (!function_exists('get_class_name')) {
+    function get_class_name( $class_name )
     {
         $image_src_filename = '';
         $db      = \Config\Database::connect();

@@ -55,6 +55,15 @@
                                                         <input class="form-control " type="text" name="amount" value="<?= $row->amount ?>" required="" >
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class=" control-label">Record Type</label>
+                                                        <select name="record_type" class="form-control" required >
+                                                            <option hidden>Select Type</option>
+                                                            <option value="Buendia" <?php if($row->record_type == "Buendia"){echo "selected";}?>>Buendia</option>
+                                                            <option value="Planta"<?php if($row->record_type == "Planta"){echo "selected";}?>>Planta</option>
+                                                        </select>
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="box-footer">

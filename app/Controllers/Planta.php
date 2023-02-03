@@ -7,20 +7,16 @@ class Planta extends BaseController
         $this->Planta_Model = model('Planta_Model');
         $this->session = \Config\Services::session();
         $this->session->start();
-
         helper(['form']);
-
-        $this->module_id     = 9 ;
-        $this->sub_module_id = 11 ;
     }
 
     //planta
     public function planta_index(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Planta_Model->planta_list();
         $data['title']='PLANTA LIST';
@@ -35,7 +31,7 @@ class Planta extends BaseController
 
     public function add_planta(){
 
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -55,7 +51,7 @@ class Planta extends BaseController
 
     public function edit_planta($id)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Planta_Model->update_planta($id);
@@ -77,7 +73,7 @@ class Planta extends BaseController
 
     public function delete_planta($delete_ID)
     {
-        if(check_module_access($this->module_id, $this->sub_module_id, $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
             $this->Planta_Model->delete_planta($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");
