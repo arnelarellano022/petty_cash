@@ -12,12 +12,12 @@ class users extends BaseController
 
     public function users_index(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'change_status') == true) {$data['status_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'verify_account') == true) {$data['verify_account_access'] = true;};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), 'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), 'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), 'change_status') == true) {$data['status_access'] = true;};
+        if(check_module_access(get_class(), 'verify_account') == true) {$data['verify_account_access'] = true;};
 
             $data['fetch_data'] = $this->Users_Model->users_list();
             $data['title']='USER LIST';
@@ -32,7 +32,7 @@ class users extends BaseController
 
     public function add_user(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'add') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -82,7 +82,7 @@ class users extends BaseController
 
     public function edit_user($id)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'edit') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
 
@@ -135,7 +135,7 @@ class users extends BaseController
 
     public function delete_user($delete_ID)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'delete') == false) {return redirect()->to('/error_404');};
 
             $this->Users_Model->delete_user($delete_ID);
 

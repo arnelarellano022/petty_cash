@@ -119,6 +119,13 @@ $routes->add('/view_management_transaction/(:any)', 'management_transaction::vie
 $routes->add('/add_management_transaction', 'management_transaction::add_management_transaction');
 $routes->add('/delete_management_transaction/(:any)', 'management_transaction::delete_management_transaction/$1');
 
+//CASH VOUCHER
+$routes->add('/cash_voucher_index', 'cash_voucher::cash_voucher_index');
+$routes->add('/edit_cash_voucher/(:any)', 'cash_voucher::edit_cash_voucher/$1');
+$routes->add('/view_cash_voucher/(:any)', 'cash_voucher::view_cash_voucher/$1');
+$routes->add('/add_cash_voucher', 'cash_voucher::add_cash_voucher');
+$routes->add('/delete_cash_voucher/(:any)', 'cash_voucher::delete_cash_voucher/$1');
+
 //PETTY CASH
 $routes->add('/petty_cash_index', 'petty_cash::petty_cash_index');
 $routes->add('/edit_petty_cash/(:any)', 'petty_cash::edit_petty_cash/$1');

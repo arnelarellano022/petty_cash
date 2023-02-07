@@ -35,15 +35,26 @@ insert  into `account`(`account_id`,`title`) values (2,'ACCOUNT TITLE 1');
 DROP TABLE IF EXISTS `cash_voucher`;
 
 CREATE TABLE `cash_voucher` (
-  `id` int(10) NOT NULL,
+  `cv_id` int(10) NOT NULL,
   `voucher_no` varchar(50) NOT NULL,
   `requester` int(5) NOT NULL,
   `date` datetime NOT NULL,
   `status` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`cv_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `cash_voucher` */
+
+/*Table structure for table `cash_voucher_items` */
+
+DROP TABLE IF EXISTS `cash_voucher_items`;
+
+CREATE TABLE `cash_voucher_items` (
+  `cv_items_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cv_items_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `cash_voucher_items` */
 
 /*Table structure for table `ci_users` */
 
@@ -208,7 +219,7 @@ CREATE TABLE `module` (
 
 /*Data for the table `module` */
 
-insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',96),(2,'Role & Permissions','Roles','fa-book',97),(3,'Settings','Settings','fa-cogs',98),(4,'Backup & Export',NULL,'fa-database',99),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',10),(11,'Management',NULL,'fa-credit-card',2),(12,'Petty Cash',NULL,'fa-money-bill-wave',3),(13,'Cash Voucher',NULL,'fa-money',1);
+insert  into `module`(`module_id`,`module_name`,`controller_name`,`fa_icon`,`sort_order`) values (1,'Users','Users','fa-user',96),(2,'Role & Permissions','Roles','fa-book',97),(3,'Settings','Settings','fa-cogs',98),(4,'Backup & Export',NULL,'fa-database',99),(5,'Company',NULL,'fa-building',5),(6,'Department',NULL,'fa-users',6),(7,'Employee',NULL,'fa-address-card',7),(8,'Account',NULL,'fa-university',8),(9,'Planta',NULL,'fa-truck',9),(10,'Requester',NULL,'fa-user',10),(11,'Management',NULL,'fa-credit-card',2),(12,'Petty Cash',NULL,'fa-money-bill-wave',3),(13,'Cash Voucher',NULL,'fa-newspaper',1);
 
 /*Table structure for table `module_access` */
 

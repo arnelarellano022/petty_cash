@@ -1,0 +1,14 @@
+CRITICAL - 2023-02-06 13:01:57 --> get_class() called without object from outside a class
+#0 C:\xampp\htdocs\petty_cash\app\Helpers\functions_helper.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'get_class() cal...', 'C:\\xampp\\htdocs...', 88, Array)
+#1 C:\xampp\htdocs\petty_cash\app\Controllers\Management_Transaction.php(16): check_module_access('access')
+#2 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Management_Transaction->management_transaction_index()
+#3 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Management_Transaction))
+#4 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\petty_cash\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-02-06 21:33:58 --> Call to a member function cash_voucher_list() on null
+#0 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Cash_Voucher->cash_voucher_index()
+#1 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cash_Voucher))
+#2 C:\xampp\htdocs\petty_cash\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\petty_cash\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -82,8 +82,9 @@ if (!function_exists('get_sub_module_permission')) {
 
 // CHECK MODULE PERMISSION
 if (!function_exists('check_module_access')) {
-    function check_module_access( $class_name, $user_role, $operation)
+    function check_module_access( $class_name, $operation)
     {
+
         $classname = str_replace("App\\Controllers\\","",$class_name);
         $class_name = $classname . "_index";
 
@@ -98,7 +99,7 @@ if (!function_exists('check_module_access')) {
 
 
         $module = $db->table('module_access');
-        $result = $module->where('user_role', $user_role)
+        $result = $module->where('user_role', $_SESSION['user_role'])
             ->where('module_id', $module_id)
             ->where('sub_module_id', $sub_module_id)
             ->where('operation', $operation)

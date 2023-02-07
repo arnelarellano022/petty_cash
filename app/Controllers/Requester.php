@@ -14,10 +14,10 @@ class Requester extends BaseController
     //REQUESTER
     public function requester_index(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), 'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), 'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Requester_Model->requester_list();
         $data['title']='REQUESTER LIST';
@@ -31,7 +31,7 @@ class Requester extends BaseController
 
     public function add_requester(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -51,7 +51,7 @@ class Requester extends BaseController
 
     public function edit_requester($id)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Requester_Model->update_requester($id);
@@ -73,7 +73,7 @@ class Requester extends BaseController
 
     public function delete_requester($delete_ID)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
             $this->Requester_Model->delete_requester($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");

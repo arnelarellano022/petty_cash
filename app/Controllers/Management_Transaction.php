@@ -13,11 +13,11 @@ class Management_Transaction extends BaseController
     //management_transaction
     public function management_transaction_index(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'add') == true) {$data['add_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'view') == true) {$data['view_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'edit') == true) {$data['edit_access'] = true;};
-        if(check_module_access(get_class(), $_SESSION['user_role'],'delete') == true) {$data['delete_access'] = true;};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'add') == true) {$data['add_access'] = true;};
+        if(check_module_access(get_class(), 'view') == true) {$data['view_access'] = true;};
+        if(check_module_access(get_class(), 'edit') == true) {$data['edit_access'] = true;};
+        if(check_module_access(get_class(), 'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Management_Transaction_Model->management_transaction_list();
         $data['title']='MANAGEMENT TRANSACTION LIST';
@@ -31,7 +31,7 @@ class Management_Transaction extends BaseController
 
     public function add_management_transaction(){
 
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit'])
             {
@@ -51,7 +51,7 @@ class Management_Transaction extends BaseController
 
     public function view_management_transaction($id)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'view') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'view') == false) {return redirect()->to('/error_404');};
 
 
 
@@ -67,7 +67,7 @@ class Management_Transaction extends BaseController
 
     public function edit_management_transaction($id)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
 
             if($_POST['submit']) {
                 $this->Management_Transaction_Model->update_management_transaction($id);
@@ -89,7 +89,7 @@ class Management_Transaction extends BaseController
 
     public function delete_management_transaction($delete_ID)
     {
-        if(check_module_access(get_class(), $_SESSION['user_role'],'access') == false) {return redirect()->to('/error_404');};
+        if(check_module_access(get_class(), 'access') == false) {return redirect()->to('/error_404');};
             $this->Management_Transaction_Model->delete_management_transaction($delete_ID);
 
             $this->session->setFlashdata("success", "Record Deleted Successfully");
