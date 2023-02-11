@@ -20,7 +20,7 @@ class Cash_Voucher extends BaseController
         if(check_module_access(get_class(), 'delete') == true) {$data['delete_access'] = true;};
 
         $data['fetch_data'] = $this->Cash_Voucher_Model->cash_voucher_list();
-        $data['title']='MANAGEMENT TRANSACTION LIST';
+        $data['title']='CASH VOUCHER TRANSACTION LIST';
 
             echo view('partial/header',$data);
             echo view('partial/top_menu');
@@ -52,8 +52,6 @@ class Cash_Voucher extends BaseController
     public function view_cash_voucher($id)
     {
         if(check_module_access(get_class(), 'view') == false) {return redirect()->to('/error_404');};
-
-
 
         $module['fetch_data'] = $this->Cash_Voucher_Model->get_cash_voucher_by_id($id);
         $module['title'] = 'VIEW TRANSACTION';

@@ -40,6 +40,10 @@ CREATE TABLE `cash_voucher` (
   `requester` int(5) NOT NULL,
   `date` datetime NOT NULL,
   `status` varchar(20) NOT NULL,
+  `created_by` int(3) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`cv_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -51,7 +55,8 @@ DROP TABLE IF EXISTS `cash_voucher_items`;
 
 CREATE TABLE `cash_voucher_items` (
   `cv_items_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`cv_items_id`)
+  PRIMARY KEY (`cv_items_id`),
+  CONSTRAINT `FK-CV-ID` FOREIGN KEY (`cv_items_id`) REFERENCES `cash_voucher` (`cv_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `cash_voucher_items` */
@@ -238,11 +243,11 @@ CREATE TABLE `module_access` (
   CONSTRAINT `FK-Module` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-Roles` FOREIGN KEY (`user_role`) REFERENCES `user_roles` (`user_roles_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK-SubModule` FOREIGN KEY (`sub_module_id`) REFERENCES `sub_module` (`sub_module_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=latin1;
 
 /*Data for the table `module_access` */
 
-insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account'),(70,1,1,1,'edit'),(71,1,4,6,'access'),(72,1,5,7,'access'),(73,1,5,7,'add'),(74,1,5,7,'edit'),(75,1,5,7,'delete'),(76,1,6,8,'access'),(77,1,6,8,'add'),(78,1,6,8,'edit'),(79,1,6,8,'delete'),(80,1,7,9,'access'),(93,1,7,9,'add'),(95,1,7,9,'delete'),(96,1,7,9,'view'),(97,1,7,9,'edit'),(98,1,8,10,'add'),(99,1,8,10,'edit'),(100,1,8,10,'delete'),(101,1,8,10,'access'),(102,1,9,11,'access'),(103,1,9,11,'add'),(104,1,9,11,'edit'),(105,1,9,11,'delete'),(106,1,10,12,'access'),(107,1,10,12,'add'),(108,1,10,12,'edit'),(109,1,10,12,'delete'),(110,1,11,13,'access'),(111,1,11,13,'delete'),(112,1,11,13,'add'),(113,1,11,13,'edit'),(114,1,11,13,'view'),(115,1,12,14,'access'),(123,1,12,14,'view'),(124,1,12,14,'add'),(125,1,12,14,'edit'),(126,1,12,14,'delete'),(127,1,13,15,'access');
+insert  into `module_access`(`id`,`user_role`,`module_id`,`sub_module_id`,`operation`) values (20,1,1,1,'access'),(27,1,3,5,'access'),(28,1,3,4,'access'),(56,1,2,2,'access'),(59,1,2,3,'access'),(61,1,1,1,'change_status'),(62,1,1,1,'add'),(64,1,1,1,'delete'),(68,2,1,1,'access'),(69,1,1,1,'verify_account'),(70,1,1,1,'edit'),(71,1,4,6,'access'),(72,1,5,7,'access'),(73,1,5,7,'add'),(74,1,5,7,'edit'),(75,1,5,7,'delete'),(76,1,6,8,'access'),(77,1,6,8,'add'),(78,1,6,8,'edit'),(79,1,6,8,'delete'),(80,1,7,9,'access'),(93,1,7,9,'add'),(95,1,7,9,'delete'),(96,1,7,9,'view'),(97,1,7,9,'edit'),(98,1,8,10,'add'),(99,1,8,10,'edit'),(100,1,8,10,'delete'),(101,1,8,10,'access'),(102,1,9,11,'access'),(103,1,9,11,'add'),(104,1,9,11,'edit'),(105,1,9,11,'delete'),(106,1,10,12,'access'),(107,1,10,12,'add'),(108,1,10,12,'edit'),(109,1,10,12,'delete'),(110,1,11,13,'access'),(111,1,11,13,'delete'),(112,1,11,13,'add'),(113,1,11,13,'edit'),(114,1,11,13,'view'),(115,1,12,14,'access'),(123,1,12,14,'view'),(124,1,12,14,'add'),(125,1,12,14,'edit'),(126,1,12,14,'delete'),(127,1,13,15,'access'),(129,1,13,15,'add'),(130,1,13,15,'edit'),(131,1,13,15,'view'),(132,1,13,15,'delete');
 
 /*Table structure for table `petty_cash` */
 
