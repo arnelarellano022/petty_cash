@@ -153,19 +153,20 @@
         $('#date').datetimepicker({format: "YYYY-MM-DD"});
 
         $(document).ready(function(){
+            row_count = 0;
             $(".add-new").click(function(){
 
-                var row_count = $('#datatable >tbody >tr').length;
-
-
-
+//                var row_count = $('#datatable >tbody >tr').length;
+                alert(row_count);
 //                    $(this).attr("disabled", "disabled");
                     var index = $("#datatable tbody tr:last-child").index();
                     var row = '<tr>' +
 
-                        '<td style="text-align: center"><input style="margin-top: 15px;" type="text" class="form-control " name="description" id="description" ></td>' +
-                        '<td style="text-align: center"><input style="margin-top: 15px;" type="text" class="form-control " name="amount" id="amount" ></td>' +
-                        '<td style="text-align: center"><a class="fa fa-save" title="Save" data-toggle="tooltip"></i></a> <a class="fa fa-trash" title="Delete" data-toggle="tooltip"></a> </td>' +
+                        '<td style="text-align: center"><input type="text" class="form-control " name="description_' + row_count + '"   id="description_' + row_count + '" ></td>' +
+                        '<td style="text-align: center"><input type="text" class="form-control " name="amount_' + row_count + '" id="amount_' + row_count + '" ></td>' +
+                        '<td style="text-align: center"><a class="btn btn-success" title="Save" data-toggle="tooltip"><i class="fas fa-save"></i></a> <a class="btn btn-danger delete" title="Delete" data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
+
+
                         '</tr>';
                     $("#datatable").append(row);
                     $("#datatable tbody tr").eq(index + 1).find(".add, .edit").toggle();
@@ -184,7 +185,38 @@
                         e.preventDefault();
                     }
                 });
+                row_count++;
             });
+
+
+            // Delete row on delete button click
+            $(document).on("click", ".delete", function(){
+                var c = confirm("Do you want to delete this row?");
+                if(c === true) {
+                    $(this).parents("tr").remove();
+                    $(".add-new").removeAttr("disabled");
+                    //update table data
+                    var fess_data = JSON.stringify(tableToJSON($("#datatable")));
+                    $("[name=pass_data]").val(fess_data);
+                }
+            });
+
+
+            function tableToJSON(tblObj){
+                var data = [];
+                var $headers = $(tblObj).find("th");
+                var $rows = $(tblObj).find("tbody tr").each(function(index) {
+                    $cells = $(this).find("td input").val();
+                    data[index] = {};
+                    $cells.each(function(cellIndex) {
+                        data[index][$($headers[cellIndex]).html()] = $(this).html();
+                    });
+                });
+                return data;
+
+
+            }
+
         });
     }
 </script>
