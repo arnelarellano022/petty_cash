@@ -43,9 +43,9 @@
                                             </div>
                                             <!-- Date -->
                                             <div class="form-group col-sm-3">
-                                                <label>Date</label>
+                                                <label>Transaction Date</label>
                                                 <div class="input-group date" id="date" data-target-input="nearest">
-                                                    <input type="text" name="date" id="date_val" class="form-control datetimepicker-input" data-target="#date" placeholder="Enter Transaction Date " data-toggle="datetimepicker"/>
+                                                    <input type="text" name="date" id="date_val" class="form-control datetimepicker-input" data-target="#date" placeholder="Input Date " data-toggle="datetimepicker"/>
                                                     <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
@@ -72,7 +72,7 @@
 
 
                                         <div class="col-sm-12" style="margin-top: 30px;">
-                                            <input type="hidden" name="pass_data">
+                                            <input type="hidden" name="pass_data" >
 
                                             <div class="table-title">
                                                 <div class=" row ">
@@ -138,7 +138,7 @@
                                     </div>
                                     <div class="box-footer">
                                         <input type="hidden" name="submit" value="submit"/>
-                                        <button type="submit" class="btn btn-success float-right"><b>SUBMIT</b></button>
+                                        <button type="submit" class="btn btn-success float-right submit"><b>SUBMIT</b></button>
                                     </div>
                                 </form>
                             </div>
@@ -153,25 +153,23 @@
         $('#date').datetimepicker({format: "YYYY-MM-DD"});
 
         $(document).ready(function(){
-            row_count = 0;
+
             $(".add-new").click(function(){
 
 //                var row_count = $('#datatable >tbody >tr').length;
-                alert(row_count);
+//                alert(row_count);
 //                    $(this).attr("disabled", "disabled");
                     var index = $("#datatable tbody tr:last-child").index();
                     var row = '<tr>' +
 
-                        '<td style="text-align: center"><input type="text" class="form-control " name="description_' + row_count + '"   id="description_' + row_count + '" ></td>' +
-                        '<td style="text-align: center"><input type="text" class="form-control " name="amount_' + row_count + '" id="amount_' + row_count + '" ></td>' +
-                        '<td style="text-align: center"><a class="btn btn-success" title="Save" data-toggle="tooltip"><i class="fas fa-save"></i></a> <a class="btn btn-danger delete" title="Delete" data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
-
+                        '<td style="text-align: center"><input type="text" class="form-control " name="description"   id="description" ></td>' +
+                        '<td style="text-align: center"><input type="text" class="form-control " name="amount" id="amount" ></td>' +
+                        '<td style="text-align: center"> <a class="btn btn-danger delete"  data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
 
                         '</tr>';
                     $("#datatable").append(row);
                     $("#datatable tbody tr").eq(index + 1).find(".add, .edit").toggle();
                     $('[data-toggle="tooltip"]').tooltip();
-
 
 
                 //disable keys except backspace
@@ -185,36 +183,50 @@
                         e.preventDefault();
                     }
                 });
-                row_count++;
+
+
             });
 
+            $(document).on("click", ".submit", function(){
+//                var data = [];
+//                var $headers = $("#datatable").find("th");
+//                var $rows = $("#datatable").find('tbody tr').each(function(rowIndex)
+//                {
+//                    $cells = $(this).find('td input');
+//                    data[rowIndex] = {};
+//                    $cells.each(function(cellIndex) {
+////                        console.log($(this).val());
+//                        data[rowIndex][$($headers[cellIndex]).html()] = $(this).val() ;
+//                    });
+//
+//                });
+
+                tableToJSON_Update($("#datatable"));
+                console.log( $("[name=pass_data]").val());
+            });
 
             // Delete row on delete button click
             $(document).on("click", ".delete", function(){
-                var c = confirm("Do you want to delete this row?");
-                if(c === true) {
-                    $(this).parents("tr").remove();
-                    $(".add-new").removeAttr("disabled");
-                    //update table data
-                    var fess_data = JSON.stringify(tableToJSON($("#datatable")));
-                    $("[name=pass_data]").val(fess_data);
-                }
+                $(this).parents("tr").remove();
+                //update pass datatable data
+                tableToJSON_Update($("#datatable"));
             });
 
 
-            function tableToJSON(tblObj){
+            function tableToJSON_Update(tblObj){
                 var data = [];
                 var $headers = $(tblObj).find("th");
-                var $rows = $(tblObj).find("tbody tr").each(function(index) {
-                    $cells = $(this).find("td input").val();
-                    data[index] = {};
+                var $rows = $(tblObj).find('tbody tr').each(function(rowIndex)
+                {
+                    $cells = $(this).find('td input');
+                    data[rowIndex] = {};
                     $cells.each(function(cellIndex) {
-                        data[index][$($headers[cellIndex]).html()] = $(this).html();
+                        data[rowIndex][$($headers[cellIndex]).html()] = $(this).val() ;
                     });
                 });
-                return data;
 
-
+                var json_data = JSON.stringify(data);
+                $("[name=pass_data]").val(json_data);
             }
 
         });
