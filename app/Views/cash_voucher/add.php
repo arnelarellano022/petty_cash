@@ -92,7 +92,14 @@
                                                         <th style="text-align:center;  width: 10%;"> </th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody id="form_data" ></tbody>
+                                                    <tbody id="form_data" >
+                                                    </tbody>
+
+                                                            <tr>
+                                                                <td></td>
+                                                                <td><input type="text" id="total_amt" readonly="readonly"></td>
+                                                            </tr>
+
                                                 </table>
                                             </div>
                                         </div>
@@ -155,18 +162,17 @@
         $(document).ready(function(){
 
             $(".add-new").click(function(){
-
-//                var row_count = $('#datatable >tbody >tr').length;
-//                alert(row_count);
-//                    $(this).attr("disabled", "disabled");
+                var row_count = $('#datatable tbody tr').length ;
+                    var total_amt_display = false;
                     var index = $("#datatable tbody tr:last-child").index();
                     var row = '<tr>' +
-
                         '<td style="text-align: center"><input type="text" class="form-control " name="description"   id="description" ></td>' +
-                        '<td style="text-align: center"><input type="text" class="form-control " name="amount" id="amount" ></td>' +
+                        '<td style="text-align: center"><input type="text" class="form-control " name="amount" id="amount_' + row_count +' "  ></td>' +
                         '<td style="text-align: center"> <a class="btn btn-danger delete"  data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
-
                         '</tr>';
+                    total_amt_display = true;
+
+
                     $("#datatable").append(row);
                     $("#datatable tbody tr").eq(index + 1).find(".add, .edit").toggle();
                     $('[data-toggle="tooltip"]').tooltip();
@@ -183,9 +189,36 @@
                         e.preventDefault();
                     }
                 });
+//console.log(row_count);
+            });
+
+
+            $("[name=amount]").click(function()
+            {
+            var row_count = $('#datatable tbody tr').length  ;
+            $("#total_amt").keyup(function(){
+
+
+
+                 alert( row_count);
 
 
             });
+            });
+
+
+
+//                var $rows = $("#datatable").find('tbody tr').each(function(rowIndex)
+//                {
+//                    $cells = $("#amount").find('td input ');
+////                    data[rowIndex] = {};
+//                    $cells.each(function(cellIndex) {
+//                        alert($(this).val());
+//                        amount_Val = amount_Val +  $(this).val();
+//                    });
+//                });
+
+
 
             $(document).on("click", ".submit", function(){
 //                var data = [];
