@@ -95,52 +95,14 @@
                                                     <tbody id="form_data" >
                                                     </tbody>
 
-                                                            <tr>
+                                                            <tr id="totalAmt_Row" hidden>
                                                                 <td></td>
-                                                                <td><input type="text" id="total_amt" readonly="readonly"></td>
+                                                                <td><input class="form-control" type="text" id="total_amt" readonly="readonly" style="background-color: white"></td>
                                                             </tr>
 
                                                 </table>
                                             </div>
                                         </div>
-
-<!--                                        <div class="row">-->
-<!--                                            <div class="col-sm-12">-->
-<!--                                                <div class="form-group">-->
-<!--                                                    <label>Reference Code</label>-->
-<!--                                                    <input class="form-control " type="text" name="reference_code" value="" required="" >-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <!-- Date -->
-<!--                                            <div class="form-group col-sm-12">-->
-<!--                                                <label>Transaction Date</label>-->
-<!--                                                <div class="input-group date" id="date" data-target-input="nearest">-->
-<!--                                                    <input type="text" name="date" id="date_val" class="form-control datetimepicker-input" data-target="#date" placeholder="Enter Transaction Date " data-toggle="datetimepicker"/>-->
-<!--                                                    <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">-->
-<!--                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>-->
-<!--                                                    </div>-->
-<!--                                                    <div class="input-group-text" onclick="$('#date_val').val('');" ><i class="fa fa-times"></i></div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-sm-12">-->
-<!--                                                <div class="form-group">-->
-<!--                                                    <label class=" control-label">Transaction Type</label>-->
-<!--                                                    <select name="transaction_type" class="form-control" required >-->
-<!--                                                        <option hidden>Select Type</option>-->
-<!--                                                        <option value="Cash In">Cash In</option>-->
-<!--                                                        <option value="Cash Out">Cash Out</option>-->
-<!--                                                    </select>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-sm-12">-->
-<!--                                                <div class="form-group">-->
-<!--                                                    <label>Amount</label>-->
-<!--                                                    <input class="form-control " type="text" name="amount" value="" required="" >-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-
-
 
                                     </div>
                                     <div class="box-footer">
@@ -163,20 +125,20 @@
 
             $(".add-new").click(function(){
                 var row_count = $('#datatable tbody tr').length ;
-                    var total_amt_display = false;
-                    var index = $("#datatable tbody tr:last-child").index();
-                    var row = '<tr>' +
-                        '<td style="text-align: center"><input type="text" class="form-control " name="description"   id="description" ></td>' +
-                        '<td style="text-align: center"><input type="text" class="form-control " name="amount" id="amount_' + row_count +' "  ></td>' +
-                        '<td style="text-align: center"> <a class="btn btn-danger delete"  data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
-                        '</tr>';
-                    total_amt_display = true;
+                if(row_count = 1){
+                    $("#totalAmt_Row").prop("hidden", false);
+                }
 
+                var index = $("#datatable tbody tr:last-child").index();
+                var row = '<tr>' +
+                    '<td style="text-align: center"><input type="text" class="form-control " name="description"   id="description" ></td>' +
+                    '<td style="text-align: center"><input type="number" class="form-control amount_val" name="amount" id="amount_' + row_count +' "  ></td>' +
+                    '<td style="text-align: center"> <a class="btn btn-danger delete"  data-toggle="tooltip"><i class="fas fa-trash"></i></a> </td>' +
+                    '</tr>';
 
-                    $("#datatable").append(row);
-                    $("#datatable tbody tr").eq(index + 1).find(".add, .edit").toggle();
-                    $('[data-toggle="tooltip"]').tooltip();
-
+                $("#datatable").append(row);
+                $("#datatable tbody tr").eq(index + 1).find(".add, .edit").toggle();
+                $('[data-toggle="tooltip"]').tooltip();
 
                 //disable keys except backspace
                 $('#type').keydown(function(e) {
@@ -189,58 +151,42 @@
                         e.preventDefault();
                     }
                 });
-//console.log(row_count);
+            });
+
+            $(document).on('click', '.delete', function () {
+                var row_count = $('#datatable tbody tr').length ;
+                if(row_count < 3){
+                    $("#totalAmt_Row").prop("hidden", true);
+                }
             });
 
 
-            $("[name=amount]").click(function()
-            {
-            var row_count = $('#datatable tbody tr').length  ;
-            $("#total_amt").keyup(function(){
-
-
-
-                 alert( row_count);
-
-
-            });
+            $("#datatable").on('input', '.amount_val', function () {
+                amt_val();
             });
 
-
-
-//                var $rows = $("#datatable").find('tbody tr').each(function(rowIndex)
-//                {
-//                    $cells = $("#amount").find('td input ');
-////                    data[rowIndex] = {};
-//                    $cells.each(function(cellIndex) {
-//                        alert($(this).val());
-//                        amount_Val = amount_Val +  $(this).val();
-//                    });
-//                });
-
+            function amt_val() {
+                var calculated_total_sum = 0;
+                $("#datatable .amount_val").each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }
+                });
+                $("#total_amt").val(calculated_total_sum);
+            }
 
 
             $(document).on("click", ".submit", function(){
-//                var data = [];
-//                var $headers = $("#datatable").find("th");
-//                var $rows = $("#datatable").find('tbody tr').each(function(rowIndex)
-//                {
-//                    $cells = $(this).find('td input');
-//                    data[rowIndex] = {};
-//                    $cells.each(function(cellIndex) {
-////                        console.log($(this).val());
-//                        data[rowIndex][$($headers[cellIndex]).html()] = $(this).val() ;
-//                    });
-//
-//                });
-
                 tableToJSON_Update($("#datatable"));
                 console.log( $("[name=pass_data]").val());
             });
 
             // Delete row on delete button click
             $(document).on("click", ".delete", function(){
+
                 $(this).parents("tr").remove();
+                amt_val();
                 //update pass datatable data
                 tableToJSON_Update($("#datatable"));
             });
