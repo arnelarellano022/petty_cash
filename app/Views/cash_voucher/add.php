@@ -22,11 +22,34 @@
                             <div class="box-body">
                                 <form action="<?= base_url('add_cash_voucher');?>" method="post">
                                     <div class="box-body">
+                                        <div class="row">
+                                            <!--  Radio Button-->
+                                            <div class="form-group col-sm-12" >
+                                                <div style="text-align: center; border: 1px solid gainsboro ; height: 38px; ">
+                                                    <div style="margin-top: 7px"  >
+                                                        <label style="margin-right:  20px;">Status : </label>
+                                                        <div class="icheck-success d-inline" style="margin-right: 30px;">
+                                                            <input type="radio" name="status"  id="radioSuccess1" value="Cleared">
+                                                            <label for="radioSuccess1"> Cleared</label>
+                                                        </div>
+                                                        <div class="icheck-danger d-inline">
+                                                            <input type="radio" name="status" checked id="radioSuccess2" value="Pending">
+                                                            <label for="radioSuccess2"> Pending</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <label>Voucher No.</label>
                                                 <input  id="voucher_no" type="text"  class="form-control" name="voucher_no" value="" required >
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label>Reference No.</label>
+                                                <input  id="ref_no" type="text"  class="form-control" name="ref_no" value="" required >
                                             </div>
 
                                             <div class="col-sm-3" >
@@ -52,31 +75,42 @@
                                                     <div class="input-group-text" onclick="$('#date_val').val('');" ><i class="fa fa-times"></i></div>
                                                 </div>
                                             </div>
-                                            <!--  Radio Button-->
-                                            <div class="form-group col-sm-3" >
-                                                <label>Status</label><br>
-                                                <div style="text-align: center; border: 1px solid gainsboro ; height: 38px; ">
-                                                    <div style="margin-top: 7px"  >
-                                                        <div class="icheck-success d-inline" style="margin-right: 30px;">
-                                                            <input type="radio" name="status"  id="radioSuccess1" value="Cleared">
-                                                            <label for="radioSuccess1"> Cleared</label>
-                                                        </div>
-                                                        <div class="icheck-danger d-inline">
-                                                            <input type="radio" name="status" checked id="radioSuccess2" value="Pending">
-                                                            <label for="radioSuccess2"> Pending</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-3" >
+                                                <div class="form-group">
+                                                    <label class="control-label">Account Title</label>
+                                                    <select id="acct_title" class="form-control" name="acct_title" >
+                                                        <?php if($fetch_acct_title){
+                                                            foreach ($fetch_acct_title as $row) {?>
+                                                                <option value="" hidden>- Select Account -</option>
+                                                                <option value="<?php echo $row->account_id;?>"><?php echo "$row->title" ;?></option>
+                                                            <?php } } ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label>Payee</label>
+                                                <input  id="payee" type="text"  class="form-control" name="payee" value="" required >
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label>Requested Amount</label>
+                                                <input  id="requested_amt" type="text"  class="form-control" name="requested_amt" value="" required >
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label>TIN No.</label>
+                                                <input  id="tin" type="text"  class="form-control" name="tin" value="" required >
+                                            </div>
+                                        </div>
 
                                         <div class="col-sm-12" style="margin-top: 30px;">
                                             <input type="hidden" name="pass_data" >
 
                                             <div class="table-title">
-                                                <div class=" row ">
-                                                    <div class="col-sm-8"  ><h2><b>Item Details</b></h2></div>
+                                                <div class="row" style="margin-bottom: 7px;">
+                                                    <div class="col-sm-8"  ><h4><b>Item Details</b></h4></div>
                                                     <div class="col-sm-4 " >
                                                         <button type="button" class="btn btn-info add-new float-right " ><i class="fa fa-plus" ></i> Add New Row</button>
                                                     </div>
@@ -96,8 +130,8 @@
                                                     </tbody>
 
                                                             <tr id="totalAmt_Row" hidden>
-                                                                <td></td>
-                                                                <td><input class="form-control" type="text" id="total_amt" readonly="readonly" style="background-color: white"></td>
+                                                                <td style="text-align: right; vertical-align: middle"> <b>Actual Amount: </b></td>
+                                                                <td><input class="form-control" type="text" id="actual_amt" readonly="readonly" style="background-color: white"></td>
                                                             </tr>
 
                                                 </table>
@@ -173,7 +207,7 @@
                         calculated_total_sum += parseFloat(get_textbox_value);
                     }
                 });
-                $("#total_amt").val(calculated_total_sum);
+                $("#actual_amt").val(calculated_total_sum);
             }
 
 

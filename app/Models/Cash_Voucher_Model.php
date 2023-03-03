@@ -9,6 +9,7 @@ class Cash_Voucher_Model extends Model
     public function __construct() {
         $db      = \Config\Database::connect();
         $this->cash_voucher = $db->table('cash_voucher');
+        $this->account = $db->table('account');
         date_default_timezone_set('Asia/Manila');
     }
 
@@ -34,8 +35,25 @@ class Cash_Voucher_Model extends Model
             'updated_by'            => $user_id,
             'updated_at'            => $date,
         );
-
+        //add record to Cash Voucher
         $this->cash_voucher->insert($data);
+
+        $data = array(
+            'voucher_no'            => $_POST['voucher_no'] ,
+            'requester'             => $_POST['requester'] ,
+            'date'                  => $_POST['date'] ,
+            'status'                => $_POST['status'] ,
+
+            'created_by'            => $user_id,
+            'created_at'            => $date,
+            'updated_by'            => $user_id,
+            'updated_at'            => $date,
+        );
+        //add record to Cash Voucher Items
+        $this->cash_voucher->insert($data);
+
+
+
     }
 
     public function update_cash_voucher($cv_id)
@@ -68,6 +86,11 @@ class Cash_Voucher_Model extends Model
     public function get_cash_voucher_by_id($cv_id)
     {
         return $this->cash_voucher->where('cv_id', $cv_id)
+            ->get()->getResult();
+    }
+    public function get_account_title()
+    {
+        return $this->account->orderBy('account_id', 'asc')
             ->get()->getResult();
     }
 

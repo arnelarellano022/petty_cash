@@ -55,6 +55,14 @@ DROP TABLE IF EXISTS `cash_voucher_items`;
 
 CREATE TABLE `cash_voucher_items` (
   `cv_items_id` int(11) NOT NULL AUTO_INCREMENT,
+  `voucher_no` varchar(50) NOT NULL,
+  `ref_no` varchar(30) NOT NULL,
+  `payee` year(4) NOT NULL,
+  `description` varchar(150) NOT NULL,
+  `tin` varchar(50) NOT NULL,
+  `acct_title` int(3) NOT NULL,
+  `requested_amt` varchar(15) NOT NULL,
+  `actual_amt` varchar(15) NOT NULL,
   PRIMARY KEY (`cv_items_id`),
   CONSTRAINT `FK-CV-ID` FOREIGN KEY (`cv_items_id`) REFERENCES `cash_voucher` (`cv_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

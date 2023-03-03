@@ -40,6 +40,8 @@ class Cash_Voucher extends BaseController
                 return redirect()->to('/cash_voucher_index');
             }
 
+
+            $module['fetch_acct_title'] = $this->Cash_Voucher_Model->get_account_title();
             $module['title'] = 'ADD NEW TRANSACTION';
 
             echo view('partial/header', $module);
